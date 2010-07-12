@@ -1,0 +1,26 @@
+<?php 
+
+require_once "morganlangille.php";
+
+stdhead("Morgan Langille - Past Research",3);
+?>
+
+		<div id="content">
+			<div class="post">
+				<h2 class="title">Past Research</h2> 
+				<h3>Genomic Islands</h3>
+				<p class="meta">My PhD research was focused on identifying and characterizing <a href="http://en.wikipedia.org/wiki/Genomic_island">genomic islands (GIs)</a>. GIs are large regions (8-250 kb) that are thought to have been horizontally transferred in bacterial genomes. GIs are often linked to pathogenicity, antibiotic resistance, and adaptation to particular environments. During this research project I developed a novel GI prediction program, called IslandPick, that uses comparative genomics for GI identification. After <a href="http://www.ncbi.nlm.nih.gov/pubmed/18680607">evaluating the accurary of several other GI prediction programs</a>, I incorporated the most accurate methods into a single comprehensive website for GI prediction called <a href="http://www.pathogenomics.sfu.ca/islandviewer/">IslandViewer</a>. I also was involved in a collaborative project for the annotation and identification of GIs in a particaular <a href="http://www.ncbi.nlm.nih.gov/pubmed/19047519">virulent strain of Pseudomonas aeruginosa</a>. I also describe some interesting relationships between <a href="http://www.ncbi.nlm.nih.gov/pubmed/19956607">GIs, CRISPRs, and phage</a>. All of these are projects are outlined in my <a href="http://morganlangille.com/papers/Langille_2009_Thesis.pdf">PhD thesis</a>.</p>
+				<h3>Standards development for flow cytometry data</h3>
+				<p class="meta">My PhD program included research rotations before choosing a PhD supervisor for the remainder of my thesis research. One of these rotations was spent on developing standards for flow cytometry. I learned quite a bit about onlotology development (OWL) and file speficiations using XML and XSLT. More information is in the <a href="http://www.ncbi.nlm.nih.gov/pubmed/16901228">publication</a>.</p>
+				<h3>Medical image segmentation algorithms</h3>
+				<p class="meta">I dabbled in the field of medical image analysis, while taking an elective course with <a href="http://www.cs.sfu.ca/~hamarneh/">Dr. Hamarneh</a> during the start of my PhD. This research was focused on developing new segmentation algorithms (think magic wand tool in Photoshop) in 2D and 3D MRI images. This gave me a crash course in learning Matlab and C. The specifics on the research can be found in two publications: <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.69.5057">here</a> and <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.70.8575">here</a>. </p>
+				<h3>Gene duplication in Drosophila</h3>
+				<p class="meta">While completing my concurrent undergraduate Bachelor's of Science and Bachelor's of Computer Science degrees at UNB, I worked for two summers with <a href="http://www.unb.ca/fredericton/science/biology/Faculty/Clark.html">Dr. Clark</a> on identifying retrotransposed (DNA->RNA->DNA) gene duplications in <i>Drospophila melanogaster</i> and looking at gene expression differences between the parent and child copies using microarray data. More information about this project is explained in the <a href="http://www.ncbi.nlm.nih.gov/pubmed/17628393">publication</a>. </p>
+
+			</div>
+			
+			
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+
+<?php stdfoot() ?>

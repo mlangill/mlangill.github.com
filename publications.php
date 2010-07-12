@@ -1,0 +1,16 @@
+<?php 
+
+require_once "morganlangille.php";
+
+stdhead("Morgan Langille - Publications",4);
+?>
+
+		<div id="content">
+			
+				<div style="padding:0;margin:0;text-align:left"><iframe src="http://www.mendeley.com/research-papers/collections/embed/2061391/4486C7/" style="height:1200px;width:650px;border:none;"></iframe><hr style="border:1px solid #E0E0E0;margin:0px 0px 5px 0px;padding:0;width:650px;"/></div>
+
+			
+			
+		</div>
+
+<?php stdfoot() ?>

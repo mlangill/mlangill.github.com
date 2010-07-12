@@ -1,0 +1,109 @@
+<?php 
+
+function stdhead($title ="", $page="", $extra_head=""){
+
+?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title><?php echo $title ?></title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<?php echo $extra_head?>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">Morgan Langille, PhD</a></h1>
+			<p></p>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li <?php if($page == 1) echo "class=\"current_page_item\"" ?>><a href="index.php">About</a></li>
+			<li <?php if($page == 2) echo "class=\"current_page_item\"" ?>><a href="current_research.php">Current Research</a></li>
+			<li <?php if($page == 3) echo "class=\"current_page_item\"" ?>><a href="past_research.php">Past Research</a></li>
+			<li <?php if($page == 4) echo "class=\"current_page_item\"" ?>><a href="publications.php">Publications</a></li>
+			<li <?php if($page == 5) echo "class=\"current_page_item\"" ?>><a href="cv.php">Curriculum Vitae</a></li>
+		</ul>
+	</div>
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		
+			
+<?php } ?>
+
+<?php
+function stdfoot($sidebar=1){
+	 ?>
+			
+			
+			
+		
+	</div>
+
+<?php if($sidebar){ ?>
+<div id="sidebar">
+			<ul>
+				<li>
+				<!--	<div id="search" >
+					<form method="get" action="#">
+						<div>
+							<input type="text" name="s" id="search-text" value="" />
+							<input type="submit" id="search-submit" value="GO" />
+						</div>
+					</form>
+					</div>
+				-->	<div style="clear: both;">&nbsp;</div>
+				</li>
+				
+				<li>
+					<h2>Contact</h2>
+					<p>Morgan G.I. Langille, Ph.D.<br/>
+					<a href="http://genomics.ucdavis.edu/">UC Davis Genome Center</a><br/>
+					<a href="http://tinyurl.com/ucdavis-genome-center">451 East Health Sciences Drive<br/>
+					Davis, CA 95616</a><br/>
+					530-752-8409<br/>
+					<a href="mailto:mlangille@ucdavis.edu">mlangille@ucdavis.edu</a></p>
+				</li>
+				<li>
+					<h2>Social Networking</h2>
+					<ul>
+						<li><a href="http://betascience.blogspot.com/">Beta Science</a></li>
+						<li><a href="http://twitter.com/betascience">Twitter</a></li>
+						<li><a href="http://www.facebook.com/morgan.langille">Facebook</a></li>
+						<li><a href="http://www.mendeley.com/profiles/morgan-langille">Mendeley</a></li>
+						<li><a href="http://friendfeed.com/betascience">FriendFeed</a></li>
+						<li><a href="http://www.linkedin.com/in/morganlangille">LinkedIn</a></li>
+					</ul>
+				</li>
+				<li>
+					<h2>Research Related</h2>
+					<ul>
+						<li><a href="http://openwetware.org/wiki/ISEEM">iSEEM</a></li>
+						<li><a href="http://www.pathogenomics.sfu.ca/islandviewer/query.php">IslandViewer</a></li>
+						<li><a href="http://www.biotorrents.net">BioTorrents</a></li>
+
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+<?php }?>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+</div>
+</body>
+</html>
+
+<?php } ?>
