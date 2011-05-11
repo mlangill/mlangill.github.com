@@ -1,107 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+---
+layout: default
+title: Morgan Langille
+---
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Morgan Langille</title>
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-</head>
-<body>
-<div id="wrapper">
-	<div id="header">
-		<div id="logo">
-			<h1><a href="#">Morgan Langille, PhD</a></h1>
-			<p></p>
-		</div>
-	</div>
-	<!-- end #header -->
-	<div id="menu">
-		<ul>
-			<li class="current_page_item"><a href="index.php">About</a></li>
-			<li><a href="current_research.php">Current Research</a></li>
-			<li><a href="past_research.php">Past Research</a></li>
-			<li><a href="publications.php">Publications</a></li>
-			<li><a href="cv.php">Curriculum Vitae</a></li>
-		</ul>
-	</div>
-	<div id="page">
-	<div id="page-bgtop">
-	<div id="page-bgbtm">
-
-
-
-		<div id="content">
-			<div class="post">
-				<h2 class="title">Welcome</h2><p class="meta">
-				<img class="padded" src="images/Morgan.jpg" alt="Photo of Morgan Langille" width=225/>&nbsp;&nbsp;
-				This website is a central location for information about Dr. Morgan G.I. Langille. <br/><br/>&nbsp;&nbsp;You can find out information about my past and current research as well as a list of my publications and CV. 
-				<br/><br/>&nbsp;&nbsp;I am always looking for new research collaborations and opportunities so please don't hesitate to contact me.  </p>
-
-			</div>
-			
-			
-		<div style="clear: both;">&nbsp;</div>
-		</div>
-			
-			
-			
-		
-	</div>
-
-<div id="sidebar">
-			<ul>
-				<li>
-				<!--	<div id="search" >
-					<form method="get" action="#">
-						<div>
-							<input type="text" name="s" id="search-text" value="" />
-							<input type="submit" id="search-submit" value="GO" />
-						</div>
-					</form>
-					</div>
-				-->	<div style="clear: both;">&nbsp;</div>
-				</li>
-				
-				<li>
-					<h2>Contact</h2>
-					<p>Morgan G.I. Langille, Ph.D.<br/>
-					<a href="http://genomics.ucdavis.edu/">UC Davis Genome Center</a><br/>
-					<a href="http://tinyurl.com/ucdavis-genome-center">451 East Health Sciences Drive<br/>
-					Davis, CA 95616</a><br/>
-					530-752-8409<br/>
-					<a href="mailto:mlangille@ucdavis.edu">mlangille@ucdavis.edu</a></p>
-				</li>
-				<li>
-					<h2>Social Networking</h2>
-					<ul>
-						<li><a href="http://betascience.blogspot.com/">Beta Science</a></li>
-						<li><a href="http://twitter.com/betascience">Twitter</a></li>
-						<li><a href="http://www.facebook.com/morgan.langille">Facebook</a></li>
-						<li><a href="http://www.mendeley.com/profiles/morgan-langille">Mendeley</a></li>
-						<li><a href="http://friendfeed.com/betascience">FriendFeed</a></li>
-						<li><a href="http://www.linkedin.com/in/morganlangille">LinkedIn</a></li>
-					</ul>
-				</li>
-				<li>
-					<h2>Research Related</h2>
-					<ul>
-						<li><a href="http://openwetware.org/wiki/ISEEM">iSEEM</a></li>
-						<li><a href="http://www.pathogenomics.sfu.ca/islandviewer/query.php">IslandViewer</a></li>
-						<li><a href="http://www.biotorrents.net">BioTorrents</a></li>
-
-					</ul>
-				</li>
-
-			</ul>
-		</div>
-		<!-- end #sidebar -->
-		<div style="clear: both;">&nbsp;</div>
-	</div>
-	</div>
-	</div>
-	<!-- end #page -->
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
 </div>
-</body>
-</html>
