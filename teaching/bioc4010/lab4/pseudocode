@@ -1,0 +1,23 @@
+Extracting an Open Reading Frame
+-----------------------------------------------------------------
+INPUT: A genome in a file named "filename"
+OUTPUT: An ORF in the FASTA format in a file named "genome.fasta"
+-----------------------------------------------------------------
+
+fin <-- OPEN the file filename
+SKIP the first line
+genome <-- READ the whole genome as a string
+CLOSE fin
+
+REMOVE all end-of-line characters from genome
+PRINT the length of the genome
+
+orf <-- EXTRACT the ORF from the genome
+n_codon <-- COMPUTE the number of codon in orf
+PRINT information about orf
+
+fout <-- OPEN a new file called genome.fasta
+WRITE a FASTA header in fout
+WRITE orf to fout
+CLOSE fout
+

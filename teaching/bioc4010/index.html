@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-ca">
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>BIOC 4010/5010</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"><meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+			body {
+			  font-family: monospace;
+				width: 80%;
+				margin-left: 5%;
+				line-height: 1.5em;
+			}
+			.SLO {
+			  border-style: solid;
+			  border-color: #999999;
+			  background-color: #ffffcc;
+			  margin-left: 40px; 
+			  font-family: monospace;
+			}
+			.course_detail{
+			  margin-left: 40px; 
+			  font-family: monospace;
+			}
+  </style>
+</head>
+<body>
+
+<div name="head">
+   <h1>BIOC 4010/5010 - Bioinformatics</h1>
+		
+</div>
+<hr>
+
+<a id="lecture1"><div name="lecture1"></a>
+	<h2>Lecture - A graphical abstraction
+	to solve the Genome assembly problem</h2>	
+	
+	<div class="SLO">
+	<h3>Learning Outcomes</h3>
+	<ol><li>Create an overlap and a <span style="font-style: italic;">de Bruijn</span> graphical abstraction from a collection of
+	short DNA reads.</li><li>Solve the sequence of a contig using the OLC or Eulerian path methods.</li><li>Compute the coverage of a shotgun sequencing project when provided with the appropriate parameters.<br>
+	  </li><li>Contrast strengths and limitations of the Overlap-Layout-Consensus and Eulerian path algorithms.<br>
+	  </li><li>Explain how sequence repeats and sequencing errors affect genome assembly.<br>
+	  </li></ol>
+	</div>
+	
+	
+	<div style="margin-left: 40px;"><br>
+	<h3>Reading Material</h3>
+	<a href="papers/paper1.pdf" target="_blank">Genome Sequence Assembly: Algorithms and Issues by Mihai Pop, Steven L. Salzberg, Martin Shumway. Computer, Vol. 35 Issue 7, 2002</a>
+	<br>
+	AND
+	<br>
+	<a href="papers/paper2.pdf" target="_blank">How to apply de Bruijn graphs to genome assembly by Phillip E C Compeau, Pavel A Pevzner & Glenn Tesler. Nature Biotechnology, Vol. 29, Issue 11, 2011</a>
+
+	<div style="margin-left: 40px;">Here is what you should be focussing on:<br>
+	<ol><li>What is the genome assembly problem?</li><li>How does sequence repeats and sequencing error influence genome assembly?</li><li>What is a n-mer, and how are n-mers defined from a given sequence of DNA.</li><li>Contrast the Overlap-Layout-consensus (Hamiliton) approach with the de Bruijn (Eulerian).</li></ol>
+	You also may have a look at the <a href="http://en.wikipedia.org/wiki/Sequence_assembly" target="_blank">Wikipedia entry on Genome Assembly</a>. More fundamentally, here is the entry about <a href="http://en.wikipedia.org/wiki/Directed_graph">directed graphs</a>. After the lecture, you can find an introduction to Eulerian paths <a href="http://en.wikipedia.org/wiki/Eulerian_path" target="_blank">here</a> as well as a more whimsical introduction to Eulerian paths with the <a href="http://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg" target="_blank">Bridges of Koenigsberg</a> problem. The corresponding entry for the <a href="http://en.wikipedia.org/wiki/Hamiltonian_path">Hamiltonian path</a> is here.<br>
+	</div>
+	<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;"><span class="Apple-style-span" style="font-family: arial,helvetica,sans-serif; font-size: 12px; line-height: 18px;"></span></span><span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;"><span class="Apple-style-span" style="font-family: arial,helvetica,sans-serif; font-size: 12px; line-height: 18px;"></span></span>
+	</div>
+</div>
+<hr>
+
+
+
+<a id="lab3"><div name="lab3"></a>
+	<h2>Lab: Introduction to Programming</h2>
+	<div style="margin-left:40px">
+	This laboratory introduces key concepts in scripting. The language we'll use is <a href="http://www.python.org">Python</a>, a versatile and intuitive way to program. Python is commonly used in Bioinformatics as well as through the full range of IT industries because it is easy to use and debug.
+	</div>
+	<div class="SLO">
+	<h3>Learning Outcomes</h3>
+	<ol>
+		<li>Create Python scripts and run them.</li>
+		<li>Perform arithmetic operations.</li>
+		<li>Create and manipulate string variables.</li>
+		<li>Read and write from disk file.</li>
+		<li>Explain how an operating system knows where a line of text ends.</li>
+	</ol>
+	</div>
+	<div style="margin-left:40px">
+		<h3>Getting Python</h3>
+		To get Python for your own computer, simply <a href="http://www.python.org/download/" > download the appropriate package from the Python home page</a>. There is a tutorial <a href="http://docs.python.org/py3k/tutorial/introduction.html" >here</a> if you want to know more. However, this series of labs are designed to be all-inclusive.
+		
+		<h3>Lab Material</h3>
+		The lab material can be found <a href="./lab4" >here</a>. It is meant to be semi-standalone. I strongly recommend attending the session although the lab itself can be completed at home.
+	</div>
+</div>
+<hr>
+
+</body>
+</html>

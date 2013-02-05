@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html template="true"><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Lab 4 - Intro to Scripting</title>
+
+  
+<style type="text/css">
+body {
+	width: 80%;
+	margin-left: 5%;
+	line-height: 1.5em;
+}
+
+.code {
+  border-style: dotted;
+  border-width: 1px;
+  font-family: monospace;
+  background-color: #ffffcc;
+  margin-left: 10px;
+  width: 70%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.6em;
+}
+
+</style></head><body>
+<h1>Lab 4 - Introduction to Scripting</h1>
+
+<h2>Learning Outcomes</h2>
+The goal of this laboratory is to introduce the Python programming language. Follow along with the instructions and ask for clarifications whenever needed. Once you are done with this tutorial, you will be asked to complete the Lab assignment 4, which is a minor variation on what was done in class.
+
+Learning Objectives:
+<ol>
+	<li>Create Python scripts and run them.</li>
+	<li>Perform arithmetic operations.</li>
+	<li>Create and manipulate string variables.</li>
+	<li>Read and write from disk files.</li>
+	<li>Explain how an operating system knows where a line of text ends.</li>
+</ol>
+
+<h2>Step 1 - Fetching a genome</h2>
+<ol>
+	<li>Go to the NCBI portal (<a href="http://www.ncbi.nlm.nih.gov">www.ncbi.nlm.nih.gov</a>) and go to the entry for the Duck Hepatitis Genome (DQ256132) as search keywords.</li>
+	<li>Make note of the  size of this genome.</li>
+	<li>Follow the link to the GenBank accession code. The GenBank format contains lots of information about the genome. This specific genome was chosen because it is small and manageable. There are two FEATURES in this file. One of which provide details on the CDS (coding sequence).</li>
+	<li>Make note of the nucleotide range for this CDS relative to the complete genome?</li>
+	<li>Change the Display menu again, but to the FASTA format. You should by now have the genome is a very simple format.</li>
+	<li>Save this FASTA file to a new folder under the name duckhep.fasta</li>
+</ol>
+
+<h2>Step 2 - From genome to string, interactively </h2>
+<ol>
+	<li>Open the program IDLE (START\PROGRAMS\Python...\IDLE)</li>
+	<li>Create a string variable which will contain the full genome. This is done by pasting the nucleotide sequence (not the header) in between two sets of three quote marks.</li>
+		<div class="code">
+			genome = '''paste here'''
+		</div>
+	<li>To determine the length of the genome in character, use the following syntax:</li>
+		<div class="code">
+			genlen = len(genome)
+		</div>	
+	<li>You will notice that there is a discrepancy between the real length and the string that you pasted. Perform the following calculation:</li>
+		<div class="code">
+			actual_length = <em>enter the length as written down earlier</em><br>
+			genome_length = len(genome)<br>
+			difference = genome_length - actual_length<br>
+		</div>	
+	<li>Make note of how many characters are seemingly added to the genome.</li>
+	<li>Have a closer look at the genome using two different approaches:</li>
+		<div class="code">
+			#Method 1 - pretty printing<br>
+			print(genome)<br><br>
+			#Method 2 - look at the raw string<br>
+			genome<br>
+		</div>
+	<li>The character \n is a special character which indicates the end of a line. This is the culprit as Python considers this character to be part of the genome. First, find out how many \n there are in the string <em>genome</em></li>
+	 	<div class="code">
+			genome.count("\n")
+		</div>
+	<li>This count should match exactly the discrepancy between the actual length and the string length. To remove these characters, use the following line:</li>
+		<div class="code">
+			genome = genome.replace("\n", "")
+		</div>
+	<li>Confirm now that the length of the string <em>genome</em> matches the actual length of this genome.</li>
+</ol>
+
+<h2>Step 3 - From genome to string, batch approach</h2>
+All of the computation has been done so far in an interactive <em>shell</em>. The next step is to write the same code (or so) in a file so it can be executed as a program. 
+<ol>
+	<li>From IDLE, Open a new window with (File\New Window). This new window is a text editor with Python syntax highlights.</li>
+	<li>Save (File\Save As...) under the file name <b>orfextract.py</b> .</li>
+	<li>Add the following code to the new file (pasting will not work):</li>
+		<div class="code">
+			# Open a file<br>
+			myfile = open( "duckhep.fasta" )<br>
+<br>
+			# Skip the first line, which isn't part of the sequence.<br>
+			headerline = myfile.readline()<br>
+<br>
+			# Read in the rest of the file<br>
+			genome = myfile.read()<br>
+<br>
+			# Clean up the genome from newline characters<br>
+			genome = genome.replace("\n", "")<br>
+<br>
+                        # Compute length of the genome<br>
+                        genlen = len(genome)<br>
+<br>
+			# Output to user<br>
+			print ("This genome contains " + str(genlen) + " characters.")<br>
+		</div>
+	<li>Save this file (CTRL-S) and run it using F5, or RUN\RUN MODULE from the menu.<br><br>There goes your first Python program! You may run it by double clicking on the file, but it’ll go so fast that you won’t be able to see it execute.</li>
+	<li>The steps to do this involve opening a file in writing mode, writing a FASTA header line for the sequence, writing the sequence itself and closing the file.<br>
+       Now, let's write this to a new file called duckhep.clean.fasta. To create a file in writing mode (duckhep.fasta was opened by default in reading mode), you must add an extra argument to the <b>open()</b> function. The letter <em>w</em> passed as a string does this. Add the following code block to your file to create a clean version of the genome on the hard drive:</li>
+		<div class="code">
+			# Open the file in write mode<br>
+			outfile = open("duckhep.clean.fasta","w")<br><br>
+			#Add a header<br>
+			outfile.write(">bogus header\n")<br><br>
+			# Write genome into string<br>
+			outfile.write(genome)<br><br>
+			# Clean up<br>
+			outfile.close()<br><br>
+		</div>
+</ol>
+
+<h2>Step 4 - Interactive extraction of an ORF</h2>
+Proceed back to the console for a moment. 
+<ol>
+	<li>The operation that extracts a sub-string from a larger string is called slicing. It uses the square bracket notation to specify a range of indices of characters. Print to the console the first character which is indexed as 0:</li>
+		<div class="code">
+			genome[0]
+		</div>
+	<li>To print the first three characters, use the following syntax:</li>
+		<div class="code">
+			genome[0:3]
+		</div>
+	<li>For the second set of three nucleotides:</li>
+		<div class="code">
+			genome[3:6]
+		</div>
+	<li>Notice how the index specified for the end of the sub-string is non-inclusive. Also, note how the genome is indexed differently in the GenBank file (starts at 1).<br>The ORF can thus be recovered by slicing the genome string by using the CDS information written down earlier.</li>
+		<div class="code">
+			orf = genome[<em>first nucleotide</em>:<em>last nucleotide</em>]
+		</div>
+	<li>Verify that your indexing is correct by extracting from the ORF the first and last codons:</li>
+		<div class="code">
+			# First codon<br>
+			orf[0:3]<br><br>
+			# Last codon<br>
+			orf[-3:]<br><br>
+		</div>
+</ol>
+
+<h2>Step 5 - Saving the ORF as a FASTA file</h2>
+Now that you have experimented with the ORF extraction interactively, let's do this as part of your program. Resume coding at the end of your Python code from Step 3.
+<ol>
+	<li>Add the appropriate lines to extract the complete gene sequence and assign it to the variable name orf (as done in section 4).</li>
+	<li>Print to the console the number of amino acids in this gene. To do this you must first figure out what this value is! This can be done by dividing the length of the ORF in nucleotides by the length of a codon.</li>
+		<div class="code">
+			# Length of gene in AA<br>
+			num_AA = len(orf) / 3<br><br>
+			# Print Useful information<br>
+			x = "Gene length:" + str(len(orf)) + "nucl. (" + str(num_AA) + " aa)"<br>
+			print(x)<br><br>
+		</div>
+	<li>It is now time to write the exact gene sequence into a file in the FASTA format. Adapt the code provided in section 3 to write the sequence of the ORF into the FASTA format. Make sure that there is a sequence name provided (FASTA format) and that only the ORF is included (not the genome).</li>
+</ol>
+
+<h2>Assignment for Lab 4</h2>
+It is time to test what you have learned so far. This assignment essentially re-uses commands and logic that you have seen already in step 1 to 5.
+<ol>
+	<li>Go back to the NCBI GenBank entry for DQ256132 (the complete genome). In the CDS feature, there is a link to the protein_id (ABB96725.1). Follow this link. This polyprotein is made of a number of sites and regions. </li>
+	<li>Write down the name and range in amino acids of the 6 <em>regions</em>. </li>
+	<li>Save the polyprotein sequence in a suitable format to your disk (as in Step 1).</li>
+	<li>In a new Python file called <yourname>.lab4.py, write the necessary code to extract all six regions and write them out into a single FASTA. Additionally, all of these conditions should apply (equal weight):</li>
+		<ol>
+		   <li>The sequence data is read from a FASTA file.</li>
+			<li>The output file name must be regions.fasta</li>
+			<li>Each 6 sequences must be named according to the annotation in the GeneBank file.</li>
+			<li>The ORF slicing must be correct.</li>
+			<li>The output file must be a valid FASTA file.</li>
+			<li>The code must be error free such that Python can complete the script.</li>
+		</ol>
+</ol>
+
+This assignment is due by email to the TA before the end of the next lab session on March 10. Any email <b>sent</b> after 2:30PM is considered late. This assignment must be completed individually: make sure that you understand what was done in class <em>before</em> leaving the lab on March 3rd. 
+
+<br><br><small><a href="../" ><em>take me back to the course page</em></a></small>
+</body>
+</html>

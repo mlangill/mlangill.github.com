@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Lab4 - Programming!</title></head><body>
+<h1><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Lab 4 &#8211;
+Introduction to Bioinformatics programming<o:p></o:p></span></font></h1>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">The goal of
+this laboratory is to
+introduce the Python programming language. Follow along with the
+instructions
+and ask for clarifications whenever needed. Once you are done with this
+tutorial, you will be asked to complete the Lab assignment 4, which is
+a minor variation
+on what was done in class. <o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Learning
+Objectives:<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><span style="">1.<font face="Times New Roman" size="1"><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></span></font><!--[endif]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Create
+Python scripts and run them.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><span style="">2.<font face="Times New Roman" size="1"><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></span></font><!--[endif]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Perform
+arithmetic operations.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><span style="">3.<font face="Times New Roman" size="1"><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></span></font><!--[endif]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Create and
+manipulate string variables.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><span style="">4.<font face="Times New Roman" size="1"><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></span></font><!--[endif]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Read and write
+from disk file.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><span style="">5.<font face="Times New Roman" size="1"><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></span></font><!--[endif]--><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Explain how an
+operating system knows where a line of text ends.<o:p></o:p></span></font></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Step 1 &#8211;
+Fetching a genome<o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Go to the NCBI
+portal (<a href="http://www.ncbi.nlm.nih.gov/">www.ncbi.nlm.nih.gov</a>) and go to the entry for the Duck Hepatitis Genome (DQ256132) as search keywords.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Select the
+complete genome for this
+virus (the most recent).<o:p></o:p></span></font></p>
+
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;">a. Make note of the&nbsp; size of this genome<o:p><br>
+&nbsp;</o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Follow the link
+to the GenBank
+accession code. The GenBank format contains lots of information about
+the
+genome. This specific genome was chosen because it is small and
+manageable.
+There are two FEATURES in this file. One of which provide details on
+the CDS
+(coding sequence). <o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;">b.
+What is the nucleotide range
+for this CDS relative to the complete genome:<o:p></o:p></span></font></b></p>
+
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>First
+nucleotide:<o:p>&nbsp;</o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Last
+nucleotide:<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;"><o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Change the
+Display menu again, but
+to the FASTA format. You should by now have the genome is a very simple
+format.
+<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Save this FASTA
+file to a new
+folder under the name <b style=""><span style="font-weight: bold;">duckhep.fasta</span></b>.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Step 2 &#8211; From
+genome to a string, interactively.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Open the
+program IDLE
+(START\PROGRAMS\Python 2.4\IDLE)<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Create a string
+variable which will
+contain the full genome. This is done by pasting the nucleotide
+sequence <u>only</u>
+in between two set of three quote marks.<o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;">#
+Create the genome variable<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">genome
+= '''&lt;paste here&gt;''' <o:p></o:p></span></font></b><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">To determine
+the length of the
+genome in character, use the following syntax.<o:p><br>
+&nbsp;</o:p></span></font><br>
+</p>
+<div style="margin-left: 80px;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><span style="font-family: monospace;">genlen
+= len(genome)</span></span></font><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;"><o:p></o:p></span></font></b><br>
+</div>
+<p class="MsoNormal" style="margin-left: 0.5in;">
+<font face="Arial" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span><br>
+<span style="font-size: 10pt; font-family: Arial;">You
+will notice that there are a
+discrepancy between the real length and the string that you pasted.
+Perform the
+following calculation:<o:p></o:p></span></font></p>
+
+
+<p class="MsoNormal" style="margin-left: 0.9134in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></font><b style="font-family: monospace;"><font size="2"><span style="font-size: 10pt; font-weight: bold;">actuallen
+= &lt;whatever you
+wrote down in section 1a&gt;<o:p>&nbsp;</o:p></span></font></b></p><p class="MsoNormal" style="margin-left: 0.9134in;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><span style="font-family: monospace;">difference
+= genlen &#8211; actuallen</span></span></font></b></p>
+<div style="margin-left: 80px;"><span style="font-family: monospace; font-weight: bold;">print(difference)</span><br>
+</div>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><span style="font-family: monospace;"></span></span></font><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;"><o:p></o:p></span></font></b></p>
+
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;"></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;">How
+many characters are seemingly
+added to the genome pasted from the FASTA file?<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Have a closer
+look at the genome
+using two different approaches:<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;">#
+Method A &#8211; print command<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">print(genome)<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;">#
+Method B &#8211; raw string<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">genome<o:p></o:p></span></font></b></p>
+<br>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">What
+is
+the difference in format between the two representation of the genome?
+Can you
+see the end-of-line characters?<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">You may count
+the number of
+end-of-line characters using the string method <i style=""><span style="font-style: italic;">count</span></i>.
+<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><font style="font-family: monospace;" size="2"><span style="font-size: 10pt;"><o:p></o:p></span></font><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><span style="font-family: monospace;">print
+genome.count('\n')</span></span></font><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;"><o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span><span style="font-size: 10pt; font-family: Arial;">Unless
+something went terribly
+wrong,<span style="">&nbsp; </span>you can now
+be confident that the
+discrepancy between the genome and its FASTA representation is only due
+to the
+end-of-line characters. These can be removed using another useful
+string
+methods called <i style=""><span style="font-style: italic;">replace</span></i>. <o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p></span></font><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><span style="font-family: monospace;">genome
+= genome.replace("\n", "")</span></span></font><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;"><o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p>The
+line of code above forces all
+instances of the character <b style=""><span style="font-weight: bold;">\n</span></b> in <i style=""><span style="font-style: italic;">genome</span></i>
+to be replaced by an empty string; thereby deleting
+these characters. The resulting string is set to <i style=""><span style="font-style: italic;">genome. </span></i>Overwriting
+the original string makes sense since there is no use for the "dirty"
+string anymore.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p>You
+now have an accurate
+representation of the genome. <o:p></o:p></span></font></p>
+<br>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Step 3 &#8211; From
+genome to string, a batch approach.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p></o:p>Step
+2 was useful to observe closely
+what happens within a Python program. However, real applications are
+written in
+files, not in consoles. Step 3 will reproduce the work done in the
+previous
+section while also covering the basics of working with disk files.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">From IDLE, Open
+a new window with
+(File\New Window). This new window is a text editor which has Python
+syntax
+highlight features. <o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Save (File\Save
+As&#8230;) under the file
+name <b style=""><span style="font-weight: bold;">ORF.py</span></b>
+. <o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><u><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Read from a
+text file<o:p></o:p></span></font></u></p>
+<p class="MsoNormal" style="margin-left: 0.9134in; font-family: monospace;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;">#
+Open
+a file<o:p></o:p><br>
+myfile
+= open( &#8220;duckhep.fasta&#8221; )</span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in; font-family: monospace;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in; font-family: monospace;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;">#
+Skip
+the first line, which isn&#8217;t part of the sequence.<o:p></o:p><br>
+headerline = myfile.readline()</span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in; font-family: monospace;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in; font-family: monospace;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;">#
+Read
+in the rest of the file<o:p></o:p><br>
+genome
+= myfile.read()<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in; font-family: monospace;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><o:p>&nbsp;</o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in; font-family: monospace;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;">#
+Clean
+up the genome from newline characters<o:p></o:p><br>
+genome
+= genome.replace(&#8220;\n&#8221;, &#8220;&#8221;)<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in; font-family: monospace;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><o:p>&nbsp;</o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><b style=""><font size="2"><span style="font-size: 10pt; font-weight: bold;"><span style="font-family: monospace;">#
+Output to user</span><o:p style="font-family: monospace;"></o:p><br style="font-family: monospace;"><span style="font-family: monospace;">
+print
+(&#8220;This genome contains &#8221; + str(genlen) + &#8220; characters.&#8221;)</span></span></font><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;"><o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Save this file
+(CTRL-S) and run it
+using F5, or RUN\RUN MODULE from the menu.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">There goes your
+first Python
+program! You may run it by double clicking on the file, but it&#8217;ll go so
+fast
+that you won&#8217;t be able to see it execute.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;">Add the
+following code block
+to your file to create a clean version of the genome on the hard drive:<o:p></o:p></span></font></p><p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;"><o:p></o:p></span></font></b></p>
+<div style="font-family: monospace; margin-left: 80px;"><span style="font-weight: bold;"># Write to a new file<br>
+# Open a file in write mode<br style="font-weight: bold;">
+</span><span style="font-weight: bold;">fout = open("duckhep.clean.fasta", "w")<br>
+<br>
+# Write a header<br style="font-weight: bold;">
+</span><span style="font-weight: bold;">fout.write("&gt;clean genome\n")<br>
+<br>
+# Write the genome<br style="font-weight: bold;">
+</span><span style="font-weight: bold;">fout.write(genome)<br>
+<br>
+# Close the file<br style="font-weight: bold;">
+</span><span style="font-weight: bold;">fout.close()</span><br>
+</div>
+<p class="MsoNormal" style="margin-left: 0.9134in;"><font size="2"><span style="font-size: 10pt;"><o:p><span style="font-family: monospace;"></span></o:p></span></font><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p> <br>
+</o:p></span></font></p>
+
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Step 4 &#8211;
+Interactive extraction of an ORF.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">The operation
+that extracts a
+substring from a larger string is called slicing. It uses the square
+bracket
+notation to specify the index of characters. Print to the console the
+first
+character which is indexed as 0:<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">print
+genome[0]<o:p></o:p></span></font></b><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: Arial;">To print the
+first three characters,
+use the following syntax.<o:p></o:p></span><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">print
+genome[0:3]<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">For the second
+codon:<o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">print
+genome[3:6]<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Notice how the
+index specified for
+the end of the substring is non-inclusive. Also, note how the genome is
+indexed
+differently in the GenBank file (starts at 1).<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">The ORF can
+thus be recovered by
+slicing the genome string by using the CDS information written down in
+1c.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">orf
+=
+genome[&lt;first nucl&gt;:&lt;last nucl&gt;] <o:p></o:p></span></font></b><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">However, you
+will notice that
+although the last codon in <i style=""><span style="font-style: italic;">orf</span></i> is a
+STOP
+codon, the first one isn&#8217;t a START codon. <span style="">&nbsp;</span>To
+print only the first and last codon of a
+gene, use the following syntax:<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">print
+&#8220;First
+codon: &#8221;, orf[0:3]<o:p></o:p><br>
+print &#8220;Last
+codon : &#8221;, orf[-3:] <o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial; font-weight: bold;">Can
+you fix the slicing of the genome to recover the complete start codon? How?<o:p></o:p></span></font></b></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Step 5 &#8211; Saving
+the ORF in the FASTA format<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Now that you&#8217;ve
+experimented with
+the ORF extraction interactively, let&#8217;s do this as part of your
+program. Resume coding
+at the end of your Python code from Step 3.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Add the
+appropriate lines to extract
+the complete gene sequence and assign it to the variable name <i style=""><span style="font-style: italic;">orf</span></i>.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Print to the
+console the number of
+amino acids in this gene. To do this you must first figure out what
+this number
+is! This can be done by dividing the length of the gene in nucleotide
+by the length
+of a codon.<o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">num_AA
+= len(orf) / 3<o:p><br>
+</o:p>print &#8220;Gene
+length:&#8221;, len(orf), &#8220;nucl. (&#8221;, num_AA, &#8220; aa)&#8221;<o:p></o:p></span></font></b><br>
+<font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">It is now time
+to write the exact
+gene sequence into a file in the FASTA format. The steps to do this
+involve
+opening a file in writing mode, writing a FASTA header line for the
+sequence,
+writing the sequence itself and closing the file.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">To create a
+file in writing mode (duckhep.fasta
+was opened by default in reading mode), you must add an extra argument
+to the <b style=""><span style="font-weight: bold;">open()
+</span></b>function. The letter <i style=""><span style="font-style: italic;">w</span></i>
+passed as a string does this in the line below.<o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">fileout
+= open(&#8220;genome.fasta&#8221;, &#8220;w&#8221;)<o:p></o:p></span></font></b><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">To write the
+header, we need to
+write the &gt; symbol, followed by a descriptive name and finally a
+newline
+character (\n). Let&#8217;s prepare a string that contains all this
+information.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">header
+= &#8220;&gt;Duck Hepatitis Polyprotein\n&#8221;<o:p></o:p></span></font></b><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Writing to the
+abstract file object
+is done by calling the <b style=""><span style="font-weight: bold;">write</span></b>
+method:<o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">fileout.write(
+header )<i style=""><span style="font-style: italic;"><o:p></o:p></span></i></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">The gene itself
+must be written
+next: <o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">fileout.write(
+orf + &#8220;\n&#8221; )<o:p></o:p></span></font></b><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: Arial;">And finally the
+file must be closed.<o:p></o:p></span><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">fileout.close()<o:p></o:p></span></font></b><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Save and
+execute the script once
+more. The FASTA file will be located in the same folder as your Python
+script. Did
+it worked?<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Step 6 &#8211; Making
+it look better.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;;"><o:p></o:p></span><span style="font-size: 10pt; font-family: Arial;">The
+genome.fasta file is missing
+something to make it look better: breaking down the gene sequence into
+lines of
+a reasonable length. The syntax to do this is a bit beyond the learning
+objectives for today, but you can replace the line where the genome
+gets
+written by this code block.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><b style=""><font face="Courier New" size="2"><span style="font-size: 10pt; font-family: &quot;Courier New&quot;; font-weight: bold;">for
+lineindex
+in range(0,len(orf),50):<o:p></o:p><br>
+<span style=""></span> &nbsp; &nbsp;
+&nbsp; &nbsp; fileout.write( orf[ lineindex : lineindex
++ 50] + &#8220;\n&#8221; )<o:p></o:p></span></font></b></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">The first line
+creates a series of
+number values (integers) from 0 to the length of the orf, in steps of
+50. The
+second line gets executed once for each of these values. While this
+execute the
+value in question is called <i style=""><span style="font-style: italic;">lineindex</span></i>.
+The
+second line&#8217;s job is to <u>slice</u> the sequence of the
+gene from this index
+and up to 50 characters further. A newline is added to each of these
+substrings
+to create a line-wrapping similar to the file that was downloaded from
+NCBI.<o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Lab Assignment
+4 <o:p></o:p></span></font></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<pre style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">Get back to the NCBI GenBank entry for <a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&amp;val=83028289">DQ256132</a> (the complete genome). In the CDS feature, there is a link to the protein_id (<a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=ABB96725.1">ABB96725.1</a>). Follow this link. This polyprotein is made of a number of sites and regions. Write down the name and range in amino acids of the 6 regions. Finally, save the polyprotein sequence in FASTA format to your disk (as in Step 1).<o:p></o:p></span></font></pre>
+<pre style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;">In a new Python file called &lt;dalusername&gt;.lab4.py, write the necessary code to extract all six regions and write them out into a single FASTA file called &#8220;regions.fasta&#8221;. You don&#8217;t have to line-wrap the sequences every 50 characters, but you may if you choose to. Submit your source code to the Teaching Assistant before the following lab session (Mar 12 2008).<o:p></o:p></span></font></pre>
+<p class="MsoNormal" style="margin-left: 0.5in;"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+<p class="MsoNormal"><font face="Arial" size="2"><span style="font-size: 10pt; font-family: Arial;"><o:p>&nbsp;</o:p></span></font></p>
+</body></html>
