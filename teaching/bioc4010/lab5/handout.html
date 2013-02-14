@@ -1,0 +1,53 @@
+Pseudocode
+-------------------------------------------------------------------
+lastSTOP = 0
+start = 0
+stop = 0
+
+for as long as start is smaller than the length of the genome
+	SET start as the index of the next ATG after lastSTOP.
+	FIND the next in-frame STOP codon
+	SET stop as the index of the third base of the STOP codon
+
+IF (stop - start) IS LARGER THAN mininim Gene length threshold
+	WRITE to an outfile a line in the same format as GLIMMER3
+	SET lastSTOP to STOP
+OTHERWISE
+	resume SEARCH from lastSTOP + 1
+
+
+This translates in Python as:
+-------------------------------------------------------------------
+
+lastSTOP = 0
+start = 0
+stop = 0
+
+while start != -1:
+	# Find the first ATG after lastSTOP
+	start = genome.find("ATG", lastSTOP)
+
+	# Find the first in-frame STOP codon
+	for i in range(start, len(genome), 3):
+		codon = genome[i:i+3]
+		if codon in ["TAA","TGA","TAG"]:
+			stop = i + 2
+			break
+
+		# Is the ORF long enough?
+		if stop - start >= minGeneLength:
+			print(str(start), str(stop), str(stop - start))
+			lastSTOP = stop + 1
+			break
+		else:
+			lastSTOP = lastSTOP + 1
+
+
+
+
+
+
+
+
+
+

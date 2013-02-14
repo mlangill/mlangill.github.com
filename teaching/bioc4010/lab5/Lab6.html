@@ -1,0 +1,716 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  
+
+
+  <title>Lab5 - Gene Prediction</title><style type="text/css">
+body { font-family: Courier New,Courier,monospace;
+}
+question { border-style: dotted;
+border-width: 1px;
+font-weight: bold;
+}
+.question { border-style: dotted;
+border-width: 1px;
+font-weight: bold;
+}
+  </style></head>
+<body>
+
+<h1>Lab 6 - Gene Prediction 2, analysis.</h1>
+
+<h3>Learning objectives</h3>
+
+<div style="margin-left: 40px;">
+<ul>
+
+  <li>Computer Science</li>
+
+  <ul>
+
+    <li>Define functions to create sub-programs.</li>
+
+    <li>Use Set logic to compute prediction performances.</li>
+
+  </ul>
+
+  <ul>
+
+  </ul>
+
+  <li>Bioinformatics</li>
+
+  <ul>
+
+    <li>Scale the analysis of ORF prediction to an entire genome.</li>
+
+    <li>Discuss the implications of allowing TTG as a starting
+codon.</li>
+
+    <li>Interpret the performance results for START, STOP and
+nucleotide-level prediction.</li>
+
+  </ul>
+
+  <ul>
+
+  </ul>
+
+</ul>
+
+</div>
+
+<h3>Introduction</h3>
+
+<div style="margin-left: 40px;">Last week, you implemented
+a simple algorithm to extract ORF from a genome. A utility tool was
+also implemented to filter all ORF found in the reverse strand. You
+finally calculated the classification performance for START and STOP codons over the first 30Kb of the genome. In this
+laboratory, you will write the necessary code to compute the
+classification performance covering the entire genome for the following:<br>
+
+<br>
+
+<ol>
+
+  <li>Predicting START codons</li>
+
+  <li>Predicting STOP codons</li>
+
+  <li>Predicting whether any single nucleotide is part of a gene.</li>
+
+</ol>
+
+The Nucleotide-level prediction considers whether each nucletodide in
+the genome is correctly classified as part of a gene or not. This
+evaluation method is robust to small errors in detecting the
+boundaries of a gene. As you will see, the classification performance
+can vary drastically by changing the way the evaluation is performed. <br>
+
+&nbsp;<br>Download a copy of the assignment template <a href="template.lab6.doc">here</a>.<br>
+
+</div>
+
+<hr>
+<h3>Step 1 - Scale up the analysis</h3>
+
+<div style="margin-left: 40px;">You'd need to&nbsp;run the analysis on
+the entire genome. To do this, open your geneXtract.py script and
+remove the argument specifying the maximum length of the string to read
+from the file. <br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">genome = fin.read()</span></div>
+
+<br>
+
+This has to be done under both assumptions about the identity of START
+codons (ATG, ATG+TTG). The length of the full genome is ~5Mb, which is
+about 100 time larger than the 50Kb set used last week. The total run
+time for each analyses is ~30 minutes. For this reason, the prediction
+files were pre-computed:<br>
+
+<br>
+
+<ul>
+
+  <li><a href="prediction.ATG.txt">prediction.ATG.txt</a></li>
+
+  <li><a href="prediction.XTG.txt">prediction.XTG.txt</a>&nbsp;</li>
+
+</ul>
+
+<br>
+
+Save both file in your working directory. Make sure that you also have
+your cleaned up GLIMMER3 outfile. Lets assume that this file
+NC_03997.clean.GLIMMER3 .<br>
+
+<br>
+
+</div>
+
+<h3>Step 2 - A generic function to strip data from GLIMMER files.</h3>
+
+<div style="margin-left: 40px;">We'll create a generic
+function which accept any file name and return two lists: a list of
+indices of START codons and another list for the STOP codons. Here is
+the algorithm:<br>
+
+<br>
+
+EXTRACT(filename)<br>
+
+<div style="margin-left: 40px;"><span style="font-style: italic;">STA &lt;-- empty list for
+start position<br>
+
+STO &lt;-- empty list for stop position<br>
+
+OPEN a file called filename<br>
+
+SKIP the first line<br>
+
+for each line in the file:<br>
+
+&nbsp;&nbsp;&nbsp; temp &lt;-- SPLIT the line using white spaces as delimiters</span><br>
+
+&nbsp;&nbsp;&nbsp; APPEND to STA the 2nd element of temp
+(index = 1)<br>
+
+&nbsp;&nbsp;&nbsp; APPEND to STO the 3rd element of temp
+(index = 2)<br>
+
+return STA and STO<br>
+
+</div>
+
+</div>
+
+<div style="margin-left: 40px;"><br>
+
+In a brand new file, specify the filename of the reference file
+(cleaned GLIMMER) and the name of the ATG-only prediction file.<br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">reffile = "NC_003997.clean.GLIMMER3"<br>
+
+testfile = "prediction.ATG.txt"</span></div>
+
+<h3>Step 2.1 Define a function</h3>
+
+<div style="margin-left: 40px;">This step creates an empty
+functions which simply create two empty lists and return them. Note
+that everything that belongs to this function must be properly indented
+(indentation defines what belongs to this function). Add this code
+above the previous two lines.<br>
+
+<br>
+
+<span style="font-weight: bold;">def Xtract( fname ):</span><br style="font-weight: bold;">
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">startlist = []</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">stoplist = []</span><br style="font-weight: bold;">
+
+<br style="font-weight: bold;">
+
+<span style="font-weight: bold;">return startlist, stoplist</span></div>
+
+</div>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; You will know that this code is working
+if you add the following lines at the end of your script:<br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;"># Read in the reference data<br>
+
+refSTART, refSTOP = Xtract( reffile )<br>
+
+print len( refSTART )<br>
+
+<br>
+
+</span>If you run this script, it shouldn't crash. However, the
+results are trivials (and the length is 0).<br>
+
+<br>
+
+</div>
+
+<h3>Step 2.2 - Open the file</h3>
+
+<div style="margin-left: 40px;">Step 2.2 to Within the function definition (and accordingly indented), add the following code. After creating the empty
+list, but before returning the results. Add the necessary code to open
+a file which file name is stored in the string variable <span style="font-style: italic;">fname</span>, then skip
+the first
+line.<br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">fin = open( fname )</span><br>
+
+<span style="font-weight: bold;">fin.readline()</span><br>
+
+<span style="font-weight: bold;"></span></div>
+
+<span style="font-weight: bold;"><br>
+
+</span></div>
+
+<h3>Step 2.3 - The main extraction loop</h3>
+
+<div style="margin-left: 40px;">The bulk of the work will
+be done within a loop iterating over each line in the file. <span style="text-decoration: underline;">BEFORE you
+work on your script, type the following lines in an IDLE console</span>:<br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;"><span style="font-style: italic;">line = "ORF0000 &nbsp;100
+&nbsp; 200 &nbsp;+3 &nbsp;12.5\n"<br>
+
+linelist = line.split()<br>
+
+print linelist<br>
+
+print linelist[1]<br>
+
+print linelist[2]</span></span><br>
+
+</div>
+
+<br>
+
+This code snippet demonstrate how split breaks a string into a list of
+"words". Each GLIMMER line will thus become a list of 5 strings, the
+position of the START and STOP codons will be found respectively at
+index 1 and 2 in this list.<br>
+
+<br>Return to your script and the Xtract function. Just after skipping a line, add this loop:<br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">for line in fin:</span><br style="font-weight: bold;">
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">line = line.split()</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">start = line[1]</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">stop = line[2]</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">startlist.append(start)</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">stoplist.append(stop)</span><br>
+
+</div>
+
+</div>
+
+<br>
+
+This completes the function needed to extract ALL START/STOP codon
+positions found in a given file in the GLIMMER format. The function
+finally returns these
+into a two lists.<br>
+
+<br>
+
+Do not forget to close the file object <span style="font-style: italic;">fin</span> just before
+returning the results.<br>
+
+<br>
+
+</div>
+
+</div>
+
+<h3>Step 3 - Extracting all data from the prediction file</h3>
+
+<div style="margin-left: 40px;">This sounds like you
+should be doing the same thing all over again... Since you spent the
+time to write a generic function to do this task, all that is needed is
+to do is call Xtract using the other file name (following the last line in
+the file).<br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">testSTART, testSTOP = Xtract(
+testfile )</span></div>
+
+<br>
+
+</div>
+
+<h3>Step 4 - A generic function to compute prediction performance.</h3>
+
+<div style="margin-left: 40px;">For the second time, we
+will take the time to create a function which will be generic enough to
+compute Specificity, Sensitivity and F-score on ANY kind of prediction
+data. Here is the algorithm:<br>
+
+<br>
+
+PERFORMANCE( ref, test )<br>
+
+<div style="margin-left: 40px;">real &lt;-- set of all
+reference data<br>
+
+pred &lt;-- set of all prediction data<br>
+
+<br>
+
+TF &lt;-- INTERSECTION of real and pred<br>
+
+FN &lt;-- Elements in real that are not in pred<br>
+
+FP &lt;-- Elements in pred that are not in real<br>
+
+<br>
+
+Sn &lt;-- TF / (TF + FN)<br>
+
+Sp &lt;-- TF / (TF + FP)<br>
+
+Fs &lt;-- (2.0 * Sn * Sp) / (Sn + Sp)<br>
+
+<br>
+
+PRINT all 6 results<br>
+
+</div>
+
+<br>
+
+<br>
+
+Which translates in Python as:<br>
+
+<br>
+
+<span style="font-weight: bold;">def Performance( ref,
+test ):<br>
+
+</span>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">real = set( ref )<br>
+
+pred = set( test )<br>
+
+<br>
+
+TP = len( real.intersection(pred) )<br>
+
+FN = len( real.difference(pred) )<br>
+
+FP = len( pred.difference(real) )<br>
+
+<br>
+
+Sn = float(TP) / (TP + FN)<br>
+
+Sp = float(TP) / (TP + FP)<br>
+
+Fs = (2*Sn*Sp) / (Sn + Sp)<br>
+
+<br>
+
+print "TP = ", TP<br>
+
+print "FN = ", FN<br>
+
+print "FP = ", FP<br>
+
+print "Sn = ", Sn<br>
+
+print "Sp = ", Sp<br>
+
+print "Fs = ", Fs<br>
+
+</span></div>
+
+<br>
+
+Insert this function definition after the Xtract()
+definition. Note that this function doesn't return anything (which is
+OK).
+</div>
+
+<br>
+
+<h3>Step 4 - Harvest time!</h3>
+
+<div style="margin-left: 40px;">It is now time to collect
+the results that you are looking for. The time spent defining functions
+is comparable to the time that you spent figuring out the Sn and Sp
+manually over the 30Kb mini fragment. &nbsp;However, you can now
+do these calculation over
+5Mb in a few seconds. <br>
+
+<br>
+
+Your experiment code should look like this:<br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;"># Read in the reference data<br>
+
+refSTART, refSTOP = Xtract( reffile )<br>
+
+<br>
+
+# Read in the predictions<br>
+
+testSTART, testSTOP = Xtract( testfile )<br>
+
+<br>
+
+#&nbsp;START codon prediction.<br>
+
+print "START codons"<br>
+
+Performance( refSTART, testSTART )<br>
+
+<br>
+
+print "========================"<br>
+
+<br>
+
+print "STOP codons"<br>
+
+Performance( refSTOP , testSTOP )<br>
+
+<br>
+
+<br>
+
+</span><span style="font-weight: bold;"></span></div>
+
+Record your results for both analyses:<br>
+
+<br>
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td style="text-align: center;"></td>
+
+      <td colspan="3" rowspan="1" style="text-align: center;">START prediction</td>
+
+      <td colspan="3" rowspan="1" style="text-align: center;">STOP prediction</td>
+
+      <td style="text-align: center;" colspan="3" rowspan="1">Nucleotide-level</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="text-align: center;"></td>
+
+      <td style="text-align: center;">Sn</td>
+
+      <td style="text-align: center;">Sp</td>
+
+      <td style="text-align: center;">F-score</td>
+
+      <td style="text-align: center;">Sn</td>
+
+      <td style="text-align: center;">Sp</td>
+
+      <td style="text-align: center;">F-score</td>
+
+      <td style="text-align: center;">Sn</td>
+
+      <td style="text-align: center;">Sp</td>
+
+      <td style="text-align: center;">F-score</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="text-align: center;">START = {ATG}</td>
+
+      <td style="text-align: center;"> <br>
+
+      <br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"> <br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td style="text-align: center;">START = {ATG + TTG}</td>
+
+      <td style="text-align: center;"><br>
+
+      <br>
+
+      <br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+      <td style="text-align: center;"><br>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<h3>Step 5 - Nucleotide-level prediction</h3>
+
+<div style="margin-left: 40px;">Predicting the position of
+all START and STOP
+codons is only part of the story. This section will evaluate the
+prediction at
+the nucleotide level. A modified version of Xtract will be implemented,
+which will create an exhaustive list of nucleotides that are part of a
+gene. As you will see, this method of evaluation will give dramatically
+different results.<br>
+
+<br>
+
+EXTRACTNUCL(file)<br>
+
+<div style="margin-left: 40px;"><span style="font-style: italic;">NUC &lt;-- empty list of all
+in-gene nucleotides</span><br>
+
+<span style="font-style: italic;"></span><br>
+
+<span style="font-style: italic;">OPEN a file</span><br>
+
+<span style="font-style: italic;">SKIP the first line
+(header)</span><br>
+
+<span style="font-style: italic;">for each line in the
+file:</span><br>
+
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+temp &lt;-- SPLIT the line<br>
+
+&nbsp;&nbsp;&nbsp; EXTEND NUC with range of integer from
+temp[1] to temp[2] + 1</span><br>
+
+<br>
+
+CLOSE file<br>
+
+return NUC<br>
+
+<br>
+
+</div>
+
+The Python code to do this looks like this:<br>
+
+<br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">def NuclExtract(fname):</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;
+fin = open(fname)</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;
+fin.readline()</span><br style="font-weight: bold;">
+
+<br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;
+nuc = []</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;
+for line in fin:</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+line = line.split()</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+start = int( line[1] )</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+stop &nbsp;= int( line[2] )<br>&nbsp; &nbsp; &nbsp; &nbsp; allnucs = range(start, stop+1, 1)<br style="font-weight: bold;"></span>
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nuc.extend( allnucs )</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;
+fin.close()</span><br style="font-weight: bold;">
+
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;
+return nuc</span></div>
+
+<br>
+
+Use this code snippet to complete the analysis following this procedure:<br>
+
+<br>
+
+refNucl &nbsp;&lt;-- EXTRACT nucleotides list from reffile<br>
+
+testNucl &lt;-- EXTRACT nucleotides list from testfile<br>
+
+PRINT "Nucleotide-level performance"<br>
+
+COMPUTE performances on refNucl and testNucl<br>
+
+<br>
+
+Can you add the necessary code to implement this pseudocode and
+complete the result table above?
+</div></body></html>

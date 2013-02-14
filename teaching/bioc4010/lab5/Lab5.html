@@ -1,0 +1,1100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+  
+
+
+  
+  <title>Lab - Gene Prediction I</title>
+  <style type="text/css">
+			body {
+			  font-family: monospace;
+				width: 80%;
+				margin-left: 5%;
+				line-height: 1.5em;
+			}
+			.SLO {
+			  border-style: solid;
+			  border-color: #999999;
+			  background-color: #ffffcc;
+			  margin-left: 40px; 
+			  font-family: monospace;
+			}
+			.course_detail{
+			  margin-left: 40px; 
+			  font-family: monospace;
+			}
+			.question { border-style: dotted;
+				border-width: 1px;
+				font-weight: bold;
+			}
+  </style>
+</head>
+
+
+<body>
+
+
+<h1>Lab 5 - Gene Prediction!</h1>
+
+<h3>Introduction</h3>
+
+
+<div style="margin-left: 40px;">
+<p>Finding genes in a genome is not a trivial task. As we have
+seen in class, a signigficant level of sophistication is required to
+complete this task. In this laboratory, you will get the opportunity to
+work directly with genome files and implement a simple gene prediction
+algorithm. The performance of this algorithm will then be evaluated
+with the assumption that the output from GLIMMER3 is completely
+accurate.</p>
+
+
+<p>As you&nbsp;will soon see, prokaryotic genomes can be
+treated as any other FASTA file. Since, you already have performed a
+conversion from FASTA to a Python string. It is therefore not difficult
+to regard a whole genome as a string.</p>
+
+<p>Please use this <a href="template.lab5.doc" > MS-Word template</a> to answer the questions for this assignment. Print your solution and submit a hard copy
+before the following lab.</p>
+
+<p>Here is an overview of the lab:</p><center><img src="flowchart.png" alt="floawchart.png" width="500px"></center>
+
+
+</div>
+
+
+<h3>Designing an algorithm: Assumptions</h3>
+
+
+<div style="margin-left: 40px;">This sounds like it should
+hurt, but it won't. Let's make a series of assumption on the structure
+of a gene:<br>
+
+
+<ol>
+
+
+  <li>Genes are defined as ORFs.</li>
+
+
+  
+  <ol>
+
+
+    <li>Begin with a ATG</li>
+
+
+    <li>End with either TAA, TAG, TGA</li>
+
+
+    <li>Both start and stop codon must be in the same frame.</li>
+
+
+    <li>START codons are more rare in a&nbsp;random sequence
+than either STOP codons.</li>
+
+
+    <li>Since there can be multiple ATG within a gene, the
+earliest in-frame ATG codon from a STOP codon is considered to be the
+real START codon.</li>
+
+
+  
+  </ol>
+
+
+  <li>Randomly occuring ORFs are very short.&nbsp;</li>
+
+
+</ol>
+
+
+</div>
+
+<hr>
+<h3>Step 1 - Getting the Data</h3>
+
+
+<div style="margin-left: 40px;">We'll work with the genome
+of&nbsp;<span style="font-style: italic;">Bacillus
+anthracis ames </span>although any genome would work as well. 
+For reference, the files below could be downloaded from the&nbsp;<span style="font-style: italic;">Bacillus
+anthracis ames</span> folder on <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria">NCBI's FTP site</a>.
+<br>
+
+<ol>
+
+  <li><a href="./NC_003997.Glimmer3"><span style="text-decoration: underline;">GLIMMER3 output</span></a></li>
+
+
+  <li><a href="./NC_003997.fna">Genome in FASTA format</a>.</li>
+
+
+</ol>
+
+
+Save these text files in a new folder called "gene_prediction".<br>
+
+
+<br>
+
+
+&nbsp;
+</div>
+
+<hr>
+<h3>Step 2 - Finding ORFs!</h3>
+
+
+<div style="margin-left: 40px;">I will assume that you saved the genome as <span style="text-decoration: underline;">NC_003997.fna</span>.
+<br><br>
+The following code has already been created and saved as the file <a href="geneXtract.py">geneXtract.py</a>.
+<br><br> 
+Download this script and save it in the same "gene_prediction" folder.
+<br><br>
+
+Please read through the code and explanation described below. You should understand what each line of code is doing. 
+
+<br><br>
+
+
+Set two application-wide variables:<br>
+
+
+<br>
+
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">maxGenomeLength = 50000<br>
+
+
+minGeneLength = 3 * 100<br>
+
+
+</span></div>
+
+
+</div>
+
+
+<div style="margin-left: 40px;"><br>
+
+
+You will be able to change these experimental parameters later on, but
+they will do for now.</div>
+
+
+<div style="margin-left: 40px;"><br>
+
+
+Read and clean the&nbsp;genome similarly to what was done in the previous lab.<br>
+
+
+<br>
+
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">myfile = open("NC_003997.fna")<br>
+
+
+<br>
+
+
+# Skip the first line in the file (header info)<br>
+
+
+myfile.readline()<br>
+
+
+<br>
+
+
+# Read-in a "chunk" of the genome.<br>
+
+
+genome = myfile.read( maxGenomeLength )<br>
+
+
+<br>
+
+
+# Clean-up<br>
+
+
+genome = genome.replace("\n", "")<br>
+
+
+<br>
+
+
+myfile.close()<br>
+
+
+</span></div>
+
+
+<br>
+
+
+
+<br>
+
+
+</div>
+
+<hr>
+<h3>Step 3 - The gene prediction algorithm</h3>
+
+
+<div style="margin-left: 40px;">Here is a plain English
+description of what we are going to do:<br>
+
+
+<br>
+
+
+<div style="margin-left: 40px;"><span style="font-style: italic;">Starting at the first base in
+the genome, find the position of the first START codon. Once a START
+codon is found, find the position of the first STOP codon that is in
+the same frame. If the length of the ORF is more than a defined minimum
+length, consider all nucleotides including and in-between the position
+of the first nucleotide in START and the last nuclotide in STOP to be a
+gene. Repeat from the end of this gene until the whole genome has been
+scanned.<br>
+
+
+</span></div>
+
+
+<br>
+
+
+It would be great if we could just type this in a Python file and make
+it happen. However, this description contains ambiguities that would
+prevent a computer from executing as desired. The second step of
+designing an algorithm is to break down this description into small
+steps which are indivually simple to implement using a real programming
+language.<br>
+
+
+<br>
+
+
+<div style="margin-left: 40px;">lastSTOP = 0<br>
+
+
+start = 0<br>
+
+
+stop = 0<br>
+
+
+<br>
+
+
+for as long as <span style="font-style: italic;">start</span>
+is smaller than the length of the genome<br>
+
+
+<div style="margin-left: 40px;">SET start as the index of
+the next ATG after lastSTOP.<br>
+
+
+FIND the next in-frame STOP codon<br>
+
+
+SET stop as the index of the third base of the STOP codon<br>
+
+
+<br>
+
+
+IF (<span style="font-style: italic;">stop - start</span>)
+IS LARGER THAN mininim Gene length threshold<br>
+
+
+<div style="margin-left: 40px;">WRITE to an outfile a line
+in the same format as GLIMMER3<br>
+SET lastSTOP to STOP<br>
+
+</div>
+
+
+OTHERWISE<br>
+
+
+<div style="margin-left: 40px;">resume SEARCH from
+lastSTOP + 1 </div>
+
+
+</div>
+
+
+</div>
+
+
+<br>
+
+
+This translates in Python as:<br>
+
+
+<br>
+
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">lastSTOP = 0<br>
+
+
+start = 0<br>
+
+
+stop = 0<br>
+
+
+<br>
+
+
+while start != -1:<br>
+
+
+</span>
+<div style="margin-left: 40px;"><span style="font-weight: bold;"># Find the first ATG after
+lastSTOP<br>
+
+
+start = genome.find("ATG", lastSTOP)<br>
+
+
+<br>
+
+
+# Find the first in-frame STOP codon<br>
+
+
+for i in range(start, len(genome), 3):<br>
+
+
+</span>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">codon = genome[i:i+3]<br>
+
+
+if codon in ["TAA","TGA","TAG"]:<br>
+
+
+</span>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">stop = i + 2<br>
+break
+</span></div>
+
+
+<span style="font-weight: bold;"></span></div>
+
+
+<span style="font-weight: bold;"><br>
+
+
+# Is the ORF long enough?<br>
+
+
+if stop - start &gt;= minGeneLength:<br>
+
+
+</span>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">print "{0}\t{1}\t{2}".format(start+1,stop+1,stop-start)<br>
+
+
+lastSTOP = stop + 1
+</span></div>
+
+
+<span style="font-weight: bold;">else:<br>
+
+
+</span>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">lastSTOP = start + 1</span></div>
+
+
+<span style="font-weight: bold;"></span></div>
+
+
+</div>
+
+
+<br>
+
+
+The most arcane lines are these using the .find() string method. This
+method returns -1 if no substring are found, this will explain why we
+want
+to run the algorithm for as long as <span style="font-style: italic;">start</span> is NOT equal
+to -1.
+The find method also begins searching at the index provided as the
+second parameter. If no second parameter is&nbsp;provided, Python
+assumes that this value is 0: which is the beginning of the genome.<br>
+
+
+<br>
+
+Make sure you understand the role of each line in the bigger picture. If in doubt, ask questions. <br>
+<br>
+Now, run the geneXtract.py script.
+<br>
+
+<br>
+
+
+Compare the output of your program with the GLIMMER3 file. You may also
+find the .fna file useful to refer to. Notice how the algorithm failed
+to find the START codon of the first gene, although it correctly
+identified the STOP codon. <span style="font-style: italic;">Can
+you explain why?</span> <br>
+
+
+<br>
+
+
+<div class="question">Question 1. Which
+assumption on the structure of the prokaryotic gene causes the wrong
+identification of the START codon of the first gene?<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+</div>
+
+
+</div>
+
+<hr>
+<h3>Step 4 - Writing to a GLIMMER-style outfile</h3>
+
+
+<div style="margin-left: 40px;">It is now time to generate
+an outfile which we will use to evaluate how good is the prediction
+algorithm. The output from GLIMMER can be found in the genome folder as
+NC_003997.GLIMMER3. Let's have a look at a GLIMMER3 gene entry:<br><br>
+<pre>&gt;gi|30260195|ref|NC_003997.3| Bacillus anthracis str. Ames, complete genome<br>orf00001 407 1747 +2 7.50<br>...<br></pre><br>
+
+The first line contains a FASTA style header. Each subsequent line
+contains the following tokens:<br><br>
+
+<div style="margin-left: 40px;">ORFname
+	\t&nbsp;&nbsp;&nbsp; first&nbsp;&nbsp;&nbsp;
+	\t&nbsp;&nbsp;&nbsp; last&nbsp;&nbsp;&nbsp;
+	\t&nbsp;&nbsp;&nbsp; frame&nbsp;&nbsp;&nbsp;
+	\t&nbsp;&nbsp;&nbsp; Some Score \n
+</div>
+<br>
+We can reproduce this output with relative ease. By following these
+steps:<br><br>
+
+<ol>
+  <li>Before looping over the genome, open a file in writing mode called <span style="text-decoration: underline;">prediction.txt</span>.</li>
+  <li>Also before the loop, add a bogus header to the file.&nbsp;</li>
+  <li>After the loop, close the file.</li>
+  <li>Instead of the print statement found within the loop, use the code below to prepare a string called <em>line</em> and write <em>line</em>to your output file.</li>
+</ol>
+
+
+<div style="margin-left: 40px;font-weight: bold;">
+	frame = (start % 3) + 1<br>
+	<br>
+	line = "ORF0000\t{0}\t{1}\t+{2}\t--\n".format(start+1,stop+1,frame)<br>
+</div>
+
+<br>
+Uncomment all lines of code in the genXtract.py script that activate these steps.
+<br><br>
+Run the script again and you should now have a newly created "prediction.txt" file that has the same format as the NC_003997.GLIMMER3 file.
+
+</div>
+
+<hr>
+<h3>Step 5 - Filtering GLIMMER3</h3>
+
+
+<div style="margin-left: 40px;">
+	For the sake of
+	simplicity, we are disregarding all genes encoded on the complementary
+	strand. We can identify these genes because their coding frame is a
+	negative value. To compare GLIMMER3 and our method, we should remove
+	all
+	negative frame genes from the GLIMMER3 output. Instead of removing,
+	we'll read the GLIMMER3 file and write to a new file all lines which
+	have a positive frame (and thus contain the character <b>+</b>).<br><br>
+
+
+	Open a new Python file, call it filter.py .<br><br>
+	
+	We'll be reading in this file using a different approach: on a
+	line-per-line basis.<br><br>
+
+
+	<div style="margin-left: 40px;"><span style="font-weight: bold;">myfile =
+		open("NC_003997.GLIMMER3")<br>
+		outfile = open("NC_003997.clean.GLIMMER3", "w")<br>
+		<br>
+		for line in myfile:<br>
+		&nbsp;&nbsp;&nbsp; # This is true only if there is a +
+		character in the string <span style="font-style: italic;">line</span>.<br>
+		&nbsp;&nbsp;&nbsp; if "+" in line:<br>
+		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+		outfile.write(line)<br>
+		<br>
+		outfile.close()<br>
+		myfile.close()</span>
+	</div>
+	<br>
+	Execute this script and there should be a new file in your folder.
+</div>
+
+<hr>
+<h3>Step 6 - Evaluating the classification performance</h3>
+<div style="margin-left: 40px;">
+Today, you will be deriving the performance of the prediction manually.
+You
+may partner to <em>complete the following two tables</em> (because it is
+tedious):<br>
+
+
+<br>
+
+
+<div class="question">Question 2. Assuming that only ATG can be used as a START codon, manually evaluate the
+Sensitivity, Specificity and F-score for the prediction of START and
+STOP codons (30,000 first nucleotides). Use the START and STOP positions in GLIMMER3 as the
+"truth" reference.<br>
+
+
+<br>
+
+
+START CODONS<br>
+
+
+<table style="text-align: left; width: 300px;" border="1" cellpadding="2" cellspacing="2">
+
+
+  <tbody>
+
+
+    <tr>
+
+
+      <td style="text-align: center;"></td>
+
+
+      <td style="text-align: center;">TRUE</td>
+
+
+      <td style="text-align: center;">FALSE</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td style="text-align: center;">POSITIVE</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td style="text-align: center;">NEGATIVE</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+      <td style="text-align: center;">XXX</td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+Sn =<br>
+
+
+<br>
+
+
+Sp =<br>
+
+
+<br>
+
+
+F-score =<br>
+
+
+<br>
+
+
+<br>
+
+
+STOP CODONS<br>
+
+
+<table style="text-align: left; width: 300px;" border="1" cellpadding="2" cellspacing="2">
+
+
+  <tbody>
+
+
+    <tr>
+
+
+      <td style="text-align: center;"></td>
+
+
+      <td style="text-align: center;">TRUE</td>
+
+
+      <td style="text-align: center;">FALSE</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td style="text-align: center;">POSITIVE</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td style="text-align: center;">NEGATIVE</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+      <td style="text-align: center;">XXX</td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+Sn = <br>
+
+
+<br>
+
+
+Sp = <br>
+
+
+<br>
+
+
+F-score = <br>
+
+
+<br>
+
+
+</div>
+
+
+</div>
+
+<hr>
+<h3>Step 7 - Tweaking the gene model</h3>
+
+
+<div style="margin-left: 40px;">Let's modify our gene
+model such that the codon TTG is also accepted as a START codon. Make a
+copy of your gene prediction program and call the copy
+geneXtract.alt.py .<br>
+
+
+<br>
+
+
+The only modification to the code that is needed is to select as <span style="font-style: italic;">start</span> value the
+smallest index returned for both ATG and TTG. Python has a handy
+function to compare two number and return the smallest:<br>
+
+
+<br>
+
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">smallest = min( a, b )<br>
+
+
+</span></div>
+
+
+<br>
+
+
+In the example above, smallest will be assigned to either a or b,
+whichever is smaller. In our situation, <span style="font-style: italic;">a</span> will be
+substituted by a the result of a find method call for the next ATG
+while <span style="font-style: italic;">b</span>
+will be the index of the next TTG.<br>
+
+
+<br>
+
+
+<br>
+
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">a = </span><span style="font-weight: bold;">genome.find('ATG', lastSTOP)<br>
+
+
+b = </span><span style="font-weight: bold;">genome.find('TTG',
+lastSTOP)<br>
+
+
+</span><span style="font-weight: bold;">start
+=&nbsp; min( a, b )</span><br>
+
+
+</div>
+
+
+<br>
+
+
+Note that this line will cause a bug near the end of the genome, but we
+will not worry about this in this laboratory. <br>
+
+
+<br>
+
+
+Run the alternative script and obtain the gene prediction as before.<br>
+
+
+<br>
+
+
+<div class="question">Question 3. Assuming that both ATG and TTG can be used as START codon, manually evaluate the
+Sensitivity, Specificity and F-score for the prediction of START and
+STOP codons (30,000 first nucleotides). Use the START and STOP positions in GLIMMER3 as the
+"truth" reference.<br>
+
+
+<br>
+
+
+START CODONS<br>
+
+
+<table style="text-align: left; width: 300px;" border="1" cellpadding="2" cellspacing="2">
+
+
+  <tbody>
+
+
+    <tr>
+
+
+      <td style="text-align: center;"></td>
+
+
+      <td style="text-align: center;">TRUE</td>
+
+
+      <td style="text-align: center;">FALSE</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td style="text-align: center;">POSITIVE</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td style="text-align: center;">NEGATIVE</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+      <td style="text-align: center;">XXX</td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+Sn =<br>
+
+
+<br>
+
+
+Sp =<br>
+
+
+<br>
+
+
+F-score =<br>
+
+
+<br>
+
+
+<br>
+
+
+STOP CODONS<br>
+
+
+<table style="text-align: left; width: 300px;" border="1" cellpadding="2" cellspacing="2">
+
+
+  <tbody>
+
+
+    <tr>
+
+
+      <td style="text-align: center;"></td>
+
+
+      <td style="text-align: center;">TRUE</td>
+
+
+      <td style="text-align: center;">FALSE</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td style="text-align: center;">POSITIVE</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td style="text-align: center;">NEGATIVE</td>
+
+
+      <td style="text-align: center;">&nbsp;</td>
+
+
+      <td style="text-align: center;">XXX</td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+Sn = <br>
+
+
+<br>
+
+
+Sp = <br>
+
+
+<br>
+
+
+F-score = <br>
+
+
+<br>
+
+
+</div>
+
+
+<br>
+
+
+<div class="question">Question 4. What is the impact on
+specificity and sensitivity of allowing TTG to be considered as a
+potential START codon? How can you explain this result?<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+</div>
+
+
+<br>
+
+
+<div class="question">Question 5. Why is it easier to
+correctly predict STOP codons while they are in fact more likely to be
+found in a
+random DNA sequence?<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+<div class="question">Question 6. Explain what is the purpose of the following Python script (2pt):<br><br>
+
+fin = open("mygenome.fasta")<br>
+fin.readline()<br>
+<br>
+genome = fin.read()<br>
+<br>
+here = 0<br>
+while not here == -1:<br>
+<div style="margin-left: 40px;">here = genome.find("GAATTC", here)<br>
+    print( str( here ) )<br>
+</div>
+<br>
+fin.close()<br>
+<br>
+<br>
+
+
+
+</div>
+
+
+<br>
+
+
+Next week, we'll see how we can analyse the results of the predictions
+to evaluate the performance over a larger span of the genome, as well
+as the evaluation of the prediction at the nucleotide level (and you
+will NOT count these by hand!).&nbsp; </div>
+
+
+</body>
+</html>
