@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Lab - Protein Structure</TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.5  (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="20130313;22470100">
+	<STYLE TYPE="text/css">
+	<!--
+		H3.cjk { font-family: "Droid Sans" }
+		H3.ctl { font-family: "Lohit Hindi" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-CA" DIR="LTR">
+<H1>Lab – Protein Structure</H1>
+<P STYLE="margin-left: 1.06cm"><BR><BR>
+</P>
+<H3 CLASS="western">Introduction</H3>
+<P STYLE="margin-left: 1.06cm">In this lab, you will practice viewing
+protein structures and structural alignments.</P>
+<H3 CLASS="western">Learning Objectives</H3>
+<OL>
+	<LI><P STYLE="margin-bottom: 0cm">Get structures from the PDB. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">Use VMD to produce informative
+	figures. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0cm">Search for structural analogs in
+	the PDB database. 
+	</P>
+	<LI><P>Identify argument for and against the assignment of homology
+	between a viral protein and other structural analogs. 
+	</P>
+</OL>
+<HR>
+<H3 CLASS="western">Step 1: Install VMD</H3>
+<P><A HREF="http://www.ks.uiuc.edu/Research/vmd">VMD</A> is freely available software for vizualizing protein
+structures. You need to download (<a href="vmd191win32.msi">Windows</a>, <a href="vmd191macx86nocuda.dmg">MacOSX</a>, or <a href="vmd-1.9.1.bin.LINUXAMD64.opengl.tar.gz">Linux</a>) and then install the software. 
+</P>
+<H3 CLASS="western">Step 2: Fetching the HA structure</H3>
+<P STYLE="margin-left: 1.06cm">Go to the <A HREF="http://www.ncbi.nlm.nih.gov/">NCBI</A>
+website.<BR><BR>Search for a <U>structure</U> using the PDB key 1HTM
+as search argument. &nbsp;Follow the link to the NCBI entry, then
+onto the PDB database (PDB ID hyperlink at the top of the page). 
+</P>
+<DL>
+	<DD>
+	<TABLE CELLPADDING=2 CELLSPACING=2>
+		<TR>
+			<TD STYLE="border: none; padding: 0cm">
+				<P>You should be directed to the PDB itself. Near the top of the
+				&quot;structure summary&quot; page, there are three items.
+				Download the structure into a local folder as a PDB (text).&nbsp;</P>
+				<P>By opening the 1HTM.pdb file in a text editor, answer the
+				following questions:</P>
+				<P><B>Question 1: What laboratory techinque was used to solve the
+				structure?</B></P>
+				<P><B>Question 2: What is the source taxon id and name for this
+				structure?</B></P>
+				<P><B>Question 3: What is type of element is the first atom in
+				the structure and what is its X, Y, Z coordinates?</B></P>
+				<P><BR>Launch VMD
+				from the START menu on the desktop. Click on the menu File\New
+				molecule... &nbsp;Click on Browse, select the PDB file then click
+				on Load.<BR><BR>Click on Graphics\Representations... Select the
+				draw method as &quot;NewCartoon&quot; and the color scheme to
+				&quot;chain&quot;. <BR><BR>Click on &quot;Create Rep&quot;. &nbsp;Set
+				the Select atom field to &quot;chain B&quot;.<BR><BR>Experiment
+				with orientation, rendering and color scheme as to clearly
+				represent the overall architecture of this protein. The chain B
+				should be proeminent. Rotating is done with the left or middle
+				mouse button. Rotate mode is triggered by the key 'r', translate
+				by 't', guess which key trigger the scale mode. The wheel mouse
+				works as well for scaling. <BR><BR>When you are happy with what
+				you see on &nbsp;screen. Click on &nbsp;VMD main\File\Render...
+				Change the filename and take a snapshot of the screen. The image
+				should open in&nbsp;MS Paint, save the bmp into your working
+				directory. The axis widget can be turned off with
+				Display\Axes...<BR><BR><B>Question 4: Include your image of the
+				structure along with a figure legend describing the image. </B>
+				</P>
+			</TD>
+			<TD STYLE="border: none; padding: 0cm">
+				<P><IMG SRC="gfxvmd.png" NAME="graphics1" ALIGN=BOTTOM WIDTH=323 HEIGHT=624 BORDER=0></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P><BR><BR>
+</P>
+<H3 CLASS="western">Step 3 – Structural similarity Search</H3>
+<P STYLE="margin-left: 1.06cm">Revisit the PDB page for IHTM. An all
+vs all structure alignments have been pre-computed by the PDB. Browse
+these search results accessible from the “3D Similarity” tab.</P>
+<P STYLE="margin-left: 1.06cm"><B>Question 5: What algorithm is used
+to produce these structural alignments?</B></P>
+<P STYLE="margin-left: 1.06cm"><B>Question 5: How many similar
+structures were found for chain A?</B></P>
+<P STYLE="margin-left: 1.06cm; font-weight: normal">For chain B
+structural results answer the following:</P>
+<P STYLE="margin-left: 1.06cm"><B>Question 6: Report the PDB ID,
+name, RMSD, length, and identity of the top hit.</B></P>
+<P STYLE="margin-left: 1.06cm">“View” this top hit to see the
+pairwise report. Download the alignment in PDB format. 
+</P>
+<P STYLE="margin-left: 1.06cm">Unfortunately, VMD will not load these
+alignment files. Therefore, as true bioinformaticians we have to hack
+them slightly to work. The alignment file contains the two molecules
+one after the other (look for “ENDMDL” to indicate the seperation
+between the two). CUT the second molecule from this alignment file
+and PASTE it in a new text file (“alignment2.pdb” if you like). 
+</P>
+<P STYLE="margin-left: 1.06cm">Now load each of these files into VMD
+one at a time, ensuring you select “New Molecule” in the file
+load dialog before loading each one. 
+</P>
+<P STYLE="margin-left: 1.06cm">As before use the “Representation”
+to produce a nice looking figure that clearly shows the two
+molecules. Try coloring them differently “Coloring Method”-&gt;
+Color ID and also possibly using some transparency (instead of
+opaque). Note that you need to select the molecule from the drop down
+box at the top of the Representations dialog. <BR><BR><BR>
+</P>
+<P STYLE="margin-left: 1.06cm"><B>Question 7: Include an image of the
+aligned structures along with a figure legend. </B>
+</P>
+<P STYLE="margin-left: 1.06cm"><B>Question 8: Based on this
+structural alignment and the sequence identity do you think these two
+structures are homologs?</B></P>
+<P STYLE="margin-left: 1.06cm"><SPAN STYLE="font-weight: normal"><b>Repeat
+questions 6, 7, and 8 with the second best hit (as questions 9, 10, and 11).</b></SPAN></P>
+<P STYLE="margin-left: 1.06cm"><SPAN STYLE="font-weight: normal"><B>That's
+it! Please email or hand in your answers by next Thursday, March 21.</B></SPAN><BR><BR><BR>
+</P>
+</BODY>
+</HTML>
