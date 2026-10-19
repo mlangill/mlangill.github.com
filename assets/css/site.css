@@ -91,7 +91,6 @@ p { margin: 0; }
 .band .card { background: var(--ground); }
 .card h3 { font-size: 24px; line-height: 1.2; }
 .card p { color: var(--ink-2); }
-.num { font-family: var(--mono); font-size: 13px; color: var(--accent); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; padding-top: 4px; }
 .tag { padding: 4px 10px; border-radius: 99px; background: var(--accent-soft); color: var(--accent-soft-ink); }
 
