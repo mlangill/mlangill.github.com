@@ -43,6 +43,17 @@
   link: https://github.com/gavinmdouglas/POMS
   paper: https://academic.oup.com/bioinformatics/article/38/22/5055/6731923
   paper_label: Douglas et al. 2022, Bioinformatics
+- name: FuncDiv
+  home: true
+  short: Computes contributional diversity of joint taxa and function data from microbiome studies.
+  long: >-
+    An R package for computing contributional diversity metrics, which describe
+    how diverse the taxa contributing to each function are, from joint taxonomic
+    and functional profiles. It is built to run efficiently on large microbiome
+    datasets.
+  link: https://github.com/gavinmdouglas/FuncDiv/wiki
+  paper: https://academic.oup.com/bioinformatics/article/39/1/btac809/6909011
+  paper_label: Douglas et al. 2023, Bioinformatics
 - name: JarrVis
   home: true
   short: Interactive views of which taxa drive differences in predicted functions.

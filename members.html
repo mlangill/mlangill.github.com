@@ -37,7 +37,7 @@ description: Current members and alumni of the Langille Lab at Dalhousie Univers
 {% for group in site.data.people.alumni_groups %}{% assign members = site.data.people.alumni | where: "group", group %}{% if members.size > 0 %}<div>
 <h3>{{ group }}</h3>
 <ul>
-{% for a in members %}<li><span>{{ a.name }} <span class="yr">{{ a.year }}</span></span>{% if a.now %}<span class="now">Now: {{ a.now }}</span>{% endif %}</li>
+{% for a in members %}<li><span>{{ a.name }} <span class="yr">{{ a.year }}</span></span>{% if a.note %}<span class="note">{{ a.note }}</span>{% endif %}{% if a.now %}<span class="now">Now: {{ a.now }}</span>{% endif %}</li>
 {% endfor %}</ul>
 </div>
 {% endif %}{% endfor %}</div>

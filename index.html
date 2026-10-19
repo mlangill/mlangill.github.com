@@ -11,7 +11,6 @@ layout: default
 <a class="btn btn-primary" href="{{ '/research.html' | relative_url }}">Explore our research</a>
 <a class="btn btn-outline" href="{{ '/positions.html' | relative_url }}">Join the lab</a>
 </div>
-<p class="muted" style="font-size: 14px">Led by Dr Morgan Langille, Canada Research Chair in Human Microbiomics, Department of Pharmacology</p>
 </div>
 <figure class="hero-figure">
 <div class="hero-photo"><img src="{{ '/images/lab_2026.jpg' | relative_url }}" alt="Members of the Langille Lab outdoors by the water" width="1600" height="900"></div>
@@ -58,7 +57,7 @@ layout: default
 </div>
 <a class="more" href="{{ '/software.html' | relative_url }}">All software →</a>
 </div>
-<div class="grid-tight">
+<div class="grid">
 {% for tool in site.data.software %}{% if tool.home %}<a class="tool" href="{{ tool.link }}">
 <span class="tool-name">{{ tool.name }}</span>
 <span class="tool-desc">{{ tool.short }}</span>

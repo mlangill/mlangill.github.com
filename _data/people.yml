@@ -2,7 +2,7 @@
 # photo: a file in /images/ (leave it out to show initials instead)
 current:
   - name: Morgan G. I. Langille, PhD
-    role: Professor and Canada Research Chair in Human Microbiomics
+    role: Professor and former Canada Research Chair in Human Microbiomics
     unit: Department of Pharmacology; Department of Microbiology & Immunology
     email: morgan.langille@dal.ca
     photo: Morgan.jpg
@@ -17,7 +17,7 @@ current:
     email: Vanessa.De.Clercq@dal.ca
     photo: Vanessa.jpg
   - name: Robyn Wright, PhD
-    role: Postdoctoral Fellow
+    role: Research Associate
     unit: Department of Pharmacology
     email: Robyn.Wright@dal.ca
     photo: Robyn.jpg
@@ -44,25 +44,39 @@ current:
 
 # Former members, grouped on the page by the "group" field.
 # year: the year they left the lab
+# note: optional short label shown after the name (e.g. Honours)
 # now: optional, where they are now (leave it out if you don't know)
 alumni:
-  - {name: Nicole Allward, group: PhD, year: 2024}
+  - {name: Nicole Allward, group: PhD, year: 2024, note: Co-supervised}
   - {name: Jacob Nearing, group: PhD, year: 2022}
   - {name: Gavin Douglas, group: PhD, year: 2020}
-  - {name: Montse Palau de Miguel, group: Visiting PhD, year: 2017}
   - {name: Arash Ghasemi, group: MSc, year: 2025}
   - {name: Ben Fisher, group: MSc, year: 2024}
   - {name: Monica Alvaro Fuss, group: MSc, year: 2024}
   - {name: Chris Tang, group: MSc, year: 2021}
-  - {name: Molly Hayes, group: MSc, year: 2020}
+  - {name: Molly Hayes, group: MSc, year: 2020, note: Co-supervised}
+  - {name: Ashley Dussault, group: MSc, year: 2019, note: Co-supervised}
   - {name: Casey Jones, group: MSc, year: 2018}
   - {name: Emily Lamoureux, group: MSc, year: 2017}
   - {name: Travis LeBlanc, group: MSc, year: 2016}
   - {name: Dhwani Desai, group: Research staff, year: 2024}
   - {name: Gina Filloramo, group: Research staff, year: 2023}
   - {name: Akhilesh Dhanani, group: Research staff, year: 2022}
-  - {name: Ben Callaghan, group: Research in Medicine, year: 2022}
-  - {name: Alex Whynot, group: Research in Medicine, year: 2019}
+  - {name: Erin O'Brien-Rogers, group: Undergraduate and visiting trainees, year: 2026, note: Experiential learning}
+  - {name: Terin Corkum, group: Undergraduate and visiting trainees, year: 2026, note: Experiential learning}
+  - {name: Del Rahimzadeh, group: Undergraduate and visiting trainees, year: 2026, note: Experiential learning}
+  - {name: Kaitlyn Blakney, group: Undergraduate and visiting trainees, year: 2026, note: Honours}
+  - {name: Heny Patel, group: Undergraduate and visiting trainees, year: 2025, note: Experiential learning}
+  - {name: Claire Attersley, group: Undergraduate and visiting trainees, year: 2025, note: Experiential learning}
+  - {name: Kate Winterton, group: Undergraduate and visiting trainees, year: 2025, note: Experiential learning}
+  - {name: Emily Butler, group: Undergraduate and visiting trainees, year: 2023, note: Experiential learning}
+  - {name: Ben Murray, group: Undergraduate and visiting trainees, year: 2022, note: Summer student}
+  - {name: Ben Callaghan, group: Undergraduate and visiting trainees, year: 2021, note: Research in Medicine}
+  - {name: Ethan Fogarty, group: Undergraduate and visiting trainees, year: 2021, note: Honours}
+  - {name: Arvin Mahmoodi, group: Undergraduate and visiting trainees, year: 2020, note: Summer student}
+  - {name: Alex Whynott, group: Undergraduate and visiting trainees, year: 2019, note: Research in Medicine}
+  - {name: Jocelyn MacDonald, group: Undergraduate and visiting trainees, year: 2019, note: Experiential learning}
+  - {name: Montse Palau de Miguel, group: Undergraduate and visiting trainees, year: 2017, note: Visiting PhD}
 
 # Order the alumni groups appear in
-alumni_groups: [PhD, Visiting PhD, MSc, Research staff, Research in Medicine]
+alumni_groups: [PhD, MSc, Research staff, Undergraduate and visiting trainees]
