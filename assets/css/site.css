@@ -53,10 +53,10 @@ p { margin: 0; }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; padding-top: 16px; padding-bottom: 16px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
 .brand:hover { color: var(--ink); }
-.brand-logo { width: 56px; height: 56px; flex: none; }
+.brand-logo { width: 72px; height: 72px; flex: none; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand-name { font-family: var(--display); font-weight: 700; font-size: 21px; }
-.brand-sub { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+.brand-name { font-family: var(--display); font-weight: 700; font-size: 28px; }
+.brand-sub { font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: 0.04em; }
 .site-nav { display: flex; flex-wrap: wrap; gap: 0 22px; font-size: 15px; font-weight: 500; }
 .site-nav a { color: var(--ink); text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent; }
 .site-nav a:hover { color: var(--accent); }
@@ -73,7 +73,8 @@ p { margin: 0; }
 /* Hero */
 .hero { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; padding: 72px 0 64px; }
 .hero-text { flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
-.hero-text h1 { font-size: clamp(38px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.01em; }
+.hero-text h1 { font-size: clamp(44px, 6vw, 68px); line-height: 1; letter-spacing: -0.015em; font-weight: 700; }
+.hero-tagline { font-family: var(--display); font-weight: 500; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; color: var(--ink-2); max-width: 560px; text-wrap: balance; }
 .hero-figure { flex: 1.15 1 440px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .hero-photo { position: relative; }
 .hero-photo::before { content: ""; position: absolute; left: -14px; top: -14px; width: 120px; height: 120px; background: var(--gold); border-radius: 12px; }
@@ -178,6 +179,8 @@ a.pub-title:hover { color: var(--accent); }
 .copyright { border-top: 1px solid #2C4247; padding-top: 20px; padding-bottom: 32px; font-size: 13px; color: #9FB0B3; }
 
 @media (max-width: 640px) {
+  .brand-logo { width: 56px; height: 56px; }
+  .brand-name { font-size: 22px; }
   body { font-size: 16px; }
   .section { padding: 56px 0; }
   .hero { padding: 48px 0; gap: 40px; }
