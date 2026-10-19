@@ -4,7 +4,7 @@ name: Fill in publication details
 
 on:
   push:
-    branches: [master]
+    branches: [master, main]
     paths: [_data/publications.yml]
   workflow_dispatch:
 
