@@ -15,6 +15,9 @@ application_form: https://forms.gle/pyvv1HnG8ixb1g7S6
 # Shown in bold in author lists on the publications pages
 highlight_author: Langille MGI
 
+# Publications before this year are shown together in one group
+pubs_grouped_before: 2014
+
 # Navigation, in order
 nav:
   - {title: Research, url: /research.html}
