@@ -1,0 +1,1 @@
+<div class="tags">{% for t in include.topics %}{% if include.mode == "filter" %}<button type="button" class="tag tag-btn" data-topic="{{ t.id }}" aria-pressed="false">{{ t.label }}</button>{% else %}<a class="tag tag-link" href="{{ '/research.html' | relative_url }}#{{ t.id }}">{{ t.label }}</a>{% endif %}{% endfor %}</div>

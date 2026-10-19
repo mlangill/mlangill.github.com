@@ -1,0 +1,99 @@
+---
+layout: default
+title: Training
+description: Training in the Langille Lab, from bioinformatics and the wet lab to the microbiome workshops we teach across Canada and abroad.
+---
+<div class="wrap">
+<header class="page-head">
+<div class="eyebrow">Training</div>
+<h1>Learn microbiome science by doing it</h1>
+<p class="lede">Trainees in the lab work hands on with real microbiome studies, from samples at the bench to analysis on our servers. Many of the methods they learn are the same ones we teach at workshops across Canada and abroad.</p>
+</header>
+</div>
+
+<section class="band section">
+<div class="wrap train-grid">
+<article class="card train-card">
+<div class="photo-slot" role="img" aria-label="Photo to come: trainees working on bioinformatics">Photo to come: trainees at work on analysis</div>
+<h2>Bioinformatics</h2>
+<p>Every trainee learns to work confidently with sequencing data. That includes the command line, running analyses on the lab's servers, and taking amplicon and metagenomic data from raw reads to taxonomic and functional profiles.</p>
+<ul class="checks">
+<li>Command line and computing on lab servers</li>
+<li>Amplicon and shotgun metagenomic workflows</li>
+<li>Statistics and visualization in R and Python</li>
+<li>Reproducible analysis and version control</li>
+</ul>
+</article>
+<article class="card train-card">
+<div class="photo-slot" role="img" aria-label="Photo to come: the new wet lab">Photo to come: our new wet lab</div>
+<h2>Wet lab</h2>
+<p>Working alongside the Integrated Microbiome Resource, trainees see how microbiome data are made. They learn how samples are handled and prepared for sequencing, and why those steps matter so much for what the data can tell us.</p>
+<ul class="checks">
+<li>Sample handling and DNA extraction</li>
+<li>Library preparation for sequencing</li>
+<li>Controls and good practice for low biomass samples</li>
+<li>Sequencing with the IMR team</li>
+</ul>
+</article>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<h2>Life in the lab</h2>
+</div>
+<div class="photo-row">
+<div class="photo-slot" role="img" aria-label="Photo to come">Photo to come: lab equipment</div>
+<div class="photo-slot" role="img" aria-label="Photo to come">Photo to come: people in the lab</div>
+<div class="photo-slot" role="img" aria-label="Photo to come">Photo to come: a workshop session</div>
+</div>
+</div>
+</section>
+
+<section class="band section">
+<div class="wrap helper">
+<div class="helper-text">
+<div class="eyebrow">Open training material</div>
+<h2>Microbiome Helper</h2>
+<p>Microbiome Helper is our collection of standard operating procedures, tutorials and scripts for amplicon and metagenomic analysis. It grew out of our own analysis workflows and now forms the core of the material we teach at workshops. Each year's workshop tutorials are kept on the wiki, so anyone can work through them at their own pace.</p>
+<div class="btns"><a class="btn btn-primary" href="https://github.com/LangilleLab/microbiome_helper/wiki">Open the Microbiome Helper wiki</a></div>
+</div>
+<div class="helper-side info">
+<span class="eyebrow">Inside</span>
+<span>Standard operating procedures</span>
+<span>Step by step workshop tutorials</span>
+<span>Helper scripts for common tasks</span>
+<a class="more" href="https://doi.org/10.1128/mSystems.00127-16">Comeau et al. 2017, mSystems →</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<div class="stack" style="gap: 8px">
+<h2>Workshops we teach</h2>
+<p class="muted" style="max-width: 640px">Since 2015 we have taught {{ site.data.workshops.size }} microbiome bioinformatics workshops, most with the Canadian Bioinformatics Workshops.</p>
+</div>
+</div>
+<div class="table-box">
+<table class="workshops">
+<thead><tr><th scope="col">Year</th><th scope="col">Workshop</th><th scope="col">Where</th><th scope="col">When</th></tr></thead>
+<tbody>
+{% for w in site.data.workshops %}<tr><td class="yr">{{ w.year }}</td><td>{{ w.name }}</td><td>{{ w.place }}</td><td class="when">{{ w.dates }}</td></tr>
+{% endfor %}</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top: 0">
+<div class="wrap">
+<div class="callout callout-soft">
+<h2>Train with us</h2>
+<p>If this is the kind of training you are looking for, we would like to hear from you.</p>
+<div class="btns"><a class="btn btn-primary" href="{{ '/positions.html' | relative_url }}">See opportunities</a></div>
+</div>
+</div>
+</section>

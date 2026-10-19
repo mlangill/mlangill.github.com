@@ -1,0 +1,12 @@
+# Topic tags shown on the research cards. The id must match the tags used
+# in publications.yml. Each group is one research card.
+health:
+  - {id: crohns, label: Crohn’s disease}
+  - {id: lung-cancer, label: Lung cancer}
+  - {id: oral, label: Oral microbiome}
+  - {id: aging, label: Aging and frailty}
+methods:
+  - {id: functional-prediction, label: Functional prediction}
+  - {id: low-biomass, label: Low biomass samples}
+  - {id: reproducibility, label: Reproducibility}
+  - {id: validation, label: Validation}

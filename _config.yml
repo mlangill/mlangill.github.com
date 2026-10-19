@@ -19,6 +19,7 @@ highlight_author: Langille MGI
 nav:
   - {title: Research, url: /research.html}
   - {title: Software, url: /software.html}
+  - {title: Training, url: /training.html}
   - {title: People, url: /members.html}
   - {title: Publications, url: /pubs.html}
   - {title: Join us, url: /positions.html}

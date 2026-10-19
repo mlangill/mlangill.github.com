@@ -7,7 +7,7 @@
 #
 # Optional fields on any entry:
 #   featured: true      shows the paper on the homepage
-#   tags: [methods]     groups papers on the Publications page
+#   tags: [oral, aging]  links the paper to topic tags on the Research page
 #
 - authors: DeClercq V, Comeau AM, Kwawukume A, Murphy R, Parmar NR, Quinn DP, Wright R, Wallace A, Langille MGI
   year: 2026
@@ -17,6 +17,10 @@
   details: s40168-026-02529-z
   doi: 10.1186/s40168-026-02529-z
   featured: true
+  tags:
+  - lung-cancer
+  - low-biomass
+  - reproducibility
 - authors: Jiang L, Wright RJ, Raudonis R, Banskota AH, Glick BR, Mitchell RJ, Scur M, Wang Z, Zhang W, Zhang T, Luo Q, Langille MGI, Cheng Z, Wen G
   year: 2026
   title: The biotechnological applications of marine bacteria
@@ -31,6 +35,8 @@
   details: s40168-026-02452-3
   doi: 10.1186/s40168-026-02452-3
   featured: true
+  tags:
+  - oral
 - authors: Wright RJ, Fisher B, Comeau AM, and Langille MGI
   year: 2026
   title: 'From classification to confirmation: Verification of metagenomic taxonomic classifications through mapping of classified reads to reference genomes'
@@ -39,6 +45,8 @@
   details: '12:5'
   doi: 10.1099/mgen.0.001739
   featured: true
+  tags:
+  - validation
 - authors: DeClercq V, Murphy R, Zinck N, Langille MGI, Wallace A
   year: 2026
   title: Association between the oral microbiome and clinical indicators of resectable non-small cell lung cancer (NSCLC)
@@ -46,6 +54,9 @@
   journal: Journal of Oral Microbiology
   details: 18:2675065
   doi: 10.1080/20002297.2026.2675065
+  tags:
+  - lung-cancer
+  - oral
 - authors: Alvaro-Fuss M, DeClercq V, Blodgett JM, Theou O, Langille MGI, Beiko RG
   year: 2026
   title: 'Effect of bedrest on the human gut and oral microbiome: implications for frailty'
@@ -53,6 +64,9 @@
   journal: Experimental Gerontology
   details: 216:113079
   featured: true
+  tags:
+  - oral
+  - aging
 - authors: Verburgt CM, Van Der Kruk N, Dunn KA, Bielawski JP, Otley AR, de Meij T, Sylvester F, Comeau AM, Langille MGI, de Jonge WJ, Van Limbergen JE
   year: 2026
   title: 'Personalized AZithromycin/metronidAZole (PAZAZ) + dietary therapy in paediatric Crohn disease: results of a pilot study'
@@ -60,12 +74,16 @@
   journal: Journal of Pediatric Gastroenterology and Nutrition
   details: jpn3.70357
   doi: 10.1002/jpn3.70357
+  tags:
+  - crohns
 - authors: Desai DK, Comeau AM, Langille MGI
   year: 2025
   title: 'JarrVis: Visualising Taxa-function relationships from meta-omic data'
   link: https://doi.org/10.1101/2025.04.13.648596
   journal: bioRxiv
   doi: 10.1101/2025.04.13.648596
+  tags:
+  - functional-prediction
 - authors: Hosmer M, Wright RJ, McCavour C, Keys K, Sterling S, Langille MGI, Rohde JR
   year: 2025
   title: Lime amendment to chronically acidified forest soils results in shifts in prokaryotic communities
@@ -86,6 +104,9 @@
   journal: Journal of Oral Microbiology
   details: 17(1), 2499923
   doi: 10.1080/20002297.2025.2499923
+  tags:
+  - crohns
+  - oral
 - authors: Wright RJ, Langille MGI
   year: 2025
   title: 'PICRUSt2-SC: an update to the reference database used for functional prediction within PICRUSt2'
@@ -93,6 +114,8 @@
   journal: Bioinformatics
   details: btaf269
   doi: 10.1093/bioinformatics/btaf269
+  tags:
+  - functional-prediction
 - authors: Hsu TY, Nzabarushimana E, Wong D, Luo C, Beiko RG, Langille MGI, Huttenhower C, Nguyen LG, Franzosa EA
   year: 2025
   title: Profiling lateral gene transfer events in the human microbiome using WAAFLE
@@ -112,6 +135,9 @@
   link: https://www.nature.com/articles/s41598-024-60409-8
   journal: Scientific Reports
   details: 14:9685
+  tags:
+  - oral
+  - aging
 - authors: Zadjelovic V, Wright RJ, Borsetto C, Quartey J, Cairns TN, Langille MGI, Wellington EMH, Christie-Oleza JA
   year: 2023
   title: Microbial hitchhikers harbouring antimicrobial-resistance genes in the riverine plastisphere
@@ -144,6 +170,8 @@
   link: https://www.nature.com/articles/s41522-023-00391-7
   journal: NPJ Biofilms and Microbiomes
   details: '9:23'
+  tags:
+  - oral
 - authors: Wright RJ, Pewarchuk ME, Marshall EA, Murray B, Rosin MP, Laronde DM, Zhang L, Lam WL, Langille MGI, Rock LD
   year: 2023
   title: Exploring the microbiome of oral epithelial dysplasia as a predictor of malignant progression
@@ -151,6 +179,8 @@
   journal: BMC Oral Health
   details: 23:206
   doi: 10.1186/s12903-023-02911-5
+  tags:
+  - oral
 - authors: Thilakarathna WPDW, Langille MGI, Rupasinghe HPV
   year: 2023
   title: Hepatotoxicity of polymeric proanthocyanidins is caused by translocation of bacterial lipopolysaccharides through impaired gut epithelium
@@ -164,6 +194,9 @@
   journal: Microbial Genomics
   details: 9:000949
   doi: 10.1099/mgen.0.000949
+  tags:
+  - low-biomass
+  - validation
 - authors: MacDonald T, Dunn KA, MacDonald J, Langille MGI, Van Limbergen JE, Bielawski JP, Kulkarni K
   year: 2023
   title: The gastrointestinal antibiotic resistome in pediatric leukemia and lymphoma patients
@@ -183,6 +216,8 @@
   link: https://bmjopen.bmj.com/content/13/2/e064944
   journal: BMJ Open
   details: 13:e064944
+  tags:
+  - crohns
 - authors: McCormick NE, Earle M, Stoddart AK, Langille MGI, Gagnon GA
   year: 2023
   title: Understanding the impact of different source water types on the biofilm characteristics and microbial communities of manganese removing biofilters
@@ -195,12 +230,16 @@
   link: https://academic.oup.com/bioinformatics/article/39/1/btac809/6909011
   journal: Bioinformatics
   details: '39: btac809'
+  tags:
+  - functional-prediction
 - authors: Douglas GM, Hayes MG, Langille MGI, Borenstein E
   year: 2022
   title: Integrating phylogenetic and functional data in microbiome studies
   link: https://academic.oup.com/bioinformatics/article/38/22/5055/6731923
   journal: Bioinformatics
   details: '38: 5055-63'
+  tags:
+  - functional-prediction
 - authors: Dunn KA, MacDonald T, Rodrigues GJ, Forbrigger Z, Bielawski JP, Langille MGI, Van Limbergen J, Kulkarni K
   year: 2022
   title: Antibiotic and antifungal use in pediatric leukemia and lymphoma patients are associated with increasing opportunistic pathogens and decreasing bacteria responsible for activities that enhance colonic defense
@@ -214,6 +253,8 @@
   link: https://www.nature.com/articles/s41467-022-28034-z
   journal: Nature Communications
   details: 13:342
+  tags:
+  - reproducibility
 - authors: DeClercq V, Nearing JT, Langille MGI
   year: 2021
   title: Investigation of the impact of commonly used medications on the oral microbiome of individuals living without major chronic conditions
@@ -221,12 +262,16 @@
   journal: PLoS One
   details: 16(12):e0261032
   doi: 10.1371/journal.pone.0261032
+  tags:
+  - oral
 - authors: Mirzayi C, et al
   year: 2021
   title: 'Reporting guidelines for human microbiome research: the STORMS checklist'
   link: https://www.nature.com/articles/s41591-021-01552-x
   journal: Nature Medicine
   details: 27:1885-1892
+  tags:
+  - reproducibility
 - authors: McCormick N, Earle M, Ha C, Hakes L, Evans A, Anderson L, Stoddart AK, Langille MGI, Gagnon GA
   year: 2021
   title: Biological and physico-chemical mechanisms accelerating the acclimation of Mn-removing biofilters
@@ -301,6 +346,8 @@
   journal: mSphere
   details: 5:e00451-20
   doi: 10.1128/mSphere.00451-20
+  tags:
+  - oral
 - authors: Price GW, Langille MGI, Yurgel SN
   year: 2020
   title: Microbial co-occurrence network analysis of soils receiving short- and long-term applications of alkaline treated biosolids
@@ -314,12 +361,16 @@
   journal: Microbiome
   details: 8:87
   doi: 10.1186/s40168-020-00839-4
+  tags:
+  - validation
 - authors: Douglas GM, Maffei VJ, Zaneveld J, Yurgel SN, Brown JR, Taylor CM, Huttenhower C, Langille MGI
   year: 2020
   title: PICRUSt2 for prediction of metagenome functions
   link: https://www.nature.com/articles/s41587-020-0548-6
   journal: Nature Biotechnology
   details: 38:685-688
+  tags:
+  - functional-prediction
 - authors: Nejman D, Livyatan I, Fuks G, Gavert N, Zwang Y, Geller LT, Rotter-Maskowitz A, Weiser R, Malle G, Gigi E, Meltser A, Douglas GM, Kamer I, Gopalakrishnan V, Dadosh T, Levin-Zaidman S, Avnet S, Atlan T, Cooper ZA, Arora R, Cogdill AP, Khan MDAW, Ologun G, Bussi Y, Weinberger A, Lotan-Pompan M, Golani O, Perry G, Rokah M, Bahar-Shany K, Rozeman EA, Blank CU, Ronai A, Shaoul R, Amit A, Dorfman T, Kremer R, Cohen ZR, Harnof S, Siegal T, Yehuda-Shnaidman E, Gal-Yam EN, Shapira H, Baldini N, Langille MGI, Ben-Nun A, Kaufman B, Nissan A, Golan T, Dadiani M, Levanon K, Bar J, Yust-Katz S, Barshack I, Peeper DS, Raz DJ, Segal E, Wargo JA, Sandbank J, Shental N, Straussman R
   year: 2020
   title: The human tumor microbiome is composed of tumor type-specific intra-cellular bacteria
@@ -327,6 +378,8 @@
   journal: Science
   details: 368(6494):973-980
   doi: 10.1126/science.aay9189
+  tags:
+  - low-biomass
 - authors: Wu L, Zeng T, Deligios M, Milanesi L, Langille MGI, Zinellu A, Rubino S, Carru C, Kelvin D
   year: 2020
   title: Age-related variation of bacterial and fungal communities in different body habitats across the young, elderly and centenarians in Sardinia
@@ -347,6 +400,8 @@
   journal: Inflammatory Bowel Diseases
   details: 26(7):1026-1037
   doi: 10.1093/ibd/izaa001
+  tags:
+  - crohns
 - authors: Douglas GM, Langille MGI
   year: 2019
   title: Current and promising approaches to identify horizontal gene transfer events in metagenomes
@@ -360,6 +415,8 @@
   link: https://www.nature.com/articles/s41587-019-0209-9
   journal: Nature Biotechnology
   details: 37:852
+  tags:
+  - reproducibility
 - authors: Yurgel SN, Nearing JT, Douglas GM, Langille MGI
   year: 2019
   title: Metagenomic functional shifts to plant induced environmental changes
@@ -411,6 +468,8 @@
   link: https://peerj.com/articles/5364/
   journal: PeerJ
   details: 6:e5364
+  tags:
+  - validation
 - authors: DeClercq V, Langille MGI, Van Limbergen J
   year: 2018
   title: Differences in adiposity and diet quality among individuals with inflammatory bowel disease in Eastern Canada
@@ -418,6 +477,8 @@
   journal: PLoS ONE
   details: 13(7):e0200580
   doi: 10.1371/journal.pone.0200580
+  tags:
+  - crohns
 - authors: Yurgel SN, Douglas GM, Dussault A, Percival D, Langille MGI
   year: 2018
   title: Dissecting community structure in wild blueberry root and soil microbiome
@@ -432,6 +493,8 @@
   journal: mSystems
   details: 3:e00163-17
   doi: 10.1128/mSystems.00163-17
+  tags:
+  - functional-prediction
 - authors: Thilakarathna WPDW, Langille MGI, Rupasinghe HPV
   year: 2018
   title: 'Polyphenol-based prebiotics and synbiotics: potential for cancer chemoprevention'
@@ -445,6 +508,8 @@
   journal: Microbiome
   details: 6(1), 13
   doi: 10.1186/s40168-018-0398-3
+  tags:
+  - crohns
 - authors: Langille MGI, Ravel J, Fricke WF
   year: 2018
   title: 'Available Upon Request: not good enough for microbiome data!'
@@ -466,6 +531,8 @@
   journal: Biology & Philosophy
   details: 32(6):1225-1243
   doi: 10.1007/s10539-017-9602-2
+  tags:
+  - functional-prediction
 - authors: Lamoureux E, Grandy S, and Langille MGI
   year: 2017
   title: Moderate exercise has limited but distinguishable effects on the mouse microbiome
@@ -486,6 +553,8 @@
   link: https://www.mdpi.com/2072-6643/9/5/447
   journal: Nutrients
   details: 9(5), 447
+  tags:
+  - crohns
 - authors: Comeau AM, Douglas GM, and Langille MGI
   year: 2017
   title: 'Microbiome Helper: A custom and streamlined workflow for microbiome research'
@@ -535,6 +604,8 @@
   journal: Microbiome
   details: 2(1):50
   doi: 10.1186/s40168-014-0050-9
+  tags:
+  - aging
 - authors: Xu Z, Malmer D, Langille MGI, Way SF, Knight R
   year: 2014
   title: 'Which is more important for classifying microbial communities: who''s there, or what they can do?'
@@ -556,6 +627,8 @@
   journal: Nature Biotechnology
   details: 31(9):814-821. *Co-first authors
   doi: 10.1038/nbt.2676
+  tags:
+  - functional-prediction
 - authors: Parks DH, Mankowski T, Zangooei S, Porter MS, Armanini DG, Baird DJ, Langille MGI, Beiko RG
   year: 2013
   title: 'GenGIS 2: Geospatial analysis of traditional and genetic biodiversity, with new gradient algorithms and an extensible plugin framework'

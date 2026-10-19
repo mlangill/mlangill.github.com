@@ -16,12 +16,12 @@ description: The Langille Lab's three research pillars, from collaborative healt
 <article class="card">
 <h3>Collaborative health projects</h3>
 <p>We work with clinicians and scientists to better understand human and microbial interactions in health and disease, bringing advanced bioinformatic methods to their studies.</p>
-<div class="tags"><span class="tag">Crohn disease</span><span class="tag">Lung cancer</span><span class="tag">Oral microbiome</span><span class="tag">Aging and frailty</span></div>
+{% include topic-tags.html topics=site.data.topics.health mode="filter" %}
 </article>
 <article class="card">
 <h3>Application and resource development</h3>
 <p>We create and validate bioinformatic approaches that improve the biological insight we can draw from microbiome data, and release them as open software.</p>
-<div class="tags"><span class="tag">Functional prediction</span><span class="tag">Low biomass samples</span><span class="tag">Reproducibility</span><span class="tag">Validation</span></div>
+{% include topic-tags.html topics=site.data.topics.methods mode="filter" %}
 <a class="more" href="{{ '/software.html' | relative_url }}">See our software →</a>
 </article>
 <article class="card">
@@ -32,16 +32,59 @@ description: The Langille Lab's three research pillars, from collaborative healt
 </div>
 </section>
 
-<section class="section">
+<section class="section" id="papers">
 <div class="wrap pubs-layout">
 <div class="pubs-side">
-<h2 style="font-size: 32px">Recent work</h2>
-<p class="muted">Our newest papers across all three pillars.</p>
+<h2 style="font-size: 32px" id="papers-title">Recent work</h2>
+<p class="muted" id="papers-note">Our newest papers across all three pillars. Choose a topic above to see the papers on it.</p>
+<button type="button" class="more reset" id="papers-reset" hidden>Show recent work instead</button>
 <a class="more" href="{{ '/pubs.html' | relative_url }}">All publications →</a>
 </div>
 <div class="pubs-main">
-<ol class="pub-list">
-{% for pub in site.data.publications limit: 6 %}{% include pub.html pub=pub %}{% endfor %}</ol>
+<ol class="pub-list" id="papers-list">
+{% for pub in site.data.publications %}{% if forloop.index > 6 and pub.tags == nil %}{% continue %}{% endif %}{% if forloop.index > 6 %}{% include pub.html pub=pub hidden=true %}{% else %}{% include pub.html pub=pub %}{% endif %}{% endfor %}</ol>
 </div>
 </div>
 </section>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.tag-btn');
+  var items = document.querySelectorAll('#papers-list .pub');
+  var title = document.getElementById('papers-title');
+  var note = document.getElementById('papers-note');
+  var reset = document.getElementById('papers-reset');
+  var recentTitle = title.textContent, recentNote = note.textContent;
+
+  function show(topic, scroll) {
+    var count = 0;
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.topic === topic ? 'true' : 'false'); });
+    items.forEach(function (li, i) {
+      var tags = (li.dataset.tags || '').split(' ');
+      var visible = topic ? tags.indexOf(topic) !== -1 : i < 6;
+      li.classList.toggle('is-hidden', !visible);
+      if (visible) count++;
+    });
+    if (topic) {
+      var label = document.querySelector('.tag-btn[data-topic="' + topic + '"]').textContent;
+      title.textContent = label;
+      note.textContent = count + (count === 1 ? ' paper' : ' papers') + ' from the lab on this topic.';
+      reset.hidden = false;
+      if (scroll) document.getElementById('papers').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      title.textContent = recentTitle; note.textContent = recentNote; reset.hidden = true;
+    }
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var on = b.getAttribute('aria-pressed') === 'true';
+      show(on ? null : b.dataset.topic, !on);
+    });
+  });
+  reset.addEventListener('click', function () { show(null, false); });
+
+  var start = location.hash.slice(1);
+  if (start && document.querySelector('.tag-btn[data-topic="' + start + '"]')) show(start, true);
+})();
+</script>

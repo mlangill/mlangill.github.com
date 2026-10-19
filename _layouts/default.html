@@ -23,5 +23,11 @@
 {{ content }}
 </main>
 {% include footer.html %}
+<script>
+// Open links to other sites in a new tab
+document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+  if (a.hostname !== location.hostname) { a.target = '_blank'; a.rel = 'noopener'; }
+});
+</script>
 </body>
 </html>

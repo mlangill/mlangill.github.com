@@ -28,7 +28,7 @@ HEADER = """# Lab publications, newest first.
 #
 # Optional fields on any entry:
 #   featured: true      shows the paper on the homepage
-#   tags: [methods]     groups papers on the Publications page
+#   tags: [oral, aging]  links the paper to topic tags on the Research page
 #
 """
 
