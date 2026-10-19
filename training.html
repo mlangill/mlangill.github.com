@@ -14,7 +14,7 @@ description: Training in the Langille Lab, from bioinformatics and the wet lab t
 <section class="band section">
 <div class="wrap train-grid">
 <article class="card train-card">
-<div class="photo-slot" role="img" aria-label="Photo to come: trainees working on bioinformatics">Photo to come: trainees at work on analysis</div>
+<img class="card-photo" src="{{ '/images/training/workshop.jpg' | relative_url }}" alt="Participants working on laptops during a microbiome bioinformatics workshop" loading="lazy">
 <h2>Bioinformatics</h2>
 <p>Every trainee learns to work confidently with sequencing data. That includes the command line, running analyses on the lab's servers, and taking amplicon and metagenomic data from raw reads to taxonomic and functional profiles.</p>
 <ul class="checks">
@@ -25,7 +25,7 @@ description: Training in the Langille Lab, from bioinformatics and the wet lab t
 </ul>
 </article>
 <article class="card train-card">
-<div class="photo-slot" role="img" aria-label="Photo to come: the new wet lab">Photo to come: our new wet lab</div>
+<img class="card-photo" src="{{ '/images/training/wetlab_plates.jpg' | relative_url }}" alt="A lab member pipetting samples into rows of 96 well plates in the new wet lab" style="object-position: 50% 58%" loading="lazy">
 <h2>Wet lab</h2>
 <p>Working alongside the Integrated Microbiome Resource, trainees see how microbiome data are made. They learn how samples are handled and prepared for sequencing, and why those steps matter so much for what the data can tell us.</p>
 <ul class="checks">
@@ -44,9 +44,10 @@ description: Training in the Langille Lab, from bioinformatics and the wet lab t
 <h2>Life in the lab</h2>
 </div>
 <div class="photo-row">
-<div class="photo-slot" role="img" aria-label="Photo to come">Photo to come: lab equipment</div>
-<div class="photo-slot" role="img" aria-label="Photo to come">Photo to come: people in the lab</div>
-<div class="photo-slot" role="img" aria-label="Photo to come">Photo to come: a workshop session</div>
+<figure><img src="{{ '/images/training/sequencers.jpg' | relative_url }}" alt="Long read and short read sequencers on a bench in the new lab" loading="lazy"><figcaption class="caption">Sequencers in our new lab</figcaption></figure>
+<figure><img src="{{ '/images/training/new_lab_unpacking.jpg' | relative_url }}" alt="Four lab members smiling while unpacking boxes in the new lab" loading="lazy"><figcaption class="caption">Moving into the new lab</figcaption></figure>
+<figure><img src="{{ '/images/training/anchor_conference.jpg' | relative_url }}" alt="Two lab members at the Microbiome Anchor Conference" style="object-position: 50% 22%" loading="lazy"><figcaption class="caption">Microbiome Anchor Conference, June 2026</figcaption></figure>
+<figure><img src="{{ '/images/training/curling.jpg' | relative_url }}" alt="Five lab members sweeping a curling stone on the ice" loading="lazy"><figcaption class="caption">Lab curling outing</figcaption></figure>
 </div>
 </div>
 </section>
@@ -73,16 +74,16 @@ description: Training in the Langille Lab, from bioinformatics and the wet lab t
 <div class="wrap">
 <div class="section-head">
 <div class="stack" style="gap: 8px">
-<h2>Workshops we teach</h2>
-<p class="muted" style="max-width: 640px">Since 2015 we have taught {{ site.data.workshops.size }} microbiome bioinformatics workshops, most with the Canadian Bioinformatics Workshops.</p>
+<h2>Recent and upcoming workshops</h2>
+<p class="muted" style="max-width: 640px">Since 2015 we have been teaching in the <a href="https://bioinformatics.ca/">Canadian Bioinformatics Workshops</a>.</p>
 </div>
 </div>
 <div class="table-box">
 <table class="workshops">
 <thead><tr><th scope="col">Year</th><th scope="col">Workshop</th><th scope="col">Where</th><th scope="col">When</th></tr></thead>
 <tbody>
-{% for w in site.data.workshops %}<tr><td class="yr">{{ w.year }}</td><td>{{ w.name }}</td><td>{{ w.place }}</td><td class="when">{{ w.dates }}</td></tr>
-{% endfor %}</tbody>
+{% for w in site.data.workshops %}{% if w.year >= 2024 %}<tr><td class="yr">{{ w.year }}</td><td><span class="ws-name">{{ w.name }}</span>{% if w.upcoming %} <span class="badge-up">Upcoming</span>{% endif %}{% if w.links %}<span class="ws-links">{% for l in w.links %}<a href="{{ l.url }}">{{ l.label }} →</a>{% endfor %}</span>{% endif %}</td><td>{{ w.place }}</td><td class="when">{{ w.dates }}</td></tr>
+{% endif %}{% endfor %}</tbody>
 </table>
 </div>
 </div>

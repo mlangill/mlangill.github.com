@@ -6,7 +6,7 @@ health:
   - {id: oral, label: Oral microbiome}
   - {id: aging, label: Aging and frailty}
 methods:
-  - {id: functional-prediction, label: Functional prediction}
+  - {id: functional-prediction, label: Functional insights}
   - {id: low-biomass, label: Low biomass samples}
   - {id: reproducibility, label: Reproducibility}
   - {id: validation, label: Validation}

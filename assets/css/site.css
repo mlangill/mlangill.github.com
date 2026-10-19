@@ -190,7 +190,7 @@ a.pub-title:hover { color: var(--accent); }
 .train-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 .train-card h2 { font-size: 28px; }
 .photo-slot { aspect-ratio: 3 / 2; max-width: 100%; border: 2px dashed var(--line); border-radius: 10px; background: var(--surface); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
-.photo-row { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.photo-row { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .checks { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .checks li { padding-left: 26px; position: relative; color: var(--ink-2); }
 .checks li::before { content: ""; position: absolute; left: 4px; top: 9px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
@@ -206,3 +206,10 @@ a.pub-title:hover { color: var(--accent); }
 .workshops tr:last-child td { border-bottom: 0; }
 .workshops .yr { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--accent); }
 .workshops .when { white-space: nowrap; color: var(--muted); }
+.card-photo { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; }
+.photo-row figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.photo-row img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+.ws-name { font-weight: 500; }
+.ws-links { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; font-weight: 600; margin-top: 4px; }
+.ws-links a { text-decoration: none; }
+.badge-up { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; background: var(--gold); color: var(--ink); vertical-align: 2px; }

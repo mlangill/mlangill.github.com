@@ -1,11 +1,15 @@
 # Microbiome workshops the lab has taught, newest first.
-- {year: 2026, name: CBW/CS-DCC Microbiome Analysis, place: "Guelph, ON", dates: Sept 15–17}
-- {year: 2025, name: CBW Beginner and Advanced Microbiome Analysis, place: "Vancouver, BC", dates: May 26–30}
-- {year: 2024, name: CBW Beginner and Advanced Microbiome Analysis, place: "St. John's, NL", dates: May 27–30}
-- {year: 2023, name: CBW-IMPACTT Microbiome Analysis, place: "University of Calgary", dates: July 5–7}
+# The Training page lists workshops from 2024 on (set in training.html).
+# links: optional list of {label, url} pages for the workshop
+# upcoming: true marks a workshop that hasn't happened yet
+- {year: 2027, name: "CBW Microbiome Analysis", place: "Edmonton, AB", dates: January, upcoming: true}
+- {year: 2026, name: CBW/CS-DCC Microbiome Analysis, place: "Guelph, ON", dates: Sept 15–17, links: [{label: Workshop page, url: "https://bioinformatics.ca/workshops-all/cbw-cs-dcc-microbiome-analysis/"}]}
+- {year: 2025, name: CBW Beginner and Advanced Microbiome Analysis, place: "Vancouver, BC", dates: May 26–30, links: [{label: Beginner, url: "https://bioinformatics.ca/workshops-all/2025-beginner-microbiome-analysis-vancouver-bc/"}, {label: Advanced, url: "https://bioinformatics.ca/workshops-all/2025-advanced-microbiome-analysis-vancouver-bc/"}]}
+- {year: 2024, name: CBW Beginner and Advanced Microbiome Analysis, place: "St. John's, NL", dates: May 27–30, links: [{label: Beginner, url: "https://bioinformatics.ca/workshops-all/2024-beginner-microbiome-analysis-st-johns-nl/"}, {label: Advanced, url: "https://bioinformatics.ca/workshops-all/2024-advanced-microbiome-analysis-st-johns-nl/"}]}
+- {year: 2023, name: CBW-IMPACTT Microbiome Analysis, place: "University of Calgary", dates: July 5–7, links: [{label: Workshop page, url: "https://bioinformatics.ca/workshops-all/2023-cbw-impactt-microbiome-analysis/"}]}
 - {year: 2022, name: IMPACTT Microbiome Bioinformatics Workshop, place: "McGill University, Montréal", dates: Dec 6–7}
 - {year: 2022, name: IMPACTT Microbiome Bioinformatics Workshop, place: "University of Calgary", dates: May 30–June 1}
-- {year: 2021, name: "Canadian Bioinformatics Workshop: Microbiome Analysis", place: Online, dates: Sept 1–3}
+- {year: 2021, name: "Canadian Bioinformatics Workshop: Microbiome Analysis", place: Online, dates: Sept 1–3, links: [{label: Workshop page, url: "https://bioinformatics.ca/workshops-all/2021-microbiome-analysis/"}]}
 - {year: 2019, name: Microbiome Bioinformatics, place: "San Juan, Puerto Rico", dates: May 30–June 2}
 - {year: 2018, name: "Canadian Bioinformatics Workshop: Metagenomic Analysis", place: "Toronto, ON", dates: June 5–7}
 - {year: 2017, name: Metagenomics Bioinformatics Workshop, place: "EMBL-EBI, Hinxton, UK", dates: Oct 2–5}
