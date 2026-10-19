@@ -1,104 +1,104 @@
-<!DOCTYPE HTML>
-<!--
-	Arcana by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Langille Lab @ Dalhousie University</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.dropotron.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-wide.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-	</head>
-	<body>
+---
+layout: default
+---
+<div class="wrap">
+<section class="hero">
+<div class="hero-text">
+<div class="eyebrow">Microbiome · Bioinformatics · Human health</div>
+<h1>Better methods for microbiome science, applied to human health.</h1>
+<p class="lede">We develop and test bioinformatic methods to understand the role of the microbiome in disease, and we partner with clinical and basic scientists to put them to work.</p>
+<div class="btns">
+<a class="btn btn-primary" href="{{ '/research.html' | relative_url }}">Explore our research</a>
+<a class="btn btn-outline" href="{{ '/positions.html' | relative_url }}">Join the lab</a>
+</div>
+<p class="muted" style="font-size: 14px">Led by Dr Morgan Langille, Canada Research Chair in Human Microbiomics, Department of Pharmacology</p>
+</div>
+<figure class="hero-figure">
+<div class="hero-photo"><img src="{{ '/images/lab_2026.jpg' | relative_url }}" alt="Members of the Langille Lab outdoors by the water" width="1600" height="900"></div>
+<figcaption class="caption">Microbiome Anchor Conference, Oak Island Resort, June 2026</figcaption>
+</figure>
+</section>
+</div>
 
-		<!-- Header -->
-			<div id="header">
-						
-				<!-- Logo -->
-					<h1><a href="index.html" id="logo">The Langille Lab <em>@ Dalhousie University</em></a></h1>
-				
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Home</a></li>
-							<li><a href="research.html">Research</a></li>
-							<li><a href="members.html">Members</a></li>
-							<li><a href="pubs.html">Publications</a></li>
-							<li><a href="positions.html">Opportunities</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-						</ul>
-					</nav>
+<section class="band section">
+<div class="wrap">
+<div class="section-head">
+<h2>What we do</h2>
+<a class="more" href="{{ '/research.html' | relative_url }}">Read more about our research →</a>
+</div>
+<div class="grid">
+<article class="card">
+<div class="num">01</div>
+<h3>Collaborative health projects</h3>
+<p>Bringing advanced bioinformatics to clinical studies to understand how humans and their microbes interact in health and disease.</p>
+<div class="tags"><span class="tag">Crohn disease</span><span class="tag">Lung cancer</span><span class="tag">Child oral health</span><span class="tag">Aging and frailty</span></div>
+</article>
+<article class="card">
+<div class="num">02</div>
+<h3>Methods and resources</h3>
+<p>Creating and validating bioinformatic approaches that get more reliable biological insight out of microbiome data.</p>
+<div class="tags"><span class="tag">Functional prediction</span><span class="tag">Low biomass samples</span><span class="tag">Metagenomics</span></div>
+</article>
+<article class="card">
+<div class="num">03</div>
+<h3>Integrated Microbiome Resource</h3>
+<p>A sequencing and bioinformatics service housed in the lab, supporting microbiome researchers around the world.</p>
+<a class="more" href="{{ site.imr }}">Visit imr.bio →</a>
+</article>
+</div>
+</div>
+</section>
 
-			</div>
-			
-		<!-- Banner -->
-			<section id="banner">
-				<p>&nbsp;
-				<p>Welcome to The Langille Lab!
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<div class="stack" style="gap: 8px">
+<h2>Open software</h2>
+<p class="muted" style="max-width: 620px">Tools and workflows we build and maintain for the microbiome community. All are free and open source.</p>
+</div>
+<a class="more" href="{{ '/software.html' | relative_url }}">All software →</a>
+</div>
+<div class="grid-tight">
+{% for tool in site.data.software %}{% if tool.home %}<a class="tool" href="{{ tool.link }}">
+<span class="tool-name">{{ tool.name }}</span>
+<span class="tool-desc">{{ tool.short }}</span>
+</a>
+{% endif %}{% endfor %}</div>
+</div>
+</section>
 
-				<p>Our mission is to create an inclusive lab culture composed of a diverse research team that strives <br> to better understand the role of the microbiome in various diseases by developing and testing novel bioinformatic methods.
+<section class="band section">
+<div class="wrap pubs-layout">
+<div class="pubs-side">
+<h2 style="font-size: 38px">Selected publications</h2>
+<p class="muted">A few recent highlights from the lab.</p>
+<div class="stack" style="gap: 8px; font-weight: 600">
+<a class="more" href="{{ '/pubs.html' | relative_url }}">All publications →</a>
+<a class="more" href="{{ site.scholar }}">Google Scholar →</a>
+</div>
+</div>
+<div class="pubs-main">
+<ol class="pub-list">
+{% assign featured = site.data.publications | where: "featured", true %}{% for pub in featured limit: 4 %}{% include pub.html pub=pub %}{% endfor %}</ol>
+</div>
+</div>
+</section>
 
-				  <p> We are always looking for new research collaborations and opportunities so please don't hesitate to contact us.
-				<header>
-				  <a href="research.html" class="button">Learn More</a>
-				</header>
-			</section>
-		<!-- Footer -->
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<section class="3u 6u(2) 12u$(3)">
-							<h3>Bioinformatic Tools</h3>
-							<ul class="links">
-								<li><a href="https://github.com/LangilleLab/microbiome_helper/wiki" target="new">Microbiome Helper</a></li>
-								<li><a href="https://github.com/picrust/picrust2/wiki" target="new">PICRUSt</a></li>
-								<li><a href="https://github.com/gavinmdouglas/POMS" target="new">POMS</a></li>
-								<li><a href="https://github.com/dhwanidesai/JarrVis" target="new">JARRVIS</a></li>
-								<li><a href="http://www.pathogenomics.sfu.ca/islandviewer/browse/" target="new">IslandViewer</a></li>
-							</ul>
-						</section>
-						<section class="3u 6u$(2) 12u$(3)">
-							<h3>Research Related</h3>
-							<ul class="links">
-								<li><a href="http://imr.bio" target="new">Integrated Microbiome Resource</a></li>
-								<li><a href="http://dalmug.org" target="new">Dalhousie Microbiome User Group</a></li>
-								<li><a href="https://icgenomics.ca" target="new">Institute for Comparative Genomics</a></li>
-								<li><a href="http://medicine.dal.ca" target="new">Faculty of Medicine</a></li>
-								<li><a href="http://dal.ca" target="new">Dalhousie University</a></li>
-							</ul>
-						</section>
-					</div>
-				</div>
-
-				<!-- Icons -->
-					<ul class="icons">
-						<li><a href="http://twitter.com/betascience" class="icon fa-twitter" target="new"><span class="label">Twitter</span></a></li>
-						<li><a href="https://github.com/LangilleLab" class="icon fa-github" target="new"><span class="label" target="new">GitHub</span></a></li>
-						<li><a href="http://www.linkedin.com/in/morganlangille" class="icon fa-linkedin" target="new"><span class="label" target="new">LinkedIn</span></a></li>
-					</ul>
-
-				<!-- Copyright -->
-					<div class="copyright">
-						<ul class="menu">
-							<li>&copy; Langille Lab. All rights reserved</li>
-						</ul>
-					</div>
-
-			</div>
-
-	</body>
-</html>
+<section class="section">
+<div class="wrap callouts">
+<div class="callout callout-soft">
+<h2>Join the lab</h2>
+<p>We welcome trainees from many backgrounds and disciplines. If you want to build skills in genomics and bioinformatics while working on real health questions, we would like to hear from you.</p>
+<div class="btns">
+<a class="btn btn-primary" href="{{ '/positions.html' | relative_url }}">See opportunities</a>
+<a class="btn btn-outline" href="{{ '/members.html' | relative_url }}">Meet the team</a>
+</div>
+</div>
+<div class="callout callout-imr">
+<div class="eyebrow">Sequencing service</div>
+<h2>Need microbiome sequencing?</h2>
+<p>The Integrated Microbiome Resource offers amplicon and metagenomic sequencing with bioinformatics support, for academic and industry researchers.</p>
+<div class="btns"><a class="btn btn-white" href="{{ site.imr }}">Visit imr.bio</a></div>
+</div>
+</div>
+</section>

@@ -1,0 +1,68 @@
+# Current lab members, in the order they appear on the People page.
+# photo: a file in /images/ (leave it out to show initials instead)
+current:
+  - name: Morgan G. I. Langille, PhD
+    role: Professor and Canada Research Chair in Human Microbiomics
+    unit: Department of Pharmacology; Department of Microbiology & Immunology
+    email: morgan.langille@dal.ca
+    photo: Morgan.jpg
+  - name: André M. Comeau, PhD
+    role: Research Associate and Lab Manager
+    unit: IMR Manager
+    email: andre.comeau@dal.ca
+    photo: Andre.jpg
+  - name: Vanessa DeClercq, PhD
+    role: Research Associate
+    unit: Department of Pharmacology
+    email: Vanessa.De.Clercq@dal.ca
+    photo: Vanessa.jpg
+  - name: Robyn Wright, PhD
+    role: Postdoctoral Fellow
+    unit: Department of Pharmacology
+    email: Robyn.Wright@dal.ca
+    photo: Robyn.jpg
+  - name: Nidhi Gohil, PhD
+    role: Research Associate
+    unit: IMR Sequencing Technician
+    email: Nidhi.Gohil@dal.ca
+    photo: Nidhi.jpg
+  - name: Dylan Quinn, PhD
+    role: Research Associate
+    unit: IMR Sequencing Technician
+    email: Dylan.Quinn@dal.ca
+    photo: Dylan.jpg
+  - name: Alessi Kwawukume
+    role: Research Assistant
+    unit: IMR Sequencing Technician
+    email: Alessi.Kwawukume@dal.ca
+    photo: Alessi.jpg
+  - name: Abbey Saunders
+    role: MSc Student
+    unit: Department of Microbiology & Immunology
+    email: Abbey.Saunders@dal.ca
+    photo: Abbey.jpg
+
+# Former members, grouped on the page by the "group" field.
+# year: the year they left the lab
+# now: optional, where they are now (leave it out if you don't know)
+alumni:
+  - {name: Nicole Allward, group: PhD, year: 2024}
+  - {name: Jacob Nearing, group: PhD, year: 2022}
+  - {name: Gavin Douglas, group: PhD, year: 2020}
+  - {name: Montse Palau de Miguel, group: Visiting PhD, year: 2017}
+  - {name: Arash Ghasemi, group: MSc, year: 2025}
+  - {name: Ben Fisher, group: MSc, year: 2024}
+  - {name: Monica Alvaro Fuss, group: MSc, year: 2024}
+  - {name: Chris Tang, group: MSc, year: 2021}
+  - {name: Molly Hayes, group: MSc, year: 2020}
+  - {name: Casey Jones, group: MSc, year: 2018}
+  - {name: Emily Lamoureux, group: MSc, year: 2017}
+  - {name: Travis LeBlanc, group: MSc, year: 2016}
+  - {name: Dhwani Desai, group: Research staff, year: 2024}
+  - {name: Gina Filloramo, group: Research staff, year: 2023}
+  - {name: Akhilesh Dhanani, group: Research staff, year: 2022}
+  - {name: Ben Callaghan, group: Research in Medicine, year: 2022}
+  - {name: Alex Whynot, group: Research in Medicine, year: 2019}
+
+# Order the alumni groups appear in
+alumni_groups: [PhD, Visiting PhD, MSc, Research staff, Research in Medicine]

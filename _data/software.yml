@@ -1,0 +1,53 @@
+# Lab software. "home: true" shows the tool on the homepage.
+# paper: link to the main paper describing the tool (optional)
+- name: PICRUSt2
+  home: true
+  short: Predicts the functional potential of a microbial community from marker gene sequences.
+  long: >-
+    PICRUSt2 predicts the gene families and pathways a microbial community is
+    likely to carry, using 16S rRNA or other marker gene sequences. It places
+    sequences into a reference tree, infers gene content for each one, and
+    combines the results into sample level functional profiles. The reference
+    database was updated with PICRUSt2-SC in 2025.
+  link: https://github.com/picrust/picrust2/wiki
+  paper: https://www.nature.com/articles/s41587-020-0548-6
+  paper_label: Douglas et al. 2020, Nature Biotechnology
+- name: Microbiome Helper
+  home: true
+  short: Standard operating procedures, tutorials and workflows for amplicon and metagenomic analysis.
+  long: >-
+    A collection of standard operating procedures, tutorials and helper scripts
+    for amplicon and shotgun metagenomic analysis, from raw reads through to
+    taxonomic and functional profiles.
+  link: https://github.com/LangilleLab/microbiome_helper/wiki
+  paper: https://doi.org/10.1128/mSystems.00127-16
+  paper_label: Comeau et al. 2017, mSystems
+- name: GeCoCheck
+  home: true
+  short: Confirms which species in a Kraken classification are real by checking how much of each reference genome the assigned reads cover.
+  long: >-
+    Metagenomic classifiers such as Kraken often report species that are not
+    really present. GeCoCheck maps the reads assigned to each species back to
+    its reference genome and uses genome coverage to separate likely true
+    detections from false positives.
+  link: https://github.com/R-Wright-1/GeCoCheck
+  paper: https://doi.org/10.1099/mgen.0.001739
+  paper_label: Wright et al. 2026, Microbial Genomics
+- name: POMS
+  home: true
+  short: Links shifts in microbial functions to the lineages that carry them in metagenomic data.
+  long: >-
+    Phylogenetic Organization of Metagenomic Signals. POMS combines phylogenetic
+    and functional data to find gene families whose distribution across the
+    tree of life lines up with differences between sample groups.
+  link: https://github.com/gavinmdouglas/POMS
+  paper: https://academic.oup.com/bioinformatics/article/38/22/5055/6731923
+  paper_label: Douglas et al. 2022, Bioinformatics
+- name: JarrVis
+  home: true
+  short: Interactive views of which taxa drive differences in predicted functions.
+  long: >-
+    An interactive visualization tool that shows which taxa contribute to each
+    predicted function, and how those contributions differ between sample
+    groups.
+  link: https://github.com/dhwanidesai/JarrVis

@@ -1,0 +1,33 @@
+# When _data/publications.yml changes, look up any entries that only have
+# a DOI and commit the filled in details back to the repository.
+name: Fill in publication details
+
+on:
+  push:
+    branches: [master]
+    paths: [_data/publications.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml requests
+      - run: python scripts/fill_dois.py
+      - name: Commit changes, if any
+        run: |
+          if git diff --quiet; then
+            echo "Nothing to update"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -am "Fill in publication details from DOIs"
+            git push
+          fi

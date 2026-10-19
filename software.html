@@ -1,0 +1,25 @@
+---
+layout: default
+title: Software
+description: Open source bioinformatics tools from the Langille Lab, including PICRUSt2, Microbiome Helper, GeCoCheck, POMS and JarrVis.
+---
+<div class="wrap">
+<header class="page-head">
+<div class="eyebrow">Software</div>
+<h1>Open software for microbiome research</h1>
+<p class="lede">Tools and workflows we build and maintain for the microbiome community. All are free and open source, and most are developed on GitHub where you can report issues and follow updates.</p>
+</header>
+
+<div style="padding-bottom: 72px">
+{% for tool in site.data.software %}<section class="tool-row" id="{{ tool.name | slugify }}">
+<h2 class="tool-row-name">{{ tool.name }}</h2>
+<div class="tool-row-body">
+<p>{{ tool.long }}</p>
+<div class="tool-links">
+<a href="{{ tool.link }}">Documentation and code →</a>
+{% if tool.paper %}<a href="{{ tool.paper }}">Paper: {{ tool.paper_label }} →</a>{% endif %}
+</div>
+</div>
+</section>
+{% endfor %}</div>
+</div>

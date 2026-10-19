@@ -1,0 +1,675 @@
+# Lab publications, newest first.
+#
+# To add a paper, the quickest way is a new entry with just the DOI:
+#   - doi: 10.1186/s40168-026-02529-z
+# When you push, a GitHub Action looks up the title, authors, journal and
+# year and fills them in for you.
+#
+# Optional fields on any entry:
+#   featured: true      shows the paper on the homepage
+#   tags: [methods]     groups papers on the Publications page
+#
+- authors: DeClercq V, Comeau AM, Kwawukume A, Murphy R, Parmar NR, Quinn DP, Wright R, Wallace A, Langille MGI
+  year: 2026
+  title: Technical replicates and multiple sequencing approaches reveal weak and inconsistent microbiome signals in lung tumour and blood samples from patients with lung cancer
+  link: https://link.springer.com/article/10.1186/s40168-026-02529-z
+  journal: Microbiome
+  details: s40168-026-02529-z
+  doi: 10.1186/s40168-026-02529-z
+  featured: true
+- authors: Jiang L, Wright RJ, Raudonis R, Banskota AH, Glick BR, Mitchell RJ, Scur M, Wang Z, Zhang W, Zhang T, Luo Q, Langille MGI, Cheng Z, Wen G
+  year: 2026
+  title: The biotechnological applications of marine bacteria
+  link: https://www.mdpi.com/2079-7737/15/17/1546
+  journal: Biology
+  details: 15(17), 1546
+- authors: Wright RJ, DeClercq V, Burton CL, Roslin NM, Chan A, Arnold PD, Peters P, Schachar R, Crosbie J, Langille MGI
+  year: 2026
+  title: Population-based characterisation of child and adolescent oral bacterial microbiomes
+  link: https://doi.org/10.1186/s40168-026-02452-3
+  journal: Microbiome
+  details: s40168-026-02452-3
+  doi: 10.1186/s40168-026-02452-3
+  featured: true
+- authors: Wright RJ, Fisher B, Comeau AM, and Langille MGI
+  year: 2026
+  title: 'From classification to confirmation: Verification of metagenomic taxonomic classifications through mapping of classified reads to reference genomes'
+  link: https://doi.org/10.1099/mgen.0.001739
+  journal: Microbial Genomics
+  details: '12:5'
+  doi: 10.1099/mgen.0.001739
+  featured: true
+- authors: DeClercq V, Murphy R, Zinck N, Langille MGI, Wallace A
+  year: 2026
+  title: Association between the oral microbiome and clinical indicators of resectable non-small cell lung cancer (NSCLC)
+  link: https://doi.org/10.1080/20002297.2026.2675065
+  journal: Journal of Oral Microbiology
+  details: 18:2675065
+  doi: 10.1080/20002297.2026.2675065
+- authors: Alvaro-Fuss M, DeClercq V, Blodgett JM, Theou O, Langille MGI, Beiko RG
+  year: 2026
+  title: 'Effect of bedrest on the human gut and oral microbiome: implications for frailty'
+  link: https://www.sciencedirect.com/science/article/pii/S0531556526000574?via%3Dihub
+  journal: Experimental Gerontology
+  details: 216:113079
+  featured: true
+- authors: Verburgt CM, Van Der Kruk N, Dunn KA, Bielawski JP, Otley AR, de Meij T, Sylvester F, Comeau AM, Langille MGI, de Jonge WJ, Van Limbergen JE
+  year: 2026
+  title: 'Personalized AZithromycin/metronidAZole (PAZAZ) + dietary therapy in paediatric Crohn disease: results of a pilot study'
+  link: https://onlinelibrary.wiley.com/doi/10.1002/jpn3.70357
+  journal: Journal of Pediatric Gastroenterology and Nutrition
+  details: jpn3.70357
+  doi: 10.1002/jpn3.70357
+- authors: Hosmer M, Wright RJ, McCavour C, Keys K, Sterling S, Langille MGI, Rohde JR
+  year: 2025
+  title: Lime amendment to chronically acidified forest soils results in shifts in prokaryotic communities
+  link: https://journals.asm.org/doi/10.1128/aem.02171-24
+  journal: Applied and Environmental Microbiology
+  details: 92(1):e02171-24
+  doi: 10.1128/aem.02171-24
+- authors: Masirika LM, Hewins B, Ostadgavahi AT, Dutt M, Mambo LM, Udahemuka JC, Ndishymie P, Mbiribindi JB, Siangoli FB, Kelvin P, Langille MGI, Kelvin DJ, Flores L, Martinez GS, Kumar
+  year: 2025
+  title: The trans-kingdom spectrum of Mpox-like lesion pustules of suspect patients in the Mpox Clade Ib outbreak in Eastern Democratic Republic of the Congo
+  link: https://www.mdpi.com/2076-2607/13/9/2025
+  journal: Microorganisms
+  details: 13(9)
+- authors: DeClercq V, Wright RJ, Van Limbergen JE, Langille MGI
+  year: 2025
+  title: Characterization of the salivary microbiome of adults with inflammatory bowel disease
+  link: https://www.tandfonline.com/doi/full/10.1080/20002297.2025.2499923
+  journal: Journal of Oral Microbiology
+  details: 17(1), 2499923
+  doi: 10.1080/20002297.2025.2499923
+- authors: Wright RJ, Langille MGI
+  year: 2025
+  title: 'PICRUSt2-SC: an update to the reference database used for functional prediction within PICRUSt2'
+  link: https://doi.org/10.1093/bioinformatics/btaf269
+  journal: Bioinformatics
+  details: btaf269
+  doi: 10.1093/bioinformatics/btaf269
+- authors: Hsu TY, Nzabarushimana E, Wong D, Luo C, Beiko RG, Langille MGI, Huttenhower C, Nguyen LG, Franzosa EA
+  year: 2025
+  title: Profiling lateral gene transfer events in the human microbiome using WAAFLE
+  link: https://www.nature.com/articles/s41564-024-01881-w
+  journal: Nature Microbiology
+  details: 10:94–111
+- authors: Rose S, Robicheau B, Tolman J, Batista DF, Rowland E, Desai D, Ratten J, Kantor E, Comeau AM, Langille MGI, Jerlstrom-Hultqvist J, Sarthou G, Mohr W, Bertrand EM, LaRoche J
+  year: 2024
+  title: Nitrogen-fixation in the widely distributed model marine γ-proteobacterial diazotroph Candidatus Thalassolituus haligoni
+  link: https://www.science.org/doi/10.1126/sciadv.adn1476
+  journal: Science Advances
+  details: 10:eadn1476
+  doi: 10.1126/sciadv.adn1476
+- authors: DeClercq V, Wright RJ, Nearing JT, Langille MGI
+  year: 2024
+  title: Oral microbial signatures associated with age and frailty in Canadian adults
+  link: https://www.nature.com/articles/s41598-024-60409-8
+  journal: Scientific Reports
+  details: 14:9685
+- authors: Zadjelovic V, Wright RJ, Borsetto C, Quartey J, Cairns TN, Langille MGI, Wellington EMH, Christie-Oleza JA
+  year: 2023
+  title: Microbial hitchhikers harbouring antimicrobial-resistance genes in the riverine plastisphere
+  link: https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-023-01662-3
+  journal: Microbiome
+  details: 11:225
+  doi: 10.1186/s40168-023-01662-3
+- authors: Hayes MG, Langille MGI, Gu H
+  year: 2023
+  title: Cross-study analyses of microbial abundance using generalized common factor methods
+  link: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-023-05509-4
+  journal: BMC Bioinformatics
+  details: 24:380
+  doi: 10.1186/s12859-023-05509-4
+- authors: McCormick NE, Earle M, Kent A, Ha C, Hakes L, Anderson L, Stoddart AK, Langille MGI, Gagnon GA
+  year: 2023
+  title: Betaproteobacteria are a key component of surface water biofilters that maintain sustained manganese removal in response to fluctuations in influent water temperature
+  link: https://www.sciencedirect.com/science/article/pii/S0043135423009557?via%3Dihub
+  journal: Water Research
+  details: 244:120515
+- authors: Biswas D, De Silva ABKH, Mercer A, Shreya S, Kienesberger P, Langille MGI, Rupasinghe HPV, Pulinilkunnil T
+  year: 2023
+  title: Supplementation of cyanidin-3-O-B-glucoside-rich haskap (Lonicera caerulea L.) berry extract attenuates hepatic lipid dysregulation in diet-induced obese mice
+  link: https://www.sciencedirect.com/science/article/pii/S1756464623002359
+  journal: Journal of Functional Foods
+  details: 108:105635
+- authors: Nearing JT, DeClercq V, Langille MGI
+  year: 2023
+  title: Investigating the oral microbiome in retrospective and prospective cases of prostate, colon, and breast cancer
+  link: https://www.nature.com/articles/s41522-023-00391-7
+  journal: NPJ Biofilms and Microbiomes
+  details: '9:23'
+- authors: Wright RJ, Pewarchuk ME, Marshall EA, Murray B, Rosin MP, Laronde DM, Zhang L, Lam WL, Langille MGI, Rock LD
+  year: 2023
+  title: Exploring the microbiome of oral epithelial dysplasia as a predictor of malignant progression
+  link: https://bmcoralhealth.biomedcentral.com/articles/10.1186/s12903-023-02911-5
+  journal: BMC Oral Health
+  details: 23:206
+  doi: 10.1186/s12903-023-02911-5
+- authors: Thilakarathna WPDW, Langille MGI, Rupasinghe HPV
+  year: 2023
+  title: Hepatotoxicity of polymeric proanthocyanidins is caused by translocation of bacterial lipopolysaccharides through impaired gut epithelium
+  link: https://www.sciencedirect.com/science/article/pii/S0378427423001078
+  journal: Toxicology Letters
+  details: 379:35-47
+- authors: Wright RJ, Comeau AM, Langille MGI
+  year: 2023
+  title: 'From defaults to databases: parameter and database choice dramatically impact the performance of metagenomic taxonomic classification tools'
+  link: https://www.microbiologyresearch.org/content/journal/mgen/10.1099/mgen.0.000949
+  journal: Microbial Genomics
+  details: 9:000949
+  doi: 10.1099/mgen.0.000949
+- authors: MacDonald T, Dunn KA, MacDonald J, Langille MGI, Van Limbergen JE, Bielawski JP, Kulkarni K
+  year: 2023
+  title: The gastrointestinal antibiotic resistome in pediatric leukemia and lymphoma patients
+  link: https://www.frontiersin.org/articles/10.3389/fcimb.2023.1102501/full
+  journal: Frontiers in Cellular and Infection Microbiology
+  details: 13:1102501
+  doi: 10.3389/fcimb.2023.1102501/full
+- authors: Lloyd AW, Percival D, Langille MGI, Yurgel SN
+  year: 2023
+  title: Changes to Soil Microbiome Resulting from Synergetic Effects of Fungistatic Compounds Pyrimethanil and Fluopyram in Lowbush Blueberry Agriculture, with Nine Fungicide Products Tested
+  link: https://www.mdpi.com/2076-2607/11/2/410
+  journal: Microorganisms
+  details: 11(2):410
+- authors: Verburgt CM, Dunn KA, Otley A, Heyman MB, Verstraete S, Sunseri W, Sylvester F, De Meij T, Comeau AM, Langille MGI, de Jonge WJ, Benninga MA, Van Limbergen JE
+  year: 2023
+  title: 'Personalised Azithromycin + Metronidazole (PAZAZ), in combination with standard induction therapy, to achieve a faecal microbiome community structure and metagenome changes associated with sustained remission in paediatric Crohn’s Disease (CD): protocol of a pilot study'
+  link: https://bmjopen.bmj.com/content/13/2/e064944
+  journal: BMJ Open
+  details: 13:e064944
+- authors: McCormick NE, Earle M, Stoddart AK, Langille MGI, Gagnon GA
+  year: 2023
+  title: Understanding the impact of different source water types on the biofilm characteristics and microbial communities of manganese removing biofilters
+  link: https://pubs.rsc.org/en/content/articlelanding/2023/ew/d2ew00568a
+  journal: 'Environmental Science: Water Research & Technology'
+  details: '9: 48-61'
+- authors: Douglas GM, Kim S, Langille MGI, Shapiro BJ
+  year: 2023
+  title: Efficient computation of contributional diversity metrics from microbiome data with FuncDiv
+  link: https://academic.oup.com/bioinformatics/article/39/1/btac809/6909011
+  journal: Bioinformatics
+  details: '39: btac809'
+- authors: Douglas GM, Hayes MG, Langille MGI, Borenstein E
+  year: 2022
+  title: Integrating phylogenetic and functional data in microbiome studies
+  link: https://academic.oup.com/bioinformatics/article/38/22/5055/6731923
+  journal: Bioinformatics
+  details: '38: 5055-63'
+- authors: Dunn KA, MacDonald T, Rodrigues GJ, Forbrigger Z, Bielawski JP, Langille MGI, Van Limbergen J, Kulkarni K
+  year: 2022
+  title: Antibiotic and antifungal use in pediatric leukemia and lymphoma patients are associated with increasing opportunistic pathogens and decreasing bacteria responsible for activities that enhance colonic defense
+  link: https://www.frontiersin.org/articles/10.3389/fcimb.2022.924707/full
+  journal: Frontiers in Cellular and Infection Microbiology
+  details: 12:924707
+  doi: 10.3389/fcimb.2022.924707/full
+- authors: Nearing JT, Douglas GM, Hayes M, MacDonald J, Desai D, McCormick N, Jones JMA, Wright R, Dhanani A, Comeau AM, Langille MGI
+  year: 2022
+  title: Microbiome differential abundance methods produce different results across 38 datasets
+  link: https://www.nature.com/articles/s41467-022-28034-z
+  journal: Nature Communications
+  details: 13:342
+- authors: DeClercq V, Nearing JT, Langille MGI
+  year: 2021
+  title: Investigation of the impact of commonly used medications on the oral microbiome of individuals living without major chronic conditions
+  link: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0261032
+  journal: PLoS One
+  details: 16(12):e0261032
+  doi: 10.1371/journal.pone.0261032
+- authors: Mirzayi C, et al
+  year: 2021
+  title: 'Reporting guidelines for human microbiome research: the STORMS checklist'
+  link: https://www.nature.com/articles/s41591-021-01552-x
+  journal: Nature Medicine
+  details: 27:1885-1892
+- authors: McCormick N, Earle M, Ha C, Hakes L, Evans A, Anderson L, Stoddart AK, Langille MGI, Gagnon GA
+  year: 2021
+  title: Biological and physico-chemical mechanisms accelerating the acclimation of Mn-removing biofilters
+  link: https://www.sciencedirect.com/science/article/pii/S0043135421009878
+  journal: Water Research
+  details: 207:117793
+- authors: Dunn KA, Forbrigger Z, Connors J, Rahman M, Cohen A, Van Limbergen J, Langille MGI, Stadnyk AW, Bielawski JP, Penny S, MacDonald T, Kulkarni K
+  year: 2021
+  title: Gut bacterial gene changes following pegaspargase treatment in pediatric patients with acute lymphoblastic leukemia
+  link: https://www.tandfonline.com/doi/abs/10.1080/10428194.2021.1953006?journalCode=ilal20
+  journal: Leukemia & Lymphoma
+  details: 62(13):3244-3255
+  doi: 10.1080/10428194.2021.1953006
+- authors: Wright RJ, Bosch R, Langille MGI, Gibson MI, Christie-Oleza JA
+  year: 2021
+  title: A multi-OMIC characterisation of biodegradation and microbial community succession within the PET plastisphere
+  link: https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-021-01054-5
+  journal: Microbiome
+  details: 9:141
+  doi: 10.1186/s40168-021-01054-5
+- authors: Nearing JT, Comeau AM, Langille MGI
+  year: 2021
+  title: Identifying biases and their potential solutions in human microbiome studies
+  link: https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-021-01059-0
+  journal: Microbiome
+  details: 9:113
+  doi: 10.1186/s40168-021-01059-0
+- authors: Douglas GM, Langille MGI
+  year: 2021
+  title: A primer and discussion on DNA-based microbiome data and related bioinformatics analyses
+  link: https://peercommunityjournal.org/articles/10.24072/pcjournal.2/
+  journal: Peer Community Journal
+  details: 1:e5
+  doi: 10.24072/pcjournal.2
+- authors: Sultan M, Nearing JT, Brown JM, Huynh TT, Cruickshank BM, Lamoureux E, Vidovic D, Dahn ML, Fernando W, Coyle KM, Giacomantonio CA, Langille MGI, Marcato P
+  year: 2021
+  title: An in vivo genome-wide shRNA screen identifies BCL6 as a targetable biomarker of paclitaxel resistance in breast cancer
+  link: https://febs.onlinelibrary.wiley.com/doi/full/10.1002/1878-0261.12964
+  journal: Molecular Oncology
+  details: 15(8):2046-2064
+  doi: 10.1002/1878-0261.12964
+- authors: Zhang J, Cook J, Nearing JT, Zhang J, Raudonis R, Glick BR, Langille MGI, Cheng Z
+  year: 2021
+  title: Harnessing the plant microbiome to promote the growth of agricultural crops
+  link: https://www.sciencedirect.com/science/article/pii/S0944501320305589
+  journal: Microbiological Research
+  details: 245, 126690
+- authors: Cook J, Douglas GM, Zhang J, Glick BR, Langille MGI, Liu K, Cheng Z
+  year: 2020
+  title: Transcriptomic profiling of Brassica napus responses to Pseudomonas aeruginosa
+  link: https://journals.sagepub.com/doi/full/10.1177/1753425920980512
+  journal: Innate Immunity
+  details: 27(2):143-157
+  doi: 10.1177/1753425920980512
+- authors: Dunn KA, Connors J, Bielawski JP, Nearing JT, Langille MGI, Van Limbergen J, Fernandez CV, MacDonald T, Kulkarni K
+  year: 2020
+  title: Investigating the gut microbial community and genes in children with differing levels of change in serum asparaginase activity during pegaspargase treatment for acute lymphoblastic leukemia
+  link: https://doi.org/10.1080/10428194.2020.1850718
+  journal: Leukemia & Lymphoma
+  details: 62(4):927-936
+  doi: 10.1080/10428194.2020.1850718
+- authors: Wright RJ, Langille MGI, Walker TR
+  year: 2020
+  title: Food or just a free ride? A meta-analysis reveals the global diversity of the plastisphere
+  link: https://www.nature.com/articles/s41396-020-00814-9
+  journal: ISME Journal
+  details: 15(3):789-806
+- authors: Nearing JT, DeClercq V, Van Limbergen J, Langille MGI
+  year: 2020
+  title: Assessing the variation within the oral microbiome of healthy adults
+  link: https://doi.org/10.1128/mSphere.00451-20
+  journal: mSphere
+  details: 5:e00451-20
+  doi: 10.1128/mSphere.00451-20
+- authors: Price GW, Langille MGI, Yurgel SN
+  year: 2020
+  title: Microbial co-occurrence network analysis of soils receiving short- and long-term applications of alkaline treated biosolids
+  link: https://www.sciencedirect.com/science/article/pii/S0048969720352165
+  journal: Science of the Total Environment
+  details: 751:141687
+- authors: Douglas GM, Bielawski JP, Langille MGI
+  year: 2020
+  title: Re-evaluating the relationship between missing heritability and the microbiome
+  link: https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-020-00839-4
+  journal: Microbiome
+  details: 8:87
+  doi: 10.1186/s40168-020-00839-4
+- authors: Douglas GM, Maffei VJ, Zaneveld J, Yurgel SN, Brown JR, Taylor CM, Huttenhower C, Langille MGI
+  year: 2020
+  title: PICRUSt2 for prediction of metagenome functions
+  link: https://www.nature.com/articles/s41587-020-0548-6
+  journal: Nature Biotechnology
+  details: 38:685-688
+- authors: Nejman D, Livyatan I, Fuks G, Gavert N, Zwang Y, Geller LT, Rotter-Maskowitz A, Weiser R, Malle G, Gigi E, Meltser A, Douglas GM, Kamer I, Gopalakrishnan V, Dadosh T, Levin-Zaidman S, Avnet S, Atlan T, Cooper ZA, Arora R, Cogdill AP, Khan MDAW, Ologun G, Bussi Y, Weinberger A, Lotan-Pompan M, Golani O, Perry G, Rokah M, Bahar-Shany K, Rozeman EA, Blank CU, Ronai A, Shaoul R, Amit A, Dorfman T, Kremer R, Cohen ZR, Harnof S, Siegal T, Yehuda-Shnaidman E, Gal-Yam EN, Shapira H, Baldini N, Langille MGI, Ben-Nun A, Kaufman B, Nissan A, Golan T, Dadiani M, Levanon K, Bar J, Yust-Katz S, Barshack I, Peeper DS, Raz DJ, Segal E, Wargo JA, Sandbank J, Shental N, Straussman R
+  year: 2020
+  title: The human tumor microbiome is composed of tumor type-specific intra-cellular bacteria
+  link: https://doi.org/10.1126/science.aay9189
+  journal: Science
+  details: 368(6494):973-980
+  doi: 10.1126/science.aay9189
+- authors: Wu L, Zeng T, Deligios M, Milanesi L, Langille MGI, Zinellu A, Rubino S, Carru C, Kelvin D
+  year: 2020
+  title: Age-related variation of bacterial and fungal communities in different body habitats across the young, elderly and centenarians in Sardinia
+  link: https://doi.org/10.1128/mSphere.00558-19
+  journal: mSphere
+  details: 5:e00558-19
+  doi: 10.1128/mSphere.00558-19
+- authors: Palau M, Piqué N, Comeau AM, Douglas GM, Ramírez-Lázaro MJ, Lario S, Calvet X, Langille MGI, Miñana-Galbis D
+  year: 2020
+  title: Detection of Helicobacter pylori microevolution and multiple infection from gastric biopsies by housekeeping gene amplicon sequencing
+  link: https://www.mdpi.com/2076-0817/9/2/97
+  journal: Pathogens
+  details: 9(2):97
+- authors: Jones CMA, Connors J, Dunn KA, Bielawski JP, Comeau AM, Langille MGI, Van Limbergen J
+  year: 2020
+  title: Bacterial taxa and functions are predictive of sustained remission following exclusive enteral nutrition in pediatric Crohn’s disease
+  link: https://doi.org/10.1093/ibd/izaa001
+  journal: Inflammatory Bowel Diseases
+  details: 26(7):1026-1037
+  doi: 10.1093/ibd/izaa001
+- authors: Douglas GM, Langille MGI
+  year: 2019
+  title: Current and promising approaches to identify horizontal gene transfer events in metagenomes
+  link: https://doi.org/10.1093/gbe/evz184
+  journal: Genome Biology and Evolution
+  details: '11(10): 2750-2766'
+  doi: 10.1093/gbe/evz184
+- authors: Bolyen E, [… (108 other co-authors), Douglas GM, Langille MGI …],Caporaso JG
+  year: 2019
+  title: Reproducible, interactive, scalable, and extensible microbiome data science using QIIME 2
+  link: https://www.nature.com/articles/s41587-019-0209-9
+  journal: Nature Biotechnology
+  details: 37:852
+- authors: Yurgel SN, Nearing JT, Douglas GM, Langille MGI
+  year: 2019
+  title: Metagenomic functional shifts to plant induced environmental changes
+  link: https://www.frontiersin.org/articles/10.3389/fmicb.2019.01682/full
+  journal: Frontiers in Microbiology
+  details: 10:1682
+  doi: 10.3389/fmicb.2019.01682/full
+- authors: Zorz JK, Willis C, Comeau AM, Langille MGI, Li WKW, Johnson C, LaRoche J
+  year: 2019
+  title: Drivers of regional bacterial community structure and diversity over depth and time in the Northwest Atlantic Ocean
+  link: https://www.frontiersin.org/articles/10.3389/fmicb.2019.00281/full
+  journal: Frontiers in Microbiology
+  details: 10:281
+  doi: 10.3389/fmicb.2019.00281/full
+- authors: Nearing JT, Connors J, Whitehouse S, Van Limbergen J, MacDonald T, Kulkarni K, Langille MGI
+  year: 2019
+  title: Infectious complications are associated with alterations in the gut microbiome in pediatric patients with Acute Lymphoblastic Leukemia
+  link: https://www.frontiersin.org/articles/10.3389/fcimb.2019.00028/full
+  journal: Frontiers in Cellular and Infection Microbiology
+  details: '9:28'
+  doi: 10.3389/fcimb.2019.00028/full
+- authors: Singh R, Chandrashekharappa S, Bodduluri S, Baby B, Hegde B, Kotla N, Hiwale A, Saiyed T, Patel P, Vijay-kumar M, Langille MGI, Douglas GM, Cheng X, Rouchka E, Waigel S, Dryden G, Alatassi H, Zhang H, Haribabu B, Vemula P, and Jala V
+  year: 2019
+  title: Enhancement of Gut Barrier Integrity by a Microbial Metabolite through Nrf2 Pathway
+  link: https://www.nature.com/articles/s41467-018-07859-7
+  journal: Nature Communications
+  details: 10:89
+- authors: Lau WL, Vaziri ND, Nunes A, Comeau AM, Langille MGI, England W, Khazaeli M, Suematsu Y, Phan J, Whiteson K
+  year: 2018
+  title: The phosphate binder ferric citrate alters the gut microbiome in rats with chronic kidney disease
+  link: http://jpet.aspetjournals.org/content/367/3/452.long
+  journal: Journal of Pharmacology and Experimental Therapeutics
+  details: 367(3):452-460
+- authors: Dickson K, Liu S, Zhou J, Langille MGI, Holbein B, Lehmann C
+  year: 2018
+  title: Selective sensitivity of the gut microbiome to iron chelators in polybacterial abdominal sepsis
+  link: https://www.sciencedirect.com/science/article/pii/S0306987718300422
+  journal: Medical Hypotheses
+  details: 120:68-71
+- authors: Dranse HJ, Zheng A, Comeau AM, Langille MGI, Zabel BA, Sinal CJ
+  year: 2018
+  title: The impact of chemerin or chemokine-like receptor 1 loss on the mouse gut microbiome
+  link: https://peerj.com/articles/5494/
+  journal: PeerJ
+  details: 6:e5494
+- authors: Nearing JT, Douglas GM, Comeau AM, Langille MGI
+  year: 2018
+  title: 'Denoising the Denoisers: an independent evaluation of microbiome sequence error-correction approaches'
+  link: https://peerj.com/articles/5364/
+  journal: PeerJ
+  details: 6:e5364
+- authors: DeClercq V, Langille MGI, Van Limbergen J
+  year: 2018
+  title: Differences in adiposity and diet quality among individuals with inflammatory bowel disease in Eastern Canada
+  link: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0200580
+  journal: PLoS ONE
+  details: 13(7):e0200580
+  doi: 10.1371/journal.pone.0200580
+- authors: Yurgel SN, Douglas GM, Dussault A, Percival D, Langille MGI
+  year: 2018
+  title: Dissecting community structure in wild blueberry root and soil microbiome
+  link: https://www.frontiersin.org/articles/10.3389/fmicb.2018.01187/full
+  journal: Frontiers in Microbiology
+  details: 9, 1187
+  doi: 10.3389/fmicb.2018.01187/full
+- authors: Langille MGI
+  year: 2018
+  title: Exploring linkages between taxonomic and functional profiles of the human microbiome
+  link: https://doi.org/10.1128/mSystems.00163-17
+  journal: mSystems
+  details: 3:e00163-17
+  doi: 10.1128/mSystems.00163-17
+- authors: Thilakarathna WPDW, Langille MGI, Rupasinghe HPV
+  year: 2018
+  title: 'Polyphenol-based prebiotics and synbiotics: potential for cancer chemoprevention'
+  link: https://www.sciencedirect.com/science/article/pii/S2214799317301212
+  journal: Current Opinion in Food Science
+  details: '20: 51-57'
+- authors: Douglas GM, Hansen R, Jones C, Dunn K, Comeau AM, Bielawski JP, El-Omar EM, Russell RK, Hold G, Langille MGI, Van Limbergen J
+  year: 2018
+  title: Multi-omics differentially classify disease state and treatment outcome in pediatric Crohn’s disease
+  link: https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0398-3
+  journal: Microbiome
+  details: 6(1), 13
+  doi: 10.1186/s40168-018-0398-3
+- authors: Langille MGI, Ravel J, Fricke WF
+  year: 2018
+  title: 'Available Upon Request: not good enough for microbiome data!'
+  link: https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-017-0394-z
+  journal: Microbiome
+  details: 6(1), 8
+  doi: 10.1186/s40168-017-0394-z
+- authors: Finlayson-Trick ECL, Getz LJ, Slaine PD, Thornbury M, Lamoureux E, Cook J, Langille MGI, Murray LE, McCormick C, Rohde JR, Cheng Z
+  year: 2017
+  title: Taxonomic differences of gut microbiomes drive cellulolytic enzymatic potential within hind-gut fermenting mammals
+  link: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189404
+  journal: PLoS One
+  details: 12(12), e0189404
+  doi: 10.1371/journal.pone.0189404
+- authors: Inkpen SA, Douglas GM, Brunet TDP, Leuschen K, Doolittle WF, and Langille MGI
+  year: 2017
+  title: The coupling of taxonomy and function in microbiomes
+  link: https://link.springer.com/article/10.1007/s10539-017-9602-2
+  journal: Biology & Philosophy
+  details: 32(6):1225-1243
+  doi: 10.1007/s10539-017-9602-2
+- authors: Lamoureux E, Grandy S, and Langille MGI
+  year: 2017
+  title: Moderate exercise has limited but distinguishable effects on the mouse microbiome
+  link: https://doi.org/10.1128/mSystems.00006-17
+  journal: mSystems
+  details: 2(4), e00006-17
+  doi: 10.1128/mSystems.00006-17
+- authors: Yurgel SN, Douglas GM, Comeau AM, Mammoliti M, Dussault A, Percival D, and Langille MGI
+  year: 2017
+  title: Variation in Bacterial and Eukaryotic Communities Associated with Natural and Managed Wild Blueberry Habitats
+  link: http://apsjournals.apsnet.org/doi/abs/10.1094/PBIOMES-03-17-0012-R
+  journal: Phytobiomes
+  details: 1(2), 102-113
+  doi: 10.1094/PBIOMES-03-17-0012-R
+- authors: MacLellan A, Moore-Connors J, Shannan G, Cahill L, Langille MGI, Van Limbergen J
+  year: 2017
+  title: 'The Impact of Exclusive Enteral Nutrition (EEN) on the Gut Microbiome in Crohn’s Disease: A Review'
+  link: https://www.mdpi.com/2072-6643/9/5/447
+  journal: Nutrients
+  details: 9(5), 447
+- authors: Comeau AM, Douglas GM, and Langille MGI
+  year: 2017
+  title: 'Microbiome Helper: A custom and streamlined workflow for microbiome research'
+  link: https://doi.org/10.1128/mSystems.00127-16
+  journal: mSystems
+  details: 2(1), e00127-16
+  doi: 10.1128/mSystems.00127-16
+- authors: Rutherford K, Meehan CJ, Langille MGI, Tyack SG, McKay JC, McLean NL, Benkel K, Beiko RG, Benkel B
+  year: 2016
+  title: Discovery of an expanded set of avian leukosis subgroup E proviruses in chickens using Vermillion, a novel sequence capture and analysis pipeline
+  link: https://doi.org/10.3382/ps/pew194
+  journal: Poultry Science
+  details: 95(10):2250-2258
+  doi: 10.3382/ps/pew194
+- authors: Miller RR, Langille MGI, Montoya V, Crisan A, Stefanovic A, Martin I, Hoang L, Patrick DM, Romney M, Tyrrell G, Jones SJM, Brinkman FSL, Tang P
+  year: 2016
+  title: Genomic analysis of a serotype 5 Streptococcus pneumoniae outbreak in Canada 2005-2009
+  link: https://doi.org/10.1155/2016/5381871
+  journal: Canadian Journal of Infectious Diseases & Medical Microbiology
+  details: '5381871'
+  doi: 10.1155/2016/5381871
+- authors: Laird MR, Langille MGI, Brinkman FSL
+  year: 2015
+  title: 'GenomeD3Plot: A library for rich, interactive visualizations of genomic data in web applications'
+  link: https://doi.org/10.1093/bioinformatics/btv376
+  journal: Bioinformatics
+  details: 31(20):3348-3349
+  doi: 10.1093/bioinformatics/btv376
+- authors: Dhillon B, Laird M, Shay J, Winsor G, Lo R, Nizam F, Pereira SK, Waglechner N, McArthur A, Langille MGI, Brinkman FSL
+  year: 2015
+  title: 'IslandViewer 3: more flexible, interactive genomic island discovery, visualization and analysis'
+  link: https://doi.org/10.1093/nar/gkv401
+  journal: Nucleic Acids Research
+  details: Jul 1;43(W1):W104-8
+  doi: 10.1093/nar/gkv401
+- authors: Hester CM, Jala VR, Langille MGI, Umar S, Greiner KA, Haribabu B
+  year: 2015
+  title: Fecal microbes, short chain fatty acids, and colorectal cancer across racial/ethnic groups
+  link: https://doi.org/10.3748/wjg.v21.i9.2759
+  journal: World Journal of Gastroenterology
+  details: 21(9):2759-2769
+  doi: 10.3748/wjg.v21.i9.2759
+- authors: Langille MGI, Meehan CJ, Koenig J, Dhanani AS, Rose R, Howlett S, Beiko RG
+  year: 2014
+  title: Microbial shifts in the aging mouse gut
+  link: https://doi.org/10.1186/s40168-014-0050-9
+  journal: Microbiome
+  details: 2(1):50
+  doi: 10.1186/s40168-014-0050-9
+- authors: Xu Z, Malmer D, Langille MGI, Way SF, Knight R
+  year: 2014
+  title: 'Which is more important for classifying microbial communities: who''s there, or what they can do?'
+  link: https://doi.org/10.1038/ismej.2014.157
+  journal: ISME Journal
+  details: 8(12):2357-9
+  doi: 10.1038/ismej.2014.157
+- authors: Boon E, Meehan CJ, Whidden C, Wong DH, Langille MGI, Beiko RG
+  year: 2014
+  title: 'Interactions in the microbiome: communities of organisms and communities of genes'
+  link: https://doi.org/10.1111/1574-6976.12035
+  journal: FEMS Microbiology Reviews
+  details: 38(1):90-118
+  doi: 10.1111/1574-6976.12035
+- authors: Langille MGI*, Zaneveld J*, Caporaso JG, McDonald D, Knights D, Reyes JA, Clemente JC, Burkepile DE, Vega Thurber RL, Knight R, Beiko RG, Huttenhower C
+  year: 2013
+  title: Predictive functional profiling of microbial communities using 16S rRNA marker gene sequences
+  link: https://doi.org/10.1038/nbt.2676
+  journal: Nature Biotechnology
+  details: 31(9):814-821. *Co-first authors
+  doi: 10.1038/nbt.2676
+- authors: Parks DH, Mankowski T, Zangooei S, Porter MS, Armanini DG, Baird DJ, Langille MGI, Beiko RG
+  year: 2013
+  title: 'GenGIS 2: Geospatial analysis of traditional and genetic biodiversity, with new gradient algorithms and an extensible plugin framework'
+  link: https://doi.org/10.1371/journal.pone.0069885
+  journal: PLoS ONE
+  details: 8(7):e69885
+  doi: 10.1371/journal.pone.0069885
+- authors: Dhillon B, Chiu T, Laird M, Langille MGI, Brinkman F
+  year: 2013
+  title: 'IslandViewer update: improved genomic island discovery and visualization'
+  link: https://doi.org/10.1093/nar/gkt394
+  journal: NAR
+  details: 41(W1):W129-W132
+  doi: 10.1093/nar/gkt394
+- authors: Sharpton TJ, Jospin G, Wu D, Langille MGI, Pollard KS, Eisen JA
+  year: 2012
+  title: Sifting through genomes with iterative-sequence clustering produces a large, phylogenetically diverse protein-family resource
+  link: https://doi.org/10.1186/1471-2105-13-264
+  journal: BMC Bioinformatics
+  details: 13:264
+  doi: 10.1186/1471-2105-13-264
+- authors: Jiang X*, Langille MGI*, Neches RY, Elliot M, Levin SA, Eisen JA, Weitz JS, Dushoff J
+  year: 2012
+  title: Functional biogeography of ocean microbes revealed through non-negative matrix factorization
+  link: https://doi.org/10.1371/journal.pone.0043866
+  journal: PLoS ONE
+  details: 7(9):e43866. *Co-first authors
+  doi: 10.1371/journal.pone.0043866
+- authors: Lynch EA, Langille MGI, Darling A, Wilbanks EG, Haltiner C, Shao KSY, Starr MO, Teiling C, Harkins TT, Edwards RA, Eisen JA, Facciotti MT
+  year: 2012
+  title: Sequencing of Seven Haloarchaeal Genomes Reveals Patterns of Genomic Flux
+  link: https://doi.org/10.1371/journal.pone.0041389
+  journal: PLoS ONE
+  details: 7(7):e41389
+  doi: 10.1371/journal.pone.0041389
+- authors: Langille MGI, Laird MR, Hsiao WWL, Chiu TA, Eisen JA, Brinkman FSL
+  year: 2012
+  title: 'MicrobeDB: a locally maintainable database of microbial genomic sequences'
+  link: https://doi.org/10.1093/bioinformatics/bts273
+  journal: Bioinformatics
+  details: 28(14):1947-1948
+  doi: 10.1093/bioinformatics/bts273
+- authors: Langille MGI, Meehan CJ, Beiko RG
+  year: 2012
+  title: 'Human Microbiome: A Genetic Bazaar for Microbes?'
+  link: https://pubmed.ncbi.nlm.nih.gov/22240474/
+  journal: Current Biology
+  details: 22(1):R20-22
+- authors: Langille MGI, Hsiao WWL, Brinkman FSL
+  year: 2010
+  title: Detection of genomic islands using bioinformatics approaches
+  link: https://doi.org/10.1038/nrmicro2350
+  journal: Nature Reviews Microbiology
+  details: 8(5):373-82
+  doi: 10.1038/nrmicro2350
+- authors: Langille MGI and Eisen JA
+  year: 2010
+  title: 'BioTorrents: A file sharing service for scientific data'
+  link: https://doi.org/10.1371/journal.pone.0010071
+  journal: PLoS ONE
+  details: 5(4):e10071
+  doi: 10.1371/journal.pone.0010071
+- authors: Ho Sui SJ, Fedynak A, Hsiao WWL, Langille MGI, Brinkman FSL
+  year: 2009
+  title: The association of virulence factors with genomic islands
+  link: https://doi.org/10.1371/journal.pone.0008094
+  journal: PLoS ONE
+  details: 4(12):e8094
+  doi: 10.1371/journal.pone.0008094
+- authors: Langille MGI and Brinkman FSL
+  year: 2009
+  title: Bioinformatic detection of horizontally transferred DNA in bacterial genomes
+  link: https://doi.org/10.3410/B1-25
+  journal: F1000 Biology Reports
+  details: '1:25'
+  doi: 10.3410/B1-25
+- authors: Langille MGI and Brinkman FSL
+  year: 2009
+  title: 'IslandViewer: an integrated interface for computational identification and visualization of genomic islands'
+  link: https://doi.org/10.1093/bioinformatics/btp030
+  journal: Bioinformatics
+  details: 25(5):664-5
+  doi: 10.1093/bioinformatics/btp030
+- authors: Winstanley C, Langille MGI, Fothergill JL, Kukavica-Ibrulj I, Paradis-Bleau C, Sanschagrin F, Thomson NR, Winsor GL, Quail MA, Lennard N, Bignell A, Clarke L, Seeger K, Saunders D, Harris D, Parkhill J, Hancock REW, Brinkman FSL, and Levesque RC
+  year: 2009
+  title: Newly introduced genomic prophage islands are critical determinants of in vivo competitiveness in the Liverpool Epidemic Strain of Pseudomonas aeruginosa
+  link: https://doi.org/10.1101/gr.086082.108
+  journal: Genome Research
+  details: 19(1):12-23
+  doi: 10.1101/gr.086082.108
+- authors: Langille MGI, Hsiao WWL, Brinkman FSL
+  year: 2008
+  title: Evaluation of genomic island predictors using a comparative genomics approach
+  link: https://doi.org/10.1186/1471-2105-9-329
+  journal: BMC Bioinformatics
+  details: 9:329
+  doi: 10.1186/1471-2105-9-329
+- authors: Langille MGI and Clark DV
+  year: 2007
+  title: Parent genes of retrotransposition-generated gene duplicates in Drosophila melanogaster have distinct expression profiles
+  link: https://www.sciencedirect.com/science/article/pii/S0888754307001437
+  journal: Genomics
+  details: 90(3):334-43
+- authors: Spidlen J, Gentleman RC, Haaland PD, Langille MGI, Le Meur N, Ochs MF, Schmitt C, Smith CA, Treister AS, Brinkman RR
+  year: 2006
+  title: Data standards for flow cytometry
+  link: https://doi.org/10.1089/omi.2006.10.209
+  journal: OMICS
+  details: 10(2):209-14
+  doi: 10.1089/omi.2006.10.209
+- authors: Hamarneh G, Yang J, McIntosh C, Langille MGI
+  year: 2005
+  title: 3D live-wire-based semi-automatic segmentation of medical images
+  link: https://www2.cs.sfu.ca/~hamarneh/ecopy/spiemi2005c.pdf
+  journal: 'Proceedings of SPIE Medical Imaging: Image Processing'
+  details: 5747:1597-603
+- authors: Chodorowski A, Mattsson U, Langille MGI, Hamarneh G
+  year: 2005
+  title: Color Lesion Boundary Detection Using Live Wire
+  link: https://doi.org/10.1117/12.594944
+  journal: 'Proceedings of SPIE Medical Imaging: Image Processing'
+  details: 5747:1589-96
+  doi: 10.1117/12.594944

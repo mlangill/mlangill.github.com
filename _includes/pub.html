@@ -1,0 +1,5 @@
+{% assign p = include.pub %}{% capture bold %}<strong>{{ site.highlight_author }}</strong>{% endcapture %}{% if p.link %}{% assign href = p.link %}{% elsif p.doi %}{% assign href = "https://doi.org/" | append: p.doi %}{% else %}{% assign href = nil %}{% endif %}<li class="pub">
+<span class="pub-meta">{{ p.year }}{% if p.journal %} · {{ p.journal }}{% endif %}</span>
+{% if href %}<a class="pub-title" href="{{ href }}">{{ p.title }}</a>{% else %}<span class="pub-title">{{ p.title }}</span>{% endif %}
+<span class="pub-authors">{{ p.authors | replace: site.highlight_author, bold }}</span>
+</li>

@@ -1,0 +1,31 @@
+title: Langille Lab
+description: >-
+  The Langille Lab at Dalhousie University develops and tests bioinformatic
+  methods to understand the role of the microbiome in human health and disease.
+url: https://morganlangille.com
+baseurl: ""
+
+email: morgan.langille@dal.ca
+scholar: https://scholar.google.ca/citations?hl=en&user=jxThz9gAAAAJ
+github: https://github.com/LangilleLab
+linkedin: http://www.linkedin.com/in/morganlangille
+imr: https://imr.bio
+application_form: https://forms.gle/pyvv1HnG8ixb1g7S6
+
+# Shown in bold in author lists on the publications pages
+highlight_author: Langille MGI
+
+# Navigation, in order
+nav:
+  - {title: Research, url: /research.html}
+  - {title: Software, url: /software.html}
+  - {title: People, url: /members.html}
+  - {title: Publications, url: /pubs.html}
+  - {title: Join us, url: /positions.html}
+  - {title: Contact, url: /contact.html}
+
+exclude:
+  - README.md
+  - scripts
+  - preview
+  - .github

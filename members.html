@@ -1,256 +1,45 @@
-<!DOCTYPE HTML>
-<!--
-	Arcana by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Langille Lab @ Dalhousie University</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.dropotron.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-wide.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+---
+layout: default
+title: People
+description: Current members and alumni of the Langille Lab at Dalhousie University.
+---
+<div class="wrap">
+<header class="page-head">
+<div class="eyebrow">People</div>
+<h1>Our team</h1>
+<p class="lede">Scientists, staff and trainees working across microbiome research, bioinformatics and the Integrated Microbiome Resource.</p>
+</header>
 
-		<style type="text/css">
-			table.space {
-  				border:0px solid black;
-				border-collapse: separate;
-  				border-spacing: 5px;
-  				}
-			td {
-				border:0px solid black;
-				vertical-align: middle;
-				}
-			img {
-				vertical-align: middle;
-				}
-</style>
+<section style="padding-bottom: 72px">
+<div class="people">
+{% for person in site.data.people.current %}<article class="person">
+{% if person.photo %}<img src="{{ '/images/' | append: person.photo | relative_url }}" alt="{{ person.name }}" loading="lazy">{% else %}<div class="initials" aria-hidden="true">{{ person.name | slice: 0 }}</div>{% endif %}
+<div>
+<div class="person-name">{{ person.name }}</div>
+<div class="person-role">{{ person.role }}</div>
+{% if person.unit %}<div class="person-unit">{{ person.unit }}</div>{% endif %}
+</div>
+{% if person.email %}<a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+</article>
+{% endfor %}</div>
+</section>
+</div>
 
-	</head>
-	<body>
-
-		<!-- Header -->
-			<div id="header">
-						
-				<!-- Logo -->
-					<h1><a href="index.html" id="logo">The Langille Lab <em>@ Dalhousie University</em></a></h1>
-				
-				<!-- Nav -->
-					<nav id="nav">
-					  <ul>
-					    	<li><a href="index.html">Home</a></li>
-						<li><a href="research.html">Research</a></li>
-						<li class="current"><a href="members.html">Members</a></li>
-						<li><a href="pubs.html">Publications</a></li>
-						<li><a href="positions.html">Opportunities</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
-						</ul>
-					</nav>
-
-			</div>
-			
-		<!-- Main -->
-			<section class="wrapper style1">
-
-				<div class="container">
-				  <div id="content">
-				    <header>
-				      <h2>Our Team</h2>
-				      
-				      <br>
-					     <img src="images/lab.jpg" style="float:middle;max-width:80%">
-					     
-					     <p>
-						<!-- Content -->
-					
-							<article>
-								<header>
-									<h3>Current Lab Members</h3>
-								</header>
-								
-								<table class="space">
-									<tr>
-										<td><img src="images/Morgan.jpg" width=150px>
-										<td><b>Morgan G. I. Langille, PhD</b>
-										<br>Canada Research Chair in Human Microbiomics
-										<br>Professor
-										<br><a href="https://medicine.dal.ca/departments/department-sites/pharmacology.html">Dept. of Pharmacology</a>
-										<br><a href="https://medicine.dal.ca/departments/department-sites/microbiology.html">Department of Microbiology & Immunology</a>
-										<td>Email: <a href="mailto:morgan.langille@dal.ca">morgan.langille@dal.ca</a>
-									</tr>
-									<tr>
-										<td><img src="images/Andre.jpg" width=150px>
-										<td><b>Andr&eacute; M. Comeau, PhD</b>
-										<br>Research Associate & Lab Manager
-										<br><a href="http://imr.bio" target="new">IMR</a>, Manager
-										<td>Email: <a href="mailto:andre.comeau@dal.ca">andre.comeau@dal.ca</a>
-									</tr>
-									<tr>
-										<td><img src="images/Alessi.jpg" width=150px>
-										<td><b>Alessi Kwawukume</b>
-										<br>Research Assistant
-										<br><a href="http://imr.bio" target="new">IMR</a>, Sequencing Technician
-										<td>Email: <a href="mailto:Alessi.Kwawukume@dal.ca">Alessi.Kwawukume@dal.ca</a>
-									</tr>
-									<tr>
-										<td><img src="images/Vanessa.jpg" width=150px>
-										<td><b>Vanessa DeClercq, PhD</b>
-										<br>Research Associate
-										<br>Department of Pharmacology
-										<td>Email: <a href="mailto:Vanessa.De.Clercq@dal.ca">Vanessa.De.Clercq@dal.ca</a>
-										</td>
-									</tr>
-									<tr>
-										<td><img src="images/Robyn.jpg" width=150px>
-										<td><b>Robyn Wright, PhD</b>
-										<br>Post Doc
-										<br>Department of Pharmacology
-										<td>Email: <a href="mailto:Robyn.Wright@dal.ca">Robyn.Wright@dal.ca</a>									
-										</td>
-									</tr>
-									<tr>
-										<td><img src="images/Nidhi.jpg" width=150px>
-										<td><b>Nidhi Gohil, PhD</b>
-										<br> Research Associate
-										<br><a href="http://imr.bio" target="new">IMR</a>, Sequencing Technician
-										<td>Email: <a href="mailto:Nidhi.Gohil@dal.ca">Nidhi.Gohil@dal.ca</a>
-									</tr>
-									<tr>
-										<td><img src="images/Dylan.jpg" width=150px>
-										<td><b>Dylan Quinn, PhD</b>
-										<br>Research Associate
-										<br><a href="http://imr.bio" target="new">IMR</a>, Sequencing Technician
-										<td>Email: <a href="mailto:Dylan.Quinn@dal.ca">Dylan.Quinn@dal.ca</a>
-									</tr>
-									
-									<tr>
-										<td><img src="images/Abbey.jpg" width=150px>
-										<td><b>Abbey Saunders</b>
-										<br>MSc Student
-										<br>Department of Microbiology & Immunology
-										<td>Email: <a href="mailto:Abbey.Saunders@dal.ca">Abbey.Saunders@dal.ca</a>
-									</tr>
-									
-								</table>
-
-								<header>
-									<h3>Previous Lab Members</h3>
-								</header>
-
-								<ul style="list-style-type:disc;">
-								  <li>
-								    Arash Ghasemi, MSc (2025)
-								  </li>
-								  <li>
-								    Ben Fisher, MSc (2024)
-								  </li>
-								  <li>
-								    Monica Alvaro Fuss, MSc (2024)
-								  </li>
-								<li>
-									Dhwani Desai, RA (2024)
-								</li>
-								<li>	
-									Nicole Allward, PhD (2024)
-								</li>
-								<li>
-								    Gina Filloramo, RA (2023)
-								  </li>
-								  <li>
-								    Jacob Nearing, PhD (2022)
-								  </li>
-								  <li>
-								    Ben Callaghan, RIM (2022)
-								  </li>
-								  <li>
-								    Akhilesh Dhanani, RA (2022)
-								  </li>
-								  <li>
-								    Chris Tang, MSc (2021)
-								  </li>
-								  <li>
-								    Gavin Douglas, PhD (2020)
-								  </li>
-								  <li>
-								    Molly Hayes, MSc (2020)
-								  </li>
-								  <li>
-								    Alex Whynot, RIM (2019)
-								  </li>
-								  <li>
-								    Casey Jones, MSc (2018)
-								  </li>
-								  <li>
-								    Emily Lamoureux, MSc (2017)
-								  </li>
-								  <li>
-								    Montse Palau de Miguel, Visiting PhD (2017)
-								  </li>
-								  <li>
-								    Travis LeBlanc, MSc (2016)
-								  </li>
-								</ul>
-							</article>
-				
-					</div>
-				</div>
-			</section>			
-
-		<!-- Footer -->
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<section class="3u 6u(2) 12u$(3)">
-<h3>Bioinformatic Tools</h3>
-                                                        <ul class="links">
-                                                                <li><a href="https://github.com/LangilleLab/microbiome_helper/wiki" target="new">Microbiome Helper</a></li>
-                                                                <li><a href="https://github.com/picrust/picrust2/wiki" target="new">PICRUSt</a></li>
-                                                                <li><a href="https://github.com/gavinmdouglas/POMS" target="new">POMS</a></li>
-                                                                <li><a href="https://github.com/dhwanidesai/JarrVis" target="new">JARRVIS</a></li>
-                                                                <li><a href="http://www.pathogenomics.sfu.ca/islandviewer/browse/" target="new">IslandViewer</a></li>
-                                                        </ul>
-                                                </section>
-                                                <section class="3u 6u$(2) 12u$(3)">
-                                                        <h3>Research Related</h3>
-                                                        <ul class="links">
-                                                                <li><a href="http://imr.bio" target="new">Integrated Microbiome Resource</a></li>
-                                                                <li><a href="http://dalmug.org" target="new">Dalhousie Microbiome User Group</a></li>
-                                                                <li><a href="https://icgenomics.ca" target="new">Institute for Comparative Genomics</a></li>
-                                                                <li><a href="http://medicine.dal.ca" target="new">Faculty of Medicine</a></li>
-                                                                <li><a href="http://dal.ca" target="new">Dalhousie University</a></li>
-                                                        </ul>
-                                                </section>
-                                        </div>
-                                </div>
-
-                                <!-- Icons -->
-                                        <ul class="icons">
-                                                <li><a href="http://twitter.com/betascience" class="icon fa-twitter" target="new"><span class="label">Twitter</span></a></li>
-                                                <li><a href="https://github.com/LangilleLab" class="icon fa-github" target="new"><span class="label" target="new">GitHub</span></a></li>
-                                                <li><a href="http://www.linkedin.com/in/morganlangille" class="icon fa-linkedin" target="new"><span class="label" target="new">LinkedIn</span></a></li>
-                                        </ul>
-
-                                <!-- Copyright -->
-                                        <div class="copyright">
-                                                <ul class="menu">
-                                                        <li>&copy; Langille Lab. All rights reserved</li>
-
-						</ul>
-					</div>
-
-			</div>
-
-	</body>
-</html>
+<section class="band section">
+<div class="wrap">
+<div class="section-head" style="margin-bottom: 28px">
+<div class="stack" style="gap: 8px">
+<h2>Alumni</h2>
+<p class="muted">Former lab members and the year they left. Former member? Let us know where you are now at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+</div>
+</div>
+<div class="alumni">
+{% for group in site.data.people.alumni_groups %}{% assign members = site.data.people.alumni | where: "group", group %}{% if members.size > 0 %}<div>
+<h3>{{ group }}</h3>
+<ul>
+{% for a in members %}<li><span>{{ a.name }} <span class="yr">{{ a.year }}</span></span>{% if a.now %}<span class="now">Now: {{ a.now }}</span>{% endif %}</li>
+{% endfor %}</ul>
+</div>
+{% endif %}{% endfor %}</div>
+</div>
+</section>
