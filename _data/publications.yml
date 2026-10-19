@@ -9,8 +9,6 @@
 #   featured: true      shows the paper on the homepage
 #   tags: [methods]     groups papers on the Publications page
 #
-- doi: 10.1101/2025.04.13.648596
-  journal: bioRxiv
 - authors: DeClercq V, Comeau AM, Kwawukume A, Murphy R, Parmar NR, Quinn DP, Wright R, Wallace A, Langille MGI
   year: 2026
   title: Technical replicates and multiple sequencing approaches reveal weak and inconsistent microbiome signals in lung tumour and blood samples from patients with lung cancer
@@ -62,6 +60,12 @@
   journal: Journal of Pediatric Gastroenterology and Nutrition
   details: jpn3.70357
   doi: 10.1002/jpn3.70357
+- authors: Desai DK, Comeau AM, Langille MGI
+  year: 2025
+  title: 'JarrVis: Visualising Taxa-function relationships from meta-omic data'
+  link: https://doi.org/10.1101/2025.04.13.648596
+  journal: bioRxiv
+  doi: 10.1101/2025.04.13.648596
 - authors: Hosmer M, Wright RJ, McCavour C, Keys K, Sterling S, Langille MGI, Rohde JR
   year: 2025
   title: Lime amendment to chronically acidified forest soils results in shifts in prokaryotic communities
