@@ -2,7 +2,7 @@
 # The Training page lists workshops from 2024 on (set in training.html).
 # links: optional list of {label, url} pages for the workshop
 # upcoming: true marks a workshop that hasn't happened yet
-- {year: 2027, name: "CBW Microbiome Analysis", place: "Edmonton, AB", dates: January, upcoming: true}
+- {year: 2027, name: "CBW Microbiome Analysis", place: "Edmonton, AB", dates: Jan 19–22, upcoming: true}
 - {year: 2026, name: CBW/CS-DCC Microbiome Analysis, place: "Guelph, ON", dates: Sept 15–17, links: [{label: Workshop page, url: "https://bioinformatics.ca/workshops-all/cbw-cs-dcc-microbiome-analysis/"}]}
 - {year: 2025, name: CBW Beginner and Advanced Microbiome Analysis, place: "Vancouver, BC", dates: May 26–30, links: [{label: Beginner, url: "https://bioinformatics.ca/workshops-all/2025-beginner-microbiome-analysis-vancouver-bc/"}, {label: Advanced, url: "https://bioinformatics.ca/workshops-all/2025-advanced-microbiome-analysis-vancouver-bc/"}]}
 - {year: 2024, name: CBW Beginner and Advanced Microbiome Analysis, place: "St. John's, NL", dates: May 27–30, links: [{label: Beginner, url: "https://bioinformatics.ca/workshops-all/2024-beginner-microbiome-analysis-st-johns-nl/"}, {label: Advanced, url: "https://bioinformatics.ca/workshops-all/2024-advanced-microbiome-analysis-st-johns-nl/"}]}
