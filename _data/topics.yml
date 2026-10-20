@@ -2,9 +2,10 @@
 # in publications.yml. Each group is one research card.
 health:
   - {id: crohns, label: Crohn’s disease}
-  - {id: lung-cancer, label: Lung cancer}
+  - {id: cancer, label: Cancer}
   - {id: oral, label: Oral microbiome}
   - {id: aging, label: Aging and frailty}
+  - {id: environmental, label: Environmental}
 methods:
   - {id: functional-prediction, label: Functional insights}
   - {id: low-biomass, label: Low biomass samples}

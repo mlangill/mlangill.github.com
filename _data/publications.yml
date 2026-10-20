@@ -18,7 +18,7 @@
   doi: 10.1186/s40168-026-02529-z
   featured: true
   tags:
-  - lung-cancer
+  - cancer
   - low-biomass
   - reproducibility
 - authors: Jiang L, Wright RJ, Raudonis R, Banskota AH, Glick BR, Mitchell RJ, Scur M, Wang Z, Zhang W, Zhang T, Luo Q, Langille MGI, Cheng Z, Wen G
@@ -27,6 +27,8 @@
   link: https://www.mdpi.com/2079-7737/15/17/1546
   journal: Biology
   details: 15(17), 1546
+  tags:
+  - environmental
 - authors: Wright RJ, DeClercq V, Burton CL, Roslin NM, Chan A, Arnold PD, Peters P, Schachar R, Crosbie J, Langille MGI
   year: 2026
   title: Population-based characterisation of child and adolescent oral bacterial microbiomes
@@ -55,7 +57,7 @@
   details: 18:2675065
   doi: 10.1080/20002297.2026.2675065
   tags:
-  - lung-cancer
+  - cancer
   - oral
 - authors: Alvaro-Fuss M, DeClercq V, Blodgett JM, Theou O, Langille MGI, Beiko RG
   year: 2026
@@ -91,6 +93,8 @@
   journal: Applied and Environmental Microbiology
   details: 92(1):e02171-24
   doi: 10.1128/aem.02171-24
+  tags:
+  - environmental
 - authors: Masirika LM, Hewins B, Ostadgavahi AT, Dutt M, Mambo LM, Udahemuka JC, Ndishymie P, Mbiribindi JB, Siangoli FB, Kelvin P, Langille MGI, Kelvin DJ, Flores L, Martinez GS, Kumar
   year: 2025
   title: The trans-kingdom spectrum of Mpox-like lesion pustules of suspect patients in the Mpox Clade Ib outbreak in Eastern Democratic Republic of the Congo
@@ -122,6 +126,8 @@
   link: https://www.nature.com/articles/s41564-024-01881-w
   journal: Nature Microbiology
   details: 10:94–111
+  tags:
+  - functional-prediction
 - authors: Rose S, Robicheau B, Tolman J, Batista DF, Rowland E, Desai D, Ratten J, Kantor E, Comeau AM, Langille MGI, Jerlstrom-Hultqvist J, Sarthou G, Mohr W, Bertrand EM, LaRoche J
   year: 2024
   title: Nitrogen-fixation in the widely distributed model marine γ-proteobacterial diazotroph Candidatus Thalassolituus haligoni
@@ -129,6 +135,8 @@
   journal: Science Advances
   details: 10:eadn1476
   doi: 10.1126/sciadv.adn1476
+  tags:
+  - environmental
 - authors: DeClercq V, Wright RJ, Nearing JT, Langille MGI
   year: 2024
   title: Oral microbial signatures associated with age and frailty in Canadian adults
@@ -145,6 +153,8 @@
   journal: Microbiome
   details: 11:225
   doi: 10.1186/s40168-023-01662-3
+  tags:
+  - environmental
 - authors: Hayes MG, Langille MGI, Gu H
   year: 2023
   title: Cross-study analyses of microbial abundance using generalized common factor methods
@@ -152,12 +162,16 @@
   journal: BMC Bioinformatics
   details: 24:380
   doi: 10.1186/s12859-023-05509-4
+  tags:
+  - reproducibility
 - authors: McCormick NE, Earle M, Kent A, Ha C, Hakes L, Anderson L, Stoddart AK, Langille MGI, Gagnon GA
   year: 2023
   title: Betaproteobacteria are a key component of surface water biofilters that maintain sustained manganese removal in response to fluctuations in influent water temperature
   link: https://www.sciencedirect.com/science/article/pii/S0043135423009557?via%3Dihub
   journal: Water Research
   details: 244:120515
+  tags:
+  - environmental
 - authors: Biswas D, De Silva ABKH, Mercer A, Shreya S, Kienesberger P, Langille MGI, Rupasinghe HPV, Pulinilkunnil T
   year: 2023
   title: Supplementation of cyanidin-3-O-B-glucoside-rich haskap (Lonicera caerulea L.) berry extract attenuates hepatic lipid dysregulation in diet-induced obese mice
@@ -172,6 +186,7 @@
   details: '9:23'
   tags:
   - oral
+  - cancer
 - authors: Wright RJ, Pewarchuk ME, Marshall EA, Murray B, Rosin MP, Laronde DM, Zhang L, Lam WL, Langille MGI, Rock LD
   year: 2023
   title: Exploring the microbiome of oral epithelial dysplasia as a predictor of malignant progression
@@ -181,6 +196,7 @@
   doi: 10.1186/s12903-023-02911-5
   tags:
   - oral
+  - cancer
 - authors: Thilakarathna WPDW, Langille MGI, Rupasinghe HPV
   year: 2023
   title: Hepatotoxicity of polymeric proanthocyanidins is caused by translocation of bacterial lipopolysaccharides through impaired gut epithelium
@@ -204,12 +220,16 @@
   journal: Frontiers in Cellular and Infection Microbiology
   details: 13:1102501
   doi: 10.3389/fcimb.2023.1102501/full
+  tags:
+  - cancer
 - authors: Lloyd AW, Percival D, Langille MGI, Yurgel SN
   year: 2023
   title: Changes to Soil Microbiome Resulting from Synergetic Effects of Fungistatic Compounds Pyrimethanil and Fluopyram in Lowbush Blueberry Agriculture, with Nine Fungicide Products Tested
   link: https://www.mdpi.com/2076-2607/11/2/410
   journal: Microorganisms
   details: 11(2):410
+  tags:
+  - environmental
 - authors: Verburgt CM, Dunn KA, Otley A, Heyman MB, Verstraete S, Sunseri W, Sylvester F, De Meij T, Comeau AM, Langille MGI, de Jonge WJ, Benninga MA, Van Limbergen JE
   year: 2023
   title: 'Personalised Azithromycin + Metronidazole (PAZAZ), in combination with standard induction therapy, to achieve a faecal microbiome community structure and metagenome changes associated with sustained remission in paediatric Crohn’s Disease (CD): protocol of a pilot study'
@@ -224,6 +244,8 @@
   link: https://pubs.rsc.org/en/content/articlelanding/2023/ew/d2ew00568a
   journal: 'Environmental Science: Water Research & Technology'
   details: '9: 48-61'
+  tags:
+  - environmental
 - authors: Douglas GM, Kim S, Langille MGI, Shapiro BJ
   year: 2023
   title: Efficient computation of contributional diversity metrics from microbiome data with FuncDiv
@@ -247,6 +269,8 @@
   journal: Frontiers in Cellular and Infection Microbiology
   details: 12:924707
   doi: 10.3389/fcimb.2022.924707/full
+  tags:
+  - cancer
 - authors: Nearing JT, Douglas GM, Hayes M, MacDonald J, Desai D, McCormick N, Jones JMA, Wright R, Dhanani A, Comeau AM, Langille MGI
   year: 2022
   title: Microbiome differential abundance methods produce different results across 38 datasets
@@ -278,6 +302,8 @@
   link: https://www.sciencedirect.com/science/article/pii/S0043135421009878
   journal: Water Research
   details: 207:117793
+  tags:
+  - environmental
 - authors: Dunn KA, Forbrigger Z, Connors J, Rahman M, Cohen A, Van Limbergen J, Langille MGI, Stadnyk AW, Bielawski JP, Penny S, MacDonald T, Kulkarni K
   year: 2021
   title: Gut bacterial gene changes following pegaspargase treatment in pediatric patients with acute lymphoblastic leukemia
@@ -285,6 +311,8 @@
   journal: Leukemia & Lymphoma
   details: 62(13):3244-3255
   doi: 10.1080/10428194.2021.1953006
+  tags:
+  - cancer
 - authors: Wright RJ, Bosch R, Langille MGI, Gibson MI, Christie-Oleza JA
   year: 2021
   title: A multi-OMIC characterisation of biodegradation and microbial community succession within the PET plastisphere
@@ -292,6 +320,8 @@
   journal: Microbiome
   details: 9:141
   doi: 10.1186/s40168-021-01054-5
+  tags:
+  - environmental
 - authors: Nearing JT, Comeau AM, Langille MGI
   year: 2021
   title: Identifying biases and their potential solutions in human microbiome studies
@@ -299,6 +329,8 @@
   journal: Microbiome
   details: 9:113
   doi: 10.1186/s40168-021-01059-0
+  tags:
+  - reproducibility
 - authors: Douglas GM, Langille MGI
   year: 2021
   title: A primer and discussion on DNA-based microbiome data and related bioinformatics analyses
@@ -319,6 +351,8 @@
   link: https://www.sciencedirect.com/science/article/pii/S0944501320305589
   journal: Microbiological Research
   details: 245, 126690
+  tags:
+  - environmental
 - authors: Cook J, Douglas GM, Zhang J, Glick BR, Langille MGI, Liu K, Cheng Z
   year: 2020
   title: Transcriptomic profiling of Brassica napus responses to Pseudomonas aeruginosa
@@ -333,12 +367,16 @@
   journal: Leukemia & Lymphoma
   details: 62(4):927-936
   doi: 10.1080/10428194.2020.1850718
+  tags:
+  - cancer
 - authors: Wright RJ, Langille MGI, Walker TR
   year: 2020
   title: Food or just a free ride? A meta-analysis reveals the global diversity of the plastisphere
   link: https://www.nature.com/articles/s41396-020-00814-9
   journal: ISME Journal
   details: 15(3):789-806
+  tags:
+  - environmental
 - authors: Nearing JT, DeClercq V, Van Limbergen J, Langille MGI
   year: 2020
   title: Assessing the variation within the oral microbiome of healthy adults
@@ -354,6 +392,8 @@
   link: https://www.sciencedirect.com/science/article/pii/S0048969720352165
   journal: Science of the Total Environment
   details: 751:141687
+  tags:
+  - environmental
 - authors: Douglas GM, Bielawski JP, Langille MGI
   year: 2020
   title: Re-evaluating the relationship between missing heritability and the microbiome
@@ -380,6 +420,7 @@
   doi: 10.1126/science.aay9189
   tags:
   - low-biomass
+  - cancer
 - authors: Wu L, Zeng T, Deligios M, Milanesi L, Langille MGI, Zinellu A, Rubino S, Carru C, Kelvin D
   year: 2020
   title: Age-related variation of bacterial and fungal communities in different body habitats across the young, elderly and centenarians in Sardinia
@@ -387,6 +428,8 @@
   journal: mSphere
   details: 5:e00558-19
   doi: 10.1128/mSphere.00558-19
+  tags:
+  - aging
 - authors: Palau M, Piqué N, Comeau AM, Douglas GM, Ramírez-Lázaro MJ, Lario S, Calvet X, Langille MGI, Miñana-Galbis D
   year: 2020
   title: Detection of Helicobacter pylori microevolution and multiple infection from gastric biopsies by housekeeping gene amplicon sequencing
@@ -409,6 +452,8 @@
   journal: Genome Biology and Evolution
   details: '11(10): 2750-2766'
   doi: 10.1093/gbe/evz184
+  tags:
+  - functional-prediction
 - authors: Bolyen E, [… (108 other co-authors), Douglas GM, Langille MGI …],Caporaso JG
   year: 2019
   title: Reproducible, interactive, scalable, and extensible microbiome data science using QIIME 2
@@ -424,6 +469,8 @@
   journal: Frontiers in Microbiology
   details: 10:1682
   doi: 10.3389/fmicb.2019.01682/full
+  tags:
+  - environmental
 - authors: Zorz JK, Willis C, Comeau AM, Langille MGI, Li WKW, Johnson C, LaRoche J
   year: 2019
   title: Drivers of regional bacterial community structure and diversity over depth and time in the Northwest Atlantic Ocean
@@ -431,6 +478,8 @@
   journal: Frontiers in Microbiology
   details: 10:281
   doi: 10.3389/fmicb.2019.00281/full
+  tags:
+  - environmental
 - authors: Nearing JT, Connors J, Whitehouse S, Van Limbergen J, MacDonald T, Kulkarni K, Langille MGI
   year: 2019
   title: Infectious complications are associated with alterations in the gut microbiome in pediatric patients with Acute Lymphoblastic Leukemia
@@ -438,6 +487,8 @@
   journal: Frontiers in Cellular and Infection Microbiology
   details: '9:28'
   doi: 10.3389/fcimb.2019.00028/full
+  tags:
+  - cancer
 - authors: Singh R, Chandrashekharappa S, Bodduluri S, Baby B, Hegde B, Kotla N, Hiwale A, Saiyed T, Patel P, Vijay-kumar M, Langille MGI, Douglas GM, Cheng X, Rouchka E, Waigel S, Dryden G, Alatassi H, Zhang H, Haribabu B, Vemula P, and Jala V
   year: 2019
   title: Enhancement of Gut Barrier Integrity by a Microbial Metabolite through Nrf2 Pathway
@@ -486,6 +537,8 @@
   journal: Frontiers in Microbiology
   details: 9, 1187
   doi: 10.3389/fmicb.2018.01187/full
+  tags:
+  - environmental
 - authors: Langille MGI
   year: 2018
   title: Exploring linkages between taxonomic and functional profiles of the human microbiome
@@ -517,6 +570,8 @@
   journal: Microbiome
   details: 6(1), 8
   doi: 10.1186/s40168-017-0394-z
+  tags:
+  - reproducibility
 - authors: Finlayson-Trick ECL, Getz LJ, Slaine PD, Thornbury M, Lamoureux E, Cook J, Langille MGI, Murray LE, McCormick C, Rohde JR, Cheng Z
   year: 2017
   title: Taxonomic differences of gut microbiomes drive cellulolytic enzymatic potential within hind-gut fermenting mammals
@@ -547,6 +602,8 @@
   journal: Phytobiomes
   details: 1(2), 102-113
   doi: 10.1094/PBIOMES-03-17-0012-R
+  tags:
+  - environmental
 - authors: MacLellan A, Moore-Connors J, Shannan G, Cahill L, Langille MGI, Van Limbergen J
   year: 2017
   title: 'The Impact of Exclusive Enteral Nutrition (EEN) on the Gut Microbiome in Crohn’s Disease: A Review'
@@ -562,6 +619,8 @@
   journal: mSystems
   details: 2(1), e00127-16
   doi: 10.1128/mSystems.00127-16
+  tags:
+  - reproducibility
 - authors: Rutherford K, Meehan CJ, Langille MGI, Tyack SG, McKay JC, McLean NL, Benkel K, Beiko RG, Benkel B
   year: 2016
   title: Discovery of an expanded set of avian leukosis subgroup E proviruses in chickens using Vermillion, a novel sequence capture and analysis pipeline
@@ -657,6 +716,8 @@
   journal: PLoS ONE
   details: 7(9):e43866. *Co-first authors
   doi: 10.1371/journal.pone.0043866
+  tags:
+  - environmental
 - authors: Lynch EA, Langille MGI, Darling A, Wilbanks EG, Haltiner C, Shao KSY, Starr MO, Teiling C, Harkins TT, Edwards RA, Eisen JA, Facciotti MT
   year: 2012
   title: Sequencing of Seven Haloarchaeal Genomes Reveals Patterns of Genomic Flux
