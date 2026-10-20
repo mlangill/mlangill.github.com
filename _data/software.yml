@@ -8,7 +8,7 @@
     likely to carry, using 16S rRNA or other marker gene sequences. It places
     sequences into a reference tree, infers gene content for each one, and
     combines the results into sample level functional profiles. The reference
-    database was updated with PICRUSt2-SC in 2025.
+    database was updated with <a href="https://doi.org/10.1093/bioinformatics/btaf269">PICRUSt2-SC in 2025</a>.
   link: https://github.com/picrust/picrust2/wiki
   paper: https://www.nature.com/articles/s41587-020-0548-6
   paper_label: Douglas et al. 2020, Nature Biotechnology
