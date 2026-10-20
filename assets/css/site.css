@@ -212,6 +212,8 @@ a.pub-title:hover { color: var(--accent); }
 .card-photo { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; }
 .photo-row figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .photo-row img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+.photo-row .wide { grid-column: 1 / -1; }
+.photo-row .wide img { aspect-ratio: 16 / 9; }
 .ws-name { font-weight: 500; }
 .ws-links { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; font-weight: 600; margin-top: 4px; }
 .ws-links a { text-decoration: none; }
